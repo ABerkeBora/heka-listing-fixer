@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-10-31T03:00:38.300Z",
+  "method": "CUA real browser; authorized substitute for TasteSkill raw CDP inspector",
+  "viewports": {
+    "desktop": {
+      "detailVisible": true,
+      "products": 10,
+      "scrollWidth": 1440,
+      "width": 1440,
+      "height": 900
+    },
+    "tablet": {
+      "scrollWidth": 768,
+      "tableRows": 10,
+      "width": 768,
+      "height": 1024
+    },
+    "phone": {
+      "filters": [
+        44,
+        44,
+        44
+      ],
+      "firstRowY": 474.546875,
+      "scrollWidth": 390,
+      "width": 390,
+      "height": 844
+    }
+  },
+  "checks": [
+    "Source sample retains identity through import",
+    "Status filters and empty search",
+    "Selected source/changes/checks on desktop, tablet and phone",
+    "Malformed JSON rejected before paid job; error visible inside import dialog; Load sample recovers",
+    "Unpaid ready-only CSV downloaded and parsed: five product rows",
+    "Bounded mandate and honest unfunded job",
+    "Reload restores same job/input; no unrelated preview pairing"
+  ],
+  "limits": [
+    "No funded Cardano request or confirmed paid UI state verified",
+    "Pending/live timeout failure cases remain blocked on test funds"
+  ],
+  "expectedConsoleErrors": "HTTP 422 from deliberately malformed source requests; no uncaught application error observed"
+}

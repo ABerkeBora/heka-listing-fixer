@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-31T03:01:06.474Z",
+  "filesScanned": 78,
+  "walletSecretsChecked": 2,
+  "secretMatches": [],
+  "privatePathsStaged": [],
+  "note": "Actual selected-project recovery phrases compared against every staged public file without printing values. .local, .env, databases and dependencies excluded."
+}

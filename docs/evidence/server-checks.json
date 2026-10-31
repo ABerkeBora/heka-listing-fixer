@@ -1,0 +1,96 @@
+{
+  "at": "2026-10-31T02:57:25.255Z",
+  "checks": [
+    {
+      "name": "Real service status",
+      "status": "PASS",
+      "detail": {
+        "ready": false,
+        "provider": "koios",
+        "buyerBalanceLovelace": "0",
+        "model": {
+          "available": true,
+          "model": "qwen3:4b"
+        }
+      }
+    },
+    {
+      "name": "10-row source review reconciles",
+      "status": "PASS",
+      "detail": {
+        "summary": {
+          "total": 10,
+          "ready": 5,
+          "needsSource": 5,
+          "review": 0,
+          "changes": 24
+        },
+        "mode": "source_review",
+        "model": null
+      }
+    },
+    {
+      "name": "No charge for free lint without useful source composition",
+      "status": "PASS",
+      "detail": {
+        "http": 422,
+        "error": {
+          "error": "No additional source specifications are available for paid composition. Use the free source review, or add supplied Material, Dimensions, Capacity, Colour or Pages clauses."
+        }
+      }
+    },
+    {
+      "name": "Invalid duplicate SKU rejected before payment",
+      "status": "PASS",
+      "detail": {
+        "http": 422,
+        "error": {
+          "error": "Fix input errors before requesting paid work.",
+          "issues": [
+            {
+              "code": "duplicate_sku",
+              "field": "sku",
+              "message": "SKU LF-001 occurs more than once.",
+              "severity": "error",
+              "row": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Cross-site request blocked",
+      "status": "PASS",
+      "detail": {
+        "http": 403
+      }
+    },
+    {
+      "name": "No unpaid result via paid export",
+      "status": "PASS",
+      "detail": {
+        "http": 409
+      }
+    },
+    {
+      "name": "Duplicate source input retains same logical intent",
+      "status": "PASS",
+      "detail": {
+        "intentId": "batch_3335c09a068c20633a3c8e1c",
+        "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+        "status": "blocked",
+        "transaction": null
+      }
+    },
+    {
+      "name": "Unfunded wallet fails closed",
+      "status": "PASS",
+      "detail": {
+        "status": "blocked",
+        "error": "Fund the buyer with 5 test ADA on Cardano preprod to cover the service, bounded network fee and a valid change output.",
+        "paidResult": false,
+        "transaction": null
+      }
+    }
+  ]
+}

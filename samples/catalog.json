@@ -1,0 +1,127 @@
+{
+  "schema": "listing-v1",
+  "language": "en",
+  "sample": true,
+  "products": [
+    {
+      "sku": "LF-001",
+      "title": "  DESK   ORGANISER — OAK  ",
+      "description": " Solid oak desk organiser.   Three compartments. ",
+      "price": "24,90",
+      "currency": "eur",
+      "manufacturer": "Pinebridge Workshop",
+      "safety": "Keep away from open flames.",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-001",
+      "sourceText": "Material: solid oak | Dimensions: 24 × 12 × 8 cm | Colour: natural"
+    },
+    {
+      "sku": "LF-002",
+      "title": "  CERAMIC MUG  350 ml",
+      "description": "Glazed ceramic mug, 350 ml. Hand wash only.",
+      "price": "12.5",
+      "currency": "EUR",
+      "manufacturer": "Clayline Studio",
+      "safety": "Not suitable for use on a hob.",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-002",
+      "sourceText": "Material: glazed ceramic | Capacity: 350 ml | Colour: white"
+    },
+    {
+      "sku": "LF-003",
+      "title": " cotton   tote bag ",
+      "description": "Natural cotton tote bag with two handles.",
+      "price": "9,00",
+      "currency": "eur",
+      "manufacturer": "",
+      "safety": "Wash at 30 °C.",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-003",
+      "sourceText": "Material: natural cotton | Dimensions: 38 × 42 cm | Colour: natural"
+    },
+    {
+      "sku": "LF-004",
+      "title": "  LINEN NOTEBOOK — A5",
+      "description": "A5 notebook with linen cover and 96 ruled pages.",
+      "price": "14.0",
+      "currency": "EUR",
+      "manufacturer": "Paperfield Works",
+      "safety": "Keep dry.",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-004",
+      "sourceText": "Material: linen, paper | Dimensions: 21 × 14.8 cm | Pages: 96 ruled"
+    },
+    {
+      "sku": "LF-005",
+      "title": " felt   desk mat ",
+      "description": "Felt desk mat, 60 × 30 cm.",
+      "price": "19,90",
+      "currency": "EUR",
+      "manufacturer": "Quietdesk Supply",
+      "safety": "",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-005",
+      "sourceText": "Material: felt | Dimensions: 60 × 30 cm | Colour: grey"
+    },
+    {
+      "sku": "LF-006",
+      "title": " GLASS WATER BOTTLE  500 ml",
+      "description": "Clear glass bottle with steel screw cap, 500 ml.",
+      "price": "16",
+      "currency": "eur",
+      "manufacturer": "Clearwell Goods",
+      "safety": "Handle glass with care. Not for hot liquids.",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-006",
+      "sourceText": "Material: glass, steel | Capacity: 500 ml | Colour: clear"
+    },
+    {
+      "sku": "LF-007",
+      "title": " recycled paper   cards ",
+      "description": "Set of 12 blank cards made from recycled paper.",
+      "price": "7,50",
+      "currency": "EUR",
+      "manufacturer": "Paperfield Works",
+      "safety": "Keep dry.",
+      "certification": "",
+      "sourceUrl": "https://supplier.example/catalog/lf-007",
+      "sourceText": "Material: recycled paper | Dimensions: 14.8 × 10.5 cm | Colour: white"
+    },
+    {
+      "sku": "LF-008",
+      "title": "  BEECH PHONE STAND ",
+      "description": "Beech wood phone stand with one cable slot.",
+      "price": "11.90",
+      "currency": "eur",
+      "manufacturer": "",
+      "safety": "Keep away from open flames.",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-008",
+      "sourceText": "Material: beech wood | Dimensions: 8 × 8 × 2 cm | Colour: natural"
+    },
+    {
+      "sku": "LF-009",
+      "title": " CORK COASTER SET  ",
+      "description": "Four round cork coasters, 10 cm diameter.",
+      "price": "8",
+      "currency": "EUR",
+      "manufacturer": "Corkroom Supply",
+      "safety": "Keep away from open flames.",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-009",
+      "sourceText": "Material: cork | Dimensions: 10 cm | Colour: brown"
+    },
+    {
+      "sku": "LF-010",
+      "title": "  COTTON CABLE TIES ",
+      "description": "Set of six reusable cotton cable ties.",
+      "price": "6,90",
+      "currency": "EUR",
+      "manufacturer": "Quietdesk Supply",
+      "safety": "",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-010",
+      "sourceText": "Material: cotton | Dimensions: 15 × 1.5 cm | Colour: natural"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "checkedAt": "2026-10-31T02:51:01.150Z",
+  "network": "cardano:preprod",
+  "sdkVersion": "2.29.0",
+  "officialStarter": "https://developers.cardano.org/templates/x402-express/",
+  "provider": "koios",
+  "providerUrl": "https://preprod.koios.rest/api/v1",
+  "facilitator": {
+    "url": "https://x402.preprod.dev.ecosyseng.cf-deployments.org/supported",
+    "supported": {
+      "kinds": [
+        {
+          "x402Version": 2,
+          "scheme": "exact",
+          "network": "cardano:preprod",
+          "extra": {
+            "assetTransferMethods": [
+              "default",
+              "masumi",
+              "script"
+            ],
+            "areFeesSponsored": false,
+            "l1Confirmations": {
+              "minimum": 0,
+              "maximum": 20
+            }
+          }
+        }
+      ],
+      "extensions": [],
+      "signers": {
+        "cardano:*": []
+      }
+    },
+    "error": null
+  },
+  "buyerAddress": "addr_test1qr8dn6eysm3fp68f8gsrcxtvhqewztsutc7asvzk43s0fs7edlkjxxvq4qhdegzkn5gy06xqk7ktqdd3ulrmxxu4r55q0zvpkc",
+  "sellerAddress": "addr_test1qrj33p9fj9mu85q55fj9m3tdc4jexk7ehylm6qrta3vd66qysmcy6nrysklxspcs24erkzgt8yeelt4wa92swggjtczsawv229",
+  "buyerBalanceLovelace": "0",
+  "providerError": null,
+  "servicePriceLovelace": "2000000",
+  "qualifyingPaidRequest": {
+    "status": "BLOCKED",
+    "transaction": null,
+    "receipt": null,
+    "result": null,
+    "reason": "Buyer requires preprod test ADA; official faucet requires a human reCAPTCHA."
+  },
+  "fundingPaths": [
+    {
+      "url": "https://docs.cardano.org/cardano-testnets/tools/faucet",
+      "state": "Browser verified: reCAPTCHA required; not solved or bypassed."
+    },
+    {
+      "url": "https://dispenser.masumi.network/",
+      "state": "Requires verification code from registration email; no code available."
+    }
+  ],
+  "warning": "Wallet generation, public provider access and /supported are setup evidence, not a paid Cardano request."
+}

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.local/
+data/*.sqlite*
+.taste-skill/
+*.log
+.DS_Store
+coverage/

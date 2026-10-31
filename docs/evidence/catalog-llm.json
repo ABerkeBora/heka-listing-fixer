@@ -1,0 +1,288 @@
+{
+  "checkedAt": "2026-10-31T02:45:23.529Z",
+  "network": "local",
+  "qualificationEvidence": false,
+  "note": "Real local model call on clearly synthetic supplier input. This proves catalog integration only, not a paid Cardano request.",
+  "endpoint": "http://127.0.0.1:11434/api/chat",
+  "input": {
+    "schema": "listing-v1",
+    "language": "en",
+    "products": [
+      {
+        "sku": "LF-001",
+        "title": "  DESK   ORGANISER — OAK  ",
+        "description": " Solid oak desk organiser.   Three compartments. ",
+        "price": "24,90",
+        "currency": "eur",
+        "manufacturer": "Pinebridge Workshop",
+        "safety": "Keep away from open flames.",
+        "certification": "No certification claim supplied.",
+        "sourceUrl": "https://supplier.example/catalog/lf-001",
+        "sourceText": "Material: solid oak | Dimensions: 24 × 12 × 8 cm | Colour: natural"
+      },
+      {
+        "sku": "LF-002",
+        "title": "  CERAMIC MUG  350 ml",
+        "description": "Glazed ceramic mug, 350 ml. Hand wash only.",
+        "price": "12.5",
+        "currency": "EUR",
+        "manufacturer": "Clayline Studio",
+        "safety": "Not suitable for use on a hob.",
+        "certification": "No certification claim supplied.",
+        "sourceUrl": "https://supplier.example/catalog/lf-002",
+        "sourceText": "Material: glazed ceramic | Capacity: 350 ml | Colour: white"
+      }
+    ],
+    "sample": true
+  },
+  "model": {
+    "provider": "ollama",
+    "model": "qwen3:4b",
+    "called": true,
+    "acceptedEdits": 2,
+    "rejectedEdits": 0,
+    "durationMs": 32232
+  },
+  "trace": {
+    "draft": {
+      "edits": [
+        {
+          "sku": "LF-001",
+          "field": "description",
+          "parts": [
+            {
+              "sourceField": "sourceText",
+              "text": "Material: solid oak"
+            },
+            {
+              "sourceField": "sourceText",
+              "text": "Dimensions: 24 × 12 × 8 cm"
+            },
+            {
+              "sourceField": "sourceText",
+              "text": "Colour: natural"
+            }
+          ]
+        },
+        {
+          "sku": "LF-002",
+          "field": "description",
+          "parts": [
+            {
+              "sourceField": "sourceText",
+              "text": "Material: glazed ceramic"
+            },
+            {
+              "sourceField": "sourceText",
+              "text": "Capacity: 350 ml"
+            },
+            {
+              "sourceField": "sourceText",
+              "text": "Colour: white"
+            }
+          ]
+        }
+      ]
+    },
+    "accepted": 2,
+    "rejected": 0,
+    "durationMs": 32232
+  },
+  "checks": {
+    "validStructuredOutput": true,
+    "acceptedMeaningfulCompositions": 2,
+    "unchangedPrices": true,
+    "resultRows": 2
+  },
+  "result": {
+    "inputHash": "3ea5c67c754226467efae4a99a0ad3f43d258307a336bc2bb43e5a368e0c90bc",
+    "schema": "listing-v1",
+    "language": "en",
+    "mode": "model_checked",
+    "products": [
+      {
+        "sku": "LF-001",
+        "title": "DESK ORGANISER — OAK",
+        "description": "Solid oak desk organiser. Three compartments. Material: solid oak Dimensions: 24 × 12 × 8 cm Colour: natural",
+        "priceMinor": 2490,
+        "currency": "EUR",
+        "manufacturer": "Pinebridge Workshop",
+        "safety": "Keep away from open flames.",
+        "certification": "No certification claim supplied.",
+        "sourceUrl": "https://supplier.example/catalog/lf-001",
+        "status": "ready",
+        "issues": [],
+        "diffs": [
+          {
+            "field": "title",
+            "before": "  DESK   ORGANISER — OAK  ",
+            "after": "DESK ORGANISER — OAK",
+            "source": {
+              "row": 1,
+              "field": "title",
+              "url": "https://supplier.example/catalog/lf-001"
+            },
+            "reason": "Trim and collapse source whitespace; wording unchanged."
+          },
+          {
+            "field": "price",
+            "before": "24,90",
+            "after": "24.90",
+            "source": {
+              "row": 1,
+              "field": "price",
+              "url": "https://supplier.example/catalog/lf-001"
+            },
+            "reason": "Format supplied amount to two decimals; value unchanged."
+          },
+          {
+            "field": "currency",
+            "before": "eur",
+            "after": "EUR",
+            "source": {
+              "row": 1,
+              "field": "currency",
+              "url": "https://supplier.example/catalog/lf-001"
+            },
+            "reason": "Normalize supplied currency code."
+          },
+          {
+            "field": "description",
+            "before": " Solid oak desk organiser.   Three compartments. ",
+            "after": "Solid oak desk organiser. Three compartments. Material: solid oak Dimensions: 24 × 12 × 8 cm Colour: natural",
+            "source": {
+              "row": 1,
+              "field": "description + sourceText + sourceText + sourceText",
+              "url": "https://supplier.example/catalog/lf-001",
+              "parts": [
+                {
+                  "field": "description",
+                  "text": "Solid oak desk organiser. Three compartments."
+                },
+                {
+                  "field": "sourceText",
+                  "text": "Material: solid oak"
+                },
+                {
+                  "field": "sourceText",
+                  "text": "Dimensions: 24 × 12 × 8 cm"
+                },
+                {
+                  "field": "sourceText",
+                  "text": "Colour: natural"
+                }
+              ]
+            },
+            "reason": "Model selected complete supplied specification clauses; deterministic renderer preserved the original display field and validated every source part."
+          }
+        ],
+        "source": {
+          "sku": "LF-001",
+          "title": "  DESK   ORGANISER — OAK  ",
+          "description": " Solid oak desk organiser.   Three compartments. ",
+          "price": "24,90",
+          "currency": "eur",
+          "manufacturer": "Pinebridge Workshop",
+          "safety": "Keep away from open flames.",
+          "certification": "No certification claim supplied.",
+          "sourceUrl": "https://supplier.example/catalog/lf-001",
+          "sourceText": "Material: solid oak | Dimensions: 24 × 12 × 8 cm | Colour: natural"
+        }
+      },
+      {
+        "sku": "LF-002",
+        "title": "CERAMIC MUG 350 ml",
+        "description": "Glazed ceramic mug, 350 ml. Hand wash only. Material: glazed ceramic Capacity: 350 ml Colour: white",
+        "priceMinor": 1250,
+        "currency": "EUR",
+        "manufacturer": "Clayline Studio",
+        "safety": "Not suitable for use on a hob.",
+        "certification": "No certification claim supplied.",
+        "sourceUrl": "https://supplier.example/catalog/lf-002",
+        "status": "ready",
+        "issues": [],
+        "diffs": [
+          {
+            "field": "title",
+            "before": "  CERAMIC MUG  350 ml",
+            "after": "CERAMIC MUG 350 ml",
+            "source": {
+              "row": 2,
+              "field": "title",
+              "url": "https://supplier.example/catalog/lf-002"
+            },
+            "reason": "Trim and collapse source whitespace; wording unchanged."
+          },
+          {
+            "field": "price",
+            "before": "12.5",
+            "after": "12.50",
+            "source": {
+              "row": 2,
+              "field": "price",
+              "url": "https://supplier.example/catalog/lf-002"
+            },
+            "reason": "Format supplied amount to two decimals; value unchanged."
+          },
+          {
+            "field": "description",
+            "before": "Glazed ceramic mug, 350 ml. Hand wash only.",
+            "after": "Glazed ceramic mug, 350 ml. Hand wash only. Material: glazed ceramic Capacity: 350 ml Colour: white",
+            "source": {
+              "row": 2,
+              "field": "description + sourceText + sourceText + sourceText",
+              "url": "https://supplier.example/catalog/lf-002",
+              "parts": [
+                {
+                  "field": "description",
+                  "text": "Glazed ceramic mug, 350 ml. Hand wash only."
+                },
+                {
+                  "field": "sourceText",
+                  "text": "Material: glazed ceramic"
+                },
+                {
+                  "field": "sourceText",
+                  "text": "Capacity: 350 ml"
+                },
+                {
+                  "field": "sourceText",
+                  "text": "Colour: white"
+                }
+              ]
+            },
+            "reason": "Model selected complete supplied specification clauses; deterministic renderer preserved the original display field and validated every source part."
+          }
+        ],
+        "source": {
+          "sku": "LF-002",
+          "title": "  CERAMIC MUG  350 ml",
+          "description": "Glazed ceramic mug, 350 ml. Hand wash only.",
+          "price": "12.5",
+          "currency": "EUR",
+          "manufacturer": "Clayline Studio",
+          "safety": "Not suitable for use on a hob.",
+          "certification": "No certification claim supplied.",
+          "sourceUrl": "https://supplier.example/catalog/lf-002",
+          "sourceText": "Material: glazed ceramic | Capacity: 350 ml | Colour: white"
+        }
+      }
+    ],
+    "summary": {
+      "total": 2,
+      "ready": 2,
+      "needsSource": 0,
+      "review": 0,
+      "changes": 7
+    },
+    "model": {
+      "provider": "ollama",
+      "model": "qwen3:4b",
+      "called": true,
+      "acceptedEdits": 2,
+      "rejectedEdits": 0,
+      "durationMs": 32232
+    },
+    "createdAt": "2026-10-31T02:45:23.528Z"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "checkedAt": "2026-10-31T02:55:07.590Z",
+  "network": "cardano:preprod",
+  "sdkVersion": "2.29.0",
+  "intentId": "batch_3335c09a068c20633a3c8e1c",
+  "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+  "transport": "Actual GET to running Listing Fixer protected catalog endpoint",
+  "httpStatus": 402,
+  "paymentRequired": {
+    "x402Version": 2,
+    "resource": {
+      "url": "http://127.0.0.1:3107/api/service/jobs/batch_3335c09a068c20633a3c8e1c",
+      "description": "Source-linked repair, field diff and deterministic validation for up to ten catalog products.",
+      "mimeType": "application/json"
+    },
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "cardano:preprod",
+        "amount": "2000000",
+        "asset": "lovelace",
+        "payTo": "addr_test1qrj33p9fj9mu85q55fj9m3tdc4jexk7ehylm6qrta3vd66qysmcy6nrysklxspcs24erkzgt8yeelt4wa92swggjtczsawv229",
+        "maxTimeoutSeconds": 600,
+        "extra": {
+          "confirmationPolicy": {
+            "l1Confirmations": 1
+          },
+          "areFeesSponsored": false
+        }
+      }
+    ]
+  },
+  "validatorDecisions": [
+    {
+      "case": "over_budget",
+      "decision": "rejected_before_signing",
+      "reason": "over_budget"
+    },
+    {
+      "case": "wrong_recipient",
+      "decision": "rejected_before_signing",
+      "reason": "seller_denied"
+    }
+  ],
+  "hasSignedPayload": false,
+  "transaction": null,
+  "receipt": null,
+  "qualification": "UNPAID CHALLENGE ONLY. No signature, transaction, settlement, charge or paid result is claimed."
+}

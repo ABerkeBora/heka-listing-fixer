@@ -1,0 +1,4 @@
+Checked 31 October 2026 03:53 Europe/Berlin.
+Source: https://hackathon.tum-blockchain.com/prizes#how-to-submit
+Method: reloaded live browser page, selected general submission tab.
+Verified: deadline 31 October2026 15:00 Europe/Berlin; one Devfolio entry per team, at most three partner tracks, automatic TUM consideration. Required materials are a public source repo with run instructions, detailed description and video no longer than2.5minutes. Cardano also requires a paid preprod transaction hash and end-to-end paid-request presentation. No competition entry submitted by this agent.

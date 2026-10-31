@@ -1,0 +1,81 @@
+{
+  "startedAt": "2026-10-31T02:55:08.076Z",
+  "checkedAt": "2026-10-31T02:55:08.109Z",
+  "network": "cardano:preprod",
+  "asset": "lovelace",
+  "status": "BLOCKED",
+  "inputIsShippedSample": true,
+  "intentId": "batch_3335c09a068c20633a3c8e1c",
+  "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+  "mandate": {
+    "serviceCapLovelace": "2000000",
+    "feeCapLovelace": "300000",
+    "totalCapLovelace": "2300000",
+    "expiresAt": "2026-10-31T03:10:08.077Z",
+    "maxActions": 1,
+    "apiFeeCapLovelace": "0",
+    "network": "cardano:preprod",
+    "asset": "lovelace",
+    "allowedSeller": "addr_test1qrj33p9fj9mu85q55fj9m3tdc4jexk7ehylm6qrta3vd66qysmcy6nrysklxspcs24erkzgt8yeelt4wa92swggjtczsawv229",
+    "endpoint": "http://127.0.0.1:3107/api/service/jobs/batch_3335c09a068c20633a3c8e1c",
+    "beneficiary": "Catalog owner: local workspace"
+  },
+  "jobStatus": "blocked",
+  "paymentStatus": "quoted",
+  "transaction": null,
+  "explorerUrl": null,
+  "receipt": null,
+  "servicePriceLovelace": "2000000",
+  "networkFeeLovelace": null,
+  "facilitatorFeeLovelace": null,
+  "sellerNetLovelace": null,
+  "resultHash": null,
+  "resultSummary": null,
+  "events": [
+    {
+      "at": "2026-10-31T02:47:55.807Z",
+      "stage": "intent",
+      "message": "Catalog validated before any payment. One logical batch intent recorded."
+    },
+    {
+      "at": "2026-10-31T02:47:55.808Z",
+      "stage": "blocked",
+      "message": "Buyer wallet needs at least 2.3 test ADA on Cardano preprod. Fund the buyer at the official faucet."
+    },
+    {
+      "at": "2026-10-31T02:48:08.464Z",
+      "stage": "blocked",
+      "message": "Buyer wallet needs at least 2.3 test ADA on Cardano preprod. Fund the buyer at the official faucet."
+    },
+    {
+      "at": "2026-10-31T02:48:08.474Z",
+      "stage": "blocked",
+      "message": "Buyer wallet needs at least 2.3 test ADA on Cardano preprod. Fund the buyer at the official faucet."
+    },
+    {
+      "at": "2026-10-31T02:48:56.646Z",
+      "stage": "blocked",
+      "message": "Buyer wallet needs at least 2.3 test ADA on Cardano preprod. Fund the buyer at the official faucet."
+    },
+    {
+      "at": "2026-10-31T02:50:33.509Z",
+      "stage": "blocked",
+      "message": "Buyer wallet needs at least 2.3 test ADA on Cardano preprod. Fund the buyer at the official faucet."
+    }
+  ],
+  "paymentEvents": [
+    {
+      "at": "2026-10-31T02:50:34.488Z",
+      "decision": "mandate_accepted",
+      "detail": "One catalog batch; fixed seller, endpoint, network, asset, expiry and separate integer spend caps."
+    },
+    {
+      "at": "2026-10-31T02:50:34.600Z",
+      "decision": "quote_issued",
+      "detail": "The x402 v2 offer is bound to this exact catalog batch endpoint."
+    }
+  ],
+  "reason": "Fund the buyer with 5 test ADA on Cardano preprod to cover the service, bounded network fee and a valid change output.",
+  "qualification": "No qualifying paid request is claimed by this run.",
+  "note": "This command delegates once through the local application. Repeated commands for the same input reuse/reconcile its existing intent. It never resets chain history or signs a replacement for an existing signed intent."
+}

@@ -1,0 +1,45 @@
+
+> heka-listing-fixer@0.1.0 test
+> tsx --test tests/*.test.ts
+
+✔ ten supplied products produce reconciled statuses and source diffs without payment claims (13.258417ms)
+✔ CSV round trip preserves quoted comma and newline cells and maps supplier column aliases (0.416875ms)
+✔ JSON and CSV reject malformed shape, schema, language and ambiguous column mappings (1.011666ms)
+✔ invalid, negative, zero, too precise and ambiguous prices fail before paid work (0.769958ms)
+✔ empty and oversized batches, duplicate normalized SKU, invalid currency and source URLs fail input validation (4.436917ms)
+✔ missing protected fields remain empty and priced rows are never fabricated (0.397ms)
+✔ valid model source-clause composition adds supplied dimensions and preserves the full description (35.1435ms)
+✔ hallucinated safety, price change and cross-field laundering are rejected without changing output (4.391834ms)
+✔ model cannot fill a missing display field or omit a negation in the original field (0.506584ms)
+✔ unknown prose and protected claims cannot be promoted through specification labels (1.809833ms)
+✔ unknown SKU, duplicate part, partial clause and unknown edit keys fail closed (1.649708ms)
+✔ invalid model JSON, schema, endpoint failure and timeout never produce a completed model result (10.287792ms)
+✔ instruction-like supplier text is data and blocks ready status; CSV export neutralizes formulas (0.574542ms)
+✔ input digest ignores envelope sample flag, preserves material source bytes and is stable (0.314667ms)
+✔ prototype-like input columns and null runtime rows are rejected (0.577417ms)
+✔ explicit unknown source placeholders do not pass as supplied protected facts (0.296583ms)
+✔ crash before first signature resumes the stored delegation instead of becoming permanently unresolved (7.529958ms)
+✔ crash after signed bytes persisted only reconciles and never creates a replacement payment (10.949583ms)
+✔ crash between job creation and intent preparation safely prepares once; concurrent requests share one runner (4.488458ms)
+✔ a signed pending state does not prematurely terminate the browser processing poll (2.5625ms)
+✔ local delegated wallet API rejects cross-site origin and unsafe content types (62.809625ms)
+✔ one bounded preprod service quote fits separate integer caps (8.691375ms)
+✔ over-budget quote, wrong recipient, different resource and script substitution fail before signing (32.71225ms)
+✔ expired delegation, mainnet, noninteger caps and multiple actions are blocked (5.917209ms)
+✔ exact signed transaction inspection catches fee excess, extra recipient and edited seller amount (0.329792ms)
+✔ wrong transaction, input, intent, network and weak receipt never authorize delivery (0.191083ms)
+✔ durable intent retains same signed payload after restart; unique input and tx binding reject duplicates (4.294ms)
+✔ purchased result must match input and actual model service; free review and mismatched counts cannot settle (0.597292ms)
+✔ unsigned crash recovery reconciles without network calls or a payment signature (32.513459ms)
+✔ receipt timeout and repeated reconciliation send exactly the same persisted signed proof (43.337459ms)
+✔ concurrent proofs for a different request are rejected without resource execution or protected state mutation (17.008625ms)
+✔ seller never releases cached work for a success receipt with string confirmations (17.972125ms)
+✔ durable jobs keep one logical input and hide unpaid cached result (16.977083ms)
+ℹ tests 33
+ℹ suites 0
+ℹ pass 33
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2091.411125

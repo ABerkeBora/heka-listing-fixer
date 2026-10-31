@@ -1,0 +1,46 @@
+{
+  "name": "heka-listing-fixer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Source-bound catalog repair with delegated Cardano x402 payments",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "tsx watch server/index.ts",
+    "start": "tsx server/index.ts",
+    "build": "tsc --noEmit && vite build",
+    "test": "tsx --test tests/*.test.ts",
+    "check": "npm test && npm run build",
+    "cardano:wallets": "tsx scripts/cardano-wallets.ts",
+    "cardano:preflight": "tsx scripts/cardano-preflight.ts",
+    "catalog:preflight": "tsx scripts/catalog-preflight.ts",
+    "cardano:run": "tsx scripts/cardano-run.ts",
+    "check:server": "tsx scripts/check-server.ts",
+    "cardano:challenge": "tsx scripts/cardano-challenge.ts"
+  },
+  "dependencies": {
+    "@evolution-sdk/evolution": "0.5.14",
+    "@x402/cardano": "2.29.0",
+    "@x402/core": "2.29.0",
+    "@x402/express": "2.29.0",
+    "@x402/fetch": "2.29.0",
+    "dotenv": "17.2.3",
+    "express": "5.3.0",
+    "lucide-react": "0.548.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.3",
+    "@types/node": "24.10.0",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@vitejs/plugin-react": "5.1.0",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "vite": "7.3.7"
+  }
+}
