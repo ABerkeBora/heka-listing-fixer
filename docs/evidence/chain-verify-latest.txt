@@ -1,0 +1,68 @@
+
+> heka-listing-fixer@0.1.0 cardano:verify
+> tsx scripts/cardano-verify.ts
+
+{
+  "status": "PASS",
+  "chainStatus": "PASS",
+  "transaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+  "networkFeeLovelace": "168581",
+  "sellerLovelace": "2000000",
+  "newerCanonicalBlocks": 25,
+  "deliveryStatus": "PASS",
+  "checks": [
+    {
+      "name": "canonical_transaction_hash",
+      "status": "PASS"
+    },
+    {
+      "name": "valid_transaction",
+      "status": "PASS"
+    },
+    {
+      "name": "preprod_provider_and_testnet_body",
+      "status": "PASS"
+    },
+    {
+      "name": "distinct_payer_and_recipient",
+      "status": "PASS"
+    },
+    {
+      "name": "input_binding",
+      "status": "PASS"
+    },
+    {
+      "name": "exact_seller_payment",
+      "status": "PASS"
+    },
+    {
+      "name": "change_and_output_allowlist",
+      "status": "PASS"
+    },
+    {
+      "name": "indexed_outputs_match_signed_body",
+      "status": "PASS"
+    },
+    {
+      "name": "lovelace_only",
+      "status": "PASS"
+    },
+    {
+      "name": "no_other_balance_actions",
+      "status": "PASS"
+    },
+    {
+      "name": "network_fee_and_value_conservation",
+      "status": "PASS"
+    },
+    {
+      "name": "canonical_depth",
+      "status": "PASS"
+    },
+    {
+      "name": "delegated_fee_and_total_caps",
+      "status": "PASS"
+    }
+  ],
+  "evidence": "docs/evidence/payment-chain.json"
+}

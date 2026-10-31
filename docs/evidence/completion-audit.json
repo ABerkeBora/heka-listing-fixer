@@ -1,85 +1,108 @@
 {
-  "checkedAt": "2026-10-31T03:05:15.452Z",
-  "scope": "Approved HANDOFF, no narrower replacement objective",
-  "goal": "blocked",
-  "previousTurnClassification": "progress",
-  "consecutiveFundingBlockerTurns": 3,
+  "checkedAt": "2026-10-31T03:22:38.086Z",
+  "approvedScope": "Original HANDOFF local application/public repository/real agentic-payment and track integration evidence, tests/browser QA,150-second outline,draft submission and honest handoff. No hosted deployment or competition submission authorized.",
+  "audit": "PASS",
+  "goalStatusUpdate": "PENDING final publication verification and update_goal",
+  "fundingBlockerResolved": true,
+  "transaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+  "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+  "resultHash": "05f15c335e49591d6e1d2d97dc295e817fb1d66ccc88f5dcec86a13871224095",
+  "liveApiComplete": true,
+  "signatureCount": 1,
+  "chainChecks": 13,
+  "deliveryChecks": 53,
   "requirements": [
     {
-      "item": "Local compact source-bound catalog service, max10, English, JSON/CSV/diff/provenance",
+      "item": "Approved local compact catalog application and source-bound model flow",
       "status": "PASS",
       "evidence": [
         "server/catalog/index.ts",
-        "docs/evidence/catalog-llm-full.json",
-        "docs/evidence/tests.txt"
+        "client/App.tsx",
+        "delivery-verification.json"
       ]
     },
     {
-      "item": "Real bounded agentic Cardano preprod payment with useful result",
-      "status": "BLOCKED",
+      "item": "Actual delegated Cardano preprod payment and useful result",
+      "status": "PASS",
       "evidence": [
-        "docs/evidence/payment-preflight.json",
-        "docs/evidence/payment-live.json"
-      ],
-      "missing": "Test ADA funding; no confirmed transaction, receipt or paid result."
+        "payment-live.json",
+        "payment-chain.json",
+        "payment-live-result.json"
+      ]
     },
     {
-      "item": "Mandate, independent policy checks, duplicate/restart protection",
-      "status": "PENDING",
+      "item": "Bounded mandate, deterministic checks, wrong budget/seller rejection",
+      "status": "PASS",
       "evidence": [
         "server/payment/policy.ts",
-        "tests/payment-policy.test.ts",
-        "tests/payment-service.test.ts",
-        "tests/jobs.test.ts"
-      ],
-      "missing": "Unit and actual offer rejection checks pass; live chain retry/timeout proof needs funding."
+        "payment-policy-live.json"
+      ]
     },
     {
-      "item": "Official selected-track start/finish checks and honest status mapping",
+      "item": "Pending connection-loss/restart/duplicate recovery without another charge",
+      "status": "PASS",
+      "evidence": [
+        "payment-restart.json",
+        "scripts/lib/poll-existing-job.ts",
+        "tests/poll-existing-job.test.ts"
+      ]
+    },
+    {
+      "item": "Required selected-track start/final gates and honest submission mapping",
       "status": "PASS",
       "evidence": [
         "TRACK_REQUIREMENTS.md",
-        "docs/evidence/rules-cardano-final.txt",
-        "docs/evidence/rules-general-final.txt"
+        "rules-cardano-final.txt",
+        "rules-general-final.txt"
       ]
     },
     {
-      "item": "Build,33tests,3viewport browser QA",
+      "item": "Production build,37 meaningful tests and actual three-width paid browser QA",
       "status": "PASS",
       "evidence": [
-        "docs/evidence/tests.txt",
-        "docs/evidence/build.txt",
-        "docs/evidence/browser-qa.json"
+        "tests.txt",
+        "build.txt",
+        "browser-paid-qa.json"
       ]
     },
     {
-      "item": "Separate public repo, account-linked commits, README/env/lockfile",
+      "item": "Standalone setup,env,lockfile,source samples and separate account-linked public repo",
       "status": "PASS",
       "evidence": [
-        "docs/evidence/repository.json",
         "README.md",
         ".env.example",
-        "package-lock.json"
+        "package-lock.json",
+        "repository.json"
       ]
     },
     {
-      "item": "150second presentation outline and submission draft",
+      "item": "Requested150-second presentation outline and draft submission text",
       "status": "PASS",
       "evidence": [
         "PRESENTATION.md",
         "SUBMISSION_DRAFT.md"
-      ],
-      "note": "Actual video and Devfolio entry remain pending; not submitted."
+      ]
     },
     {
-      "item": "Honest Turkish morning handoff with remaining action",
+      "item": "Turkish morning handoff,exacttransaction,commands,remainingsubmissionactions",
       "status": "PASS",
       "evidence": [
         "MORNING_HANDOFF.md"
       ]
     }
   ],
-  "conclusion": "Completion not proven. All independent delivery work is present; genuine paid action and live payment evidence remain blocked.",
-  "blockedStatusConfirmed": true,
-  "blocker": "Isolated buyer balance0 on live Koios; human faucet verification/test ADA required. No meaningful independent work remains without external funding."
+  "publicationVerification": "PENDING push of current verified changes",
+  "organizerSubmissionStillPending": [
+    {
+      "item": "Recorded video at most150seconds",
+      "status": "PENDING",
+      "boundary": "The approved build delivery explicitly requests a presentation outline, which exists. Actual video is still required for competition submission."
+    },
+    {
+      "item": "Devfolio entry",
+      "status": "PENDING",
+      "boundary": "Draft is prepared. User explicitly prohibited submitting the competition entry on their behalf without separate instruction."
+    }
+  ],
+  "conclusion": "All approved implementation/delivery requirements are verified locally. Confirm public push before marking Goal complete; do not claim all organizer submission steps are complete."
 }

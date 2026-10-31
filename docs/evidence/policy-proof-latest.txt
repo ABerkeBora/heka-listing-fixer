@@ -1,0 +1,29 @@
+
+> heka-listing-fixer@0.1.0 cardano:policy-proof
+> tsx scripts/cardano-policy-proof.ts
+
+{
+  "status": "PASS",
+  "transaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+  "decisions": [
+    {
+      "case": "original_paid_quote",
+      "decision": "accepted",
+      "reason": null
+    },
+    {
+      "case": "service_cap_1000000_lovelace",
+      "decision": "rejected_before_signing",
+      "reason": "over_budget"
+    },
+    {
+      "case": "quote_recipient_changed_to_buyer",
+      "decision": "rejected_before_signing",
+      "reason": "seller_denied"
+    }
+  ],
+  "protectedStateUnchanged": true,
+  "signedPaymentEvents": 1,
+  "resultHash": "05f15c335e49591d6e1d2d97dc295e817fb1d66ccc88f5dcec86a13871224095",
+  "evidence": "docs/evidence/payment-policy-live.json"
+}

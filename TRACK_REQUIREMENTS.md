@@ -1,6 +1,6 @@
 # Listing Fixer — track şartları ve kanıt durumu
 
-Seçilen sponsor yalnız **Cardano — Agentic Commerce on Cardano**. API3/BSV bu projeye seçilmedi. Başlangıç kontrolü31 Ekim 2026 **03:39 Europe/Berlin**, final yeniden kontrolü **03:53 Europe/Berlin**: gerçek Cardano sekmesi seçildi; qualification, submission, judging, örnekler ve genel submission ayrı okundu. Sayfa hash'inin varsayılan BSV içeriğini gösterme riski browser seçimiyle giderildi. Önceki hazırlık kontrolü03:02 idi.
+Seçilen sponsor yalnız **Cardano — Agentic Commerce on Cardano**. API3/BSV seçilmedi. Başlangıç kontrolü31 Ekim 2026 **03:39 Europe/Berlin**; ödeme sonrası final kontrolü **04:15 Europe/Berlin**. Gerçek Cardano sekmesi seçildi; qualification, submission, judging, örnekler ve genel submission ayrı okundu. Varsayılan BSV içeriği kullanılmadı; kural değişikliği saptanmadı.
 
 ## Resmî kaynaklar
 
@@ -11,50 +11,50 @@ Seçilen sponsor yalnız **Cardano — Agentic Commerce on Cardano**. API3/BSV b
 - [Starter kaynak/README](https://github.com/cardano-foundation/developer-portal/tree/staging/examples/templates/x402-express)
 - [Exact Cardano şeması](https://github.com/x402-foundation/x402/blob/main/specs/schemes/exact/scheme_exact_cardano.md)
 
-Final check özeti: `docs/evidence/rules-cardano-final.txt`, `rules-general-final.txt`. Kural değişikliği saptanmadı. Son tarih **31 Ekim 2026 15:00 Europe/Berlin**. Genel kurallar **takım başına tek başvuru**, en fazla üç partner track diyor; yedi ayrı repo, yedi takım başvurusu izni olarak yorumlanmadı. Başvuru gönderilmedi.
+Kontrol özetleri: `docs/evidence/rules-cardano-final.txt`, `rules-general-final.txt`. Son tarih **31 Ekim 2026 15:00 Europe/Berlin**. Takım başına tek Devfolio başvurusu, en fazla üç partner track; TUM track otomatik. Başvuru gönderilmedi.
 
 ## Zorunlu qualification
 
-| Şart | Uygulama | Kanıt | Durum |
+| Şart | Uygulama | Gerçek kanıt | Durum |
 |---|---|---|---|
-| Çalışan faydalı agent/hizmet |10 ürün, kaynak/diff/şema; kaynak seçen gerçek model ve deterministik kabul | `server/catalog/`, `catalog-llm-full.json`:10 kabul,0 ret, fiyatlar korunuyor; browser ekranları | PASS |
-| Cardano preprod üzerinde en az bir ücretli iş/request tamamlanması | Sabit seller'a2tADA direct x402 request; ilk bounded delegation sonrası agent imzalar | `payment-preflight.json`: gerçek sağlayıcı+facilitator, bakiye0; `payment-live.json`: gerçek deneme BLOCKED; tx/receipt yok | BLOCKED |
+| Çalışan faydalı agent/hizmet |10 ürün, kaynak seçen gerçek model, bağımsız kabul, JSON/CSV/diff/report | `payment-live-result.json`, `delivery-verification.json`:53 kontrol,10 faydalı kompozisyon,5 ready/5 needs source | PASS |
+| Cardano preprod üzerinde en az bir ücretli iş/request tamamlanması | İlk bounded delegation sonrası buyer agent direct x402 isteğini ödedi | [1305799c…66dc0](https://preprod.cardanoscan.io/transaction/1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0); `payment-live.json`, `payment-chain.json`13/13 | PASS |
 
-**Sonuç: Cardano qualification tamamlanmadı.** Ulaşılabilir provider, cüzdan üretimi, HTTP402 ve başarılı model çağrısı gerçek ödeme yerine geçmez. İnsan faucet doğrulaması ve test ADA gerekir. Blockfrost anahtarı bu sürümde zorunlu engel değil; resmî SDK'nın ücretsiz Koios sağlayıcısı çalışıyor.
+Teknik paid-request qualification kanıtlandı. Bu, aşağıdaki tüm submission teslimlerinin yapıldığı anlamına gelmez. Önceki bakiye0/faucet engeli kullanıcı fonlamasıyla çözüldü; geçmiş audit kayıtları tarihçedir.
 
 ## Track'e özel zorunlu submission
 
-| Şart | Uygulama/kanıt | Durum |
+| Şart | Kanıt / kalan iş | Durum |
 |---|---|---|
-| Ücretli preprod işlem hash'i | Henüz yok. `npm run cardano:run` gerçek receipt/result kaydı üretir; sahte hash kullanılmaz | BLOCKED |
-| Videoda müşteri/problem/iş modeli ve uçtan uca ücretli görev | `PRESENTATION.md`150 saniyelik taslak; gerçek ödeme sonrası kayıt gerekir | PENDING |
-| Açıklamada çalışma/Cardano araçları/gerçek kullanım | `README.md`, `docs/PAYMENTS.md`, `SUBMISSION_DRAFT.md`; taslak mevcut, Devfolio'ya gönderilmedi | PENDING |
+| Gerçek ücretli preprod işlem hash'i | İşlem linki + confirmed receipt + aynı input/intent'e bağlı sonuç | PASS |
+| Videoda müşteri/problem/iş modeli ve uçtan uca ücretli görev | `PRESENTATION.md` 150s taslak, gerçek paid UI ekranları ve trace var; video kaydı yapılmadı | PENDING |
+| Açıklamada çalışma/Cardano araçları/gerçek kullanım | `README.md`, `docs/PAYMENTS.md`, `SUBMISSION_DRAFT.md` içerik hazır; Devfolio'ya kullanıcı ekleyecek | PENDING |
 
 ## Genel zorunlu submission
 
-| Şart | Kanıt | Durum |
+| Şart | Kanıt / kalan iş | Durum |
 |---|---|---|
-| En fazla2.5dakika video | Sunum akışı hazır; video kaydedilmedi | PENDING |
-| Detaylı Devfolio açıklaması | Taslak hazır, kullanıcı ayrı yetki vermeden gönderilmeyecek | PENDING |
-| Public repo + standalone setup/run README | [ABerkeBora/heka-listing-fixer](https://github.com/ABerkeBora/heka-listing-fixer), public `codex/build`, kaynak commit `57a9f4a`; standalone README + lockfile + env örneği; `repository.json` | PASS |
+| En fazla2.5dakika video | Sunum taslağı hazır; kayıt bekliyor | PENDING |
+| Detaylı Devfolio açıklaması | Kaynaklı taslak hazır; başvuru gönderimi yapılmadı | PENDING |
+| Public repo ve standalone setup/run README | [ABerkeBora/heka-listing-fixer](https://github.com/ABerkeBora/heka-listing-fixer), public `codex/build`, doğru kullanıcı commit kimliği; README/env örneği/lockfile | PASS |
 
-## Kullanıcı ürün şartı: agentic payment
+## Kullanıcı acceptance: agentic payment
 
-Bunlar resmî sponsor şartına eklenen kullanıcı acceptance ölçütleridir.
+Bunlar sponsor qualification'ına ek ürün şartlarıdır.
 
-| Gereksinim | Uygulama/kanıt | Durum |
+| Gereksinim | Uygulama / gerçek kanıt | Durum |
 |---|---|---|
-| Payer→seller, sonuç, ilk mandate ve tamsayı sınırlar | `server/payment/policy.ts`; network/asset/seller/tool/beneficiary, service/network/APIcap0/total, max1, expiry; UI mandate | PASS |
-| İlk yetki sonrası gerçek ekonomik adım | Buyer `execute` gerçek SDK ile sign/submit/retrieve yolunu yürütür; mevcut bakiye0 | BLOCKED |
-| Yanlış seller/bütçe/asset/endpoint ve duplicate intent retleri | `tests/payment-policy.test.ts`, `payment-service.test.ts`, `jobs.test.ts`; gerçek402 offer değiştirme retleri `payment-challenge.json` | PASS |
-| Retry/restart ikinci ödeme yaratmaz | Kalıcı payload/tx/input unique binding; unsigned recovery ve signed-byte reuse testleri. Canlı timeout/receipt testi fon sonrası gerekir | PENDING |
-| Gerçek intent/validator/tx/receipt/teslim kanıtı | Intent ve challenge var; işlem/receipt/paid result yok | BLOCKED |
+| Payer→seller, sonuç, ilk mandate ve tamsayı sınırlar | Network/asset/seller/endpoint/tool/beneficiary, service2000000, fee300000, API0, total2300000, expiry, max1; `payment-live.json` | PASS |
+| İlk yetki sonrası gerçek ekonomik adım | Agent quote/transaction kontrolü, imza, request ve settlement; seller2000000, actualfee168581 | PASS |
+| Bütçe/yanlış seller/asset/endpoint ve duplicate engeli | `payment-policy-live.json` gerçek offer replays; `payment-restart.json` aynı completed input, tek imza/tx; unit failure cases | PASS |
+| Timeout/restart ikinci ödeme yaratmaz | Receipt öncesi gerçek process fault, CLI bağlantı kaybı, kalıcı payload ile recovery; aynı hash, signature count1, sonraki duplicate state unchanged | PASS |
+| Intent/validator/tx/receipt/result ve bağımsız doğrulama | `payment-live.json`, `payment-chain.json`, `delivery-verification.json` | PASS |
 
-## Teknik doğrulama ve güven sınırları
+## Teknik sınırlar ve optional judging
 
-- Resmî starter2.26.0 temel alındı. Eski Zod bağımlılığındaki açığı gidermek için exact SDK**2.29.0**, Express5.3.0, Zod4.6.7 seçildi; Evolution0.5.14 korundu.33 test/build geçti; final audit0 bilinen açık raporluyor. Sürümler lockfile'da sabit.
-- Direct address, lovelace, Cardano preprod; bu yol için ayrı contract deploy edilmez. Escrow/refund/on-chain kalite hakemi yok. Model key/destination/call yetkisi görmez. Bütçe sınırları uygulama ve imzalanan işlem kontrolündedir; on-chain session allowance iddiası yok.
-- Seller brüt hizmet miktarı ve gerçek exactnetworkfee ayrıdır; facilitator ayrıca fiyatlandırılmamış ise sıfır diye gösterilmez. Ek API ödemesi yetkilendirilmez. Kaynak doğruluğu kullanıcı/tedarikçiden devralınır; şema uygunluğu hukuki veya ürün güvenliği sertifikası değildir.
-- Judging tercihleri (yaratıcılık, müşteri, kaliteli UX, result-linked ödeme) zorunlu escrow şartı olarak yorumlanmadı. Masumi alternatif setup'taki optional ödeme adımı zorunlu prize qualification'ı kaldırmaz.
+- SDK2.29.0, Evolution0.5.14, Express5.3.0; lockfile sabit.37 test/build PASS; audit0 bilinen açık. Starter2.26'nın eski validation bağımlılığı kontrollü yükseltildi.
+- Direct-address lovelace/preprod; ayrı contract deploy edilmez. Caps uygulama ve imzalanan işlem kontrolündedir; on-chain budget allowance yok. Escrow/refund/on-chain kalite hakemi yok.
+- Satıcı brüt/net çıktısı2tADA ve ağ ücreti 0,168581tADA ayrı doğrulandı. Ayrı fiyatlanmayan facilitator ücreti uydurulmaz; API cap0. Kaynak doğruluğu devralınır; schema-ready hukuki/ürün güvenliği onayı değildir.
+- Müşteri, yararlı sonuç, özgünlük, teknik kalite, UX ve açık gösterim judging tercihleri olarak ele alındı. Escrow/refund örnekleri bu dar x402 yoluna zorunluluk olarak eklenmedi.
 
-Eksik zorunlu maddeler `MORNING_HANDOFF.md` içinde etki ve en küçük kalan adımla taşınır.
+Eksik submission maddeleri `MORNING_HANDOFF.md` içinde en küçük kalan adımlarla taşınır. Onaylı build teslimi sunum **taslağı** ve başvuru **taslağı** içerir; actual video/Devfolio submission ayrı kullanıcı işidir.

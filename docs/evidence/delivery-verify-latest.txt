@@ -1,0 +1,19 @@
+
+> heka-listing-fixer@0.1.0 verify:delivery
+> tsx scripts/verify-delivery.ts
+
+{
+  "status": "PASS",
+  "checksPassed": 53,
+  "checksTotal": 53,
+  "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+  "resultHash": "05f15c335e49591d6e1d2d97dc295e817fb1d66ccc88f5dcec86a13871224095",
+  "summary": {
+    "total": 10,
+    "ready": 5,
+    "needsSource": 5,
+    "review": 0,
+    "changes": 33
+  },
+  "outputPath": "docs/evidence/delivery-verification.json"
+}

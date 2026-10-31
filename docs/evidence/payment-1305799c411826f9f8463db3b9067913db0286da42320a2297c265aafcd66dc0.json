@@ -1,0 +1,206 @@
+{
+  "startedAt": "2026-10-31T03:22:01.963Z",
+  "checkedAt": "2026-10-31T03:22:01.992Z",
+  "recovery": {
+    "reconciliations": 0,
+    "readFailures": 0
+  },
+  "network": "cardano:preprod",
+  "asset": "lovelace",
+  "status": "PASS",
+  "inputIsShippedSample": true,
+  "intentId": "batch_3335c09a068c20633a3c8e1c",
+  "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+  "mandate": {
+    "serviceCapLovelace": "2000000",
+    "feeCapLovelace": "300000",
+    "totalCapLovelace": "2300000",
+    "expiresAt": "2026-10-31T03:23:05.501Z",
+    "maxActions": 1,
+    "apiFeeCapLovelace": "0",
+    "network": "cardano:preprod",
+    "asset": "lovelace",
+    "allowedSeller": "addr_test1qrj33p9fj9mu85q55fj9m3tdc4jexk7ehylm6qrta3vd66qysmcy6nrysklxspcs24erkzgt8yeelt4wa92swggjtczsawv229",
+    "endpoint": "http://127.0.0.1:3107/api/service/jobs/batch_3335c09a068c20633a3c8e1c",
+    "beneficiary": "Catalog owner: local workspace"
+  },
+  "jobStatus": "complete",
+  "paymentStatus": "confirmed",
+  "transaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+  "explorerUrl": "https://preprod.cardanoscan.io/transaction/1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+  "receipt": {
+    "success": true,
+    "payer": "addr_test1qr8dn6eysm3fp68f8gsrcxtvhqewztsutc7asvzk43s0fs7edlkjxxvq4qhdegzkn5gy06xqk7ktqdd3ulrmxxu4r55q0zvpkc",
+    "transaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+    "network": "cardano:preprod",
+    "extra": {
+      "status": "confirmed",
+      "transactionId": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+      "confirmations": 1
+    }
+  },
+  "servicePriceLovelace": "2000000",
+  "networkFeeLovelace": "168581",
+  "facilitatorFeeLovelace": null,
+  "sellerNetLovelace": "2000000",
+  "resultHash": "05f15c335e49591d6e1d2d97dc295e817fb1d66ccc88f5dcec86a13871224095",
+  "resultSummary": {
+    "total": 10,
+    "ready": 5,
+    "needsSource": 5,
+    "review": 0,
+    "changes": 33
+  },
+  "events": [
+    {
+      "at": "2026-10-31T02:47:55.807Z",
+      "stage": "intent",
+      "message": "Catalog validated before any payment. One logical batch intent recorded."
+    },
+    {
+      "at": "2026-10-31T02:47:55.808Z",
+      "stage": "blocked",
+      "message": "Buyer wallet needs at least 2.3 test ADA on Cardano preprod. Fund the buyer at the official faucet."
+    },
+    {
+      "at": "2026-10-31T02:48:08.464Z",
+      "stage": "blocked",
+      "message": "Buyer wallet needs at least 2.3 test ADA on Cardano preprod. Fund the buyer at the official faucet."
+    },
+    {
+      "at": "2026-10-31T02:48:08.474Z",
+      "stage": "blocked",
+      "message": "Buyer wallet needs at least 2.3 test ADA on Cardano preprod. Fund the buyer at the official faucet."
+    },
+    {
+      "at": "2026-10-31T02:48:56.646Z",
+      "stage": "blocked",
+      "message": "Buyer wallet needs at least 2.3 test ADA on Cardano preprod. Fund the buyer at the official faucet."
+    },
+    {
+      "at": "2026-10-31T02:50:33.509Z",
+      "stage": "blocked",
+      "message": "Buyer wallet needs at least 2.3 test ADA on Cardano preprod. Fund the buyer at the official faucet."
+    },
+    {
+      "at": "2026-10-31T03:08:05.524Z",
+      "stage": "payment",
+      "message": "Resuming this bounded delegation. The buyer will validate the quote and exact fee before its first signature."
+    },
+    {
+      "at": "2026-10-31T03:08:07.352Z",
+      "stage": "processing",
+      "message": "Verified payment authorization. Creating a source-bound catalog draft; settlement is still pending."
+    },
+    {
+      "at": "2026-10-31T03:09:15.736Z",
+      "stage": "validated",
+      "message": "Draft checked: 5 ready, 5 need source, 0 require review."
+    },
+    {
+      "at": "2026-10-31T03:10:06.023Z",
+      "stage": "reconciling",
+      "message": "Checking the persisted signed payment; no replacement will be signed."
+    },
+    {
+      "at": "2026-10-31T03:11:16.766Z",
+      "stage": "reconciling",
+      "message": "Checking the persisted signed payment; no replacement will be signed."
+    },
+    {
+      "at": "2026-10-31T03:11:17.286Z",
+      "stage": "delivered",
+      "message": "Confirmed preprod payment and matching checked catalog delivered."
+    }
+  ],
+  "paymentEvents": [
+    {
+      "at": "2026-10-31T02:50:34.488Z",
+      "decision": "mandate_accepted",
+      "detail": "One catalog batch; fixed seller, endpoint, network, asset, expiry and separate integer spend caps."
+    },
+    {
+      "at": "2026-10-31T02:50:34.600Z",
+      "decision": "quote_issued",
+      "detail": "The x402 v2 offer is bound to this exact catalog batch endpoint."
+    },
+    {
+      "at": "2026-10-31T02:55:07.575Z",
+      "decision": "mandate_replaced_before_signing",
+      "detail": "Fresh initial delegation replaced an unsigned attempt."
+    },
+    {
+      "at": "2026-10-31T02:55:07.586Z",
+      "decision": "quote_issued",
+      "detail": "The x402 v2 offer is bound to this exact catalog batch endpoint."
+    },
+    {
+      "at": "2026-10-31T03:08:05.523Z",
+      "decision": "mandate_replaced_before_signing",
+      "detail": "Fresh initial delegation replaced an unsigned attempt."
+    },
+    {
+      "at": "2026-10-31T03:08:05.526Z",
+      "decision": "service_selected",
+      "detail": "The source-bound catalog request fits the approved one-batch service."
+    },
+    {
+      "at": "2026-10-31T03:08:05.528Z",
+      "decision": "quote_issued",
+      "detail": "The x402 v2 offer is bound to this exact catalog batch endpoint."
+    },
+    {
+      "at": "2026-10-31T03:08:05.531Z",
+      "decision": "quote_accepted",
+      "detail": "Pinned seller, resource, price, network, asset and confirmation policy match the delegation."
+    },
+    {
+      "at": "2026-10-31T03:08:06.996Z",
+      "decision": "signed_payment_persisted",
+      "detail": "Exact signed transaction, nonce and intent were durably checkpointed before network submission."
+    },
+    {
+      "at": "2026-10-31T03:08:07.350Z",
+      "decision": "payment_verified",
+      "detail": "Official facilitator accepted the exact signed transaction; no result released."
+    },
+    {
+      "at": "2026-10-31T03:09:15.767Z",
+      "decision": "result_validated",
+      "detail": "Catalog result is cached privately before settlement; no second model call on retry."
+    },
+    {
+      "at": "2026-10-31T03:09:15.774Z",
+      "decision": "settlement_requested",
+      "detail": "The facilitator receives the same persisted signed bytes."
+    },
+    {
+      "at": "2026-10-31T03:10:06.192Z",
+      "decision": "settlement_requested",
+      "detail": "The facilitator receives the same persisted signed bytes."
+    },
+    {
+      "at": "2026-10-31T03:10:07.372Z",
+      "decision": "receipt_unresolved",
+      "detail": "Funds may already have moved. Reconcile the same transaction; never sign a replacement."
+    },
+    {
+      "at": "2026-10-31T03:10:07.451Z",
+      "decision": "payment_pending",
+      "detail": "No final receipt was received. A second payment is prohibited."
+    },
+    {
+      "at": "2026-10-31T03:11:16.826Z",
+      "decision": "settlement_requested",
+      "detail": "The facilitator receives the same persisted signed bytes."
+    },
+    {
+      "at": "2026-10-31T03:11:17.282Z",
+      "decision": "payment_confirmed",
+      "detail": "One newer canonical block confirmed the seller payment; cached result released."
+    }
+  ],
+  "reason": null,
+  "qualification": "Confirmed paid request and matching useful catalog result recorded.",
+  "note": "This command delegates once through the local application. Repeated commands for the same input reuse/reconcile its existing intent. It never resets chain history or signs a replacement for an existing signed intent."
+}

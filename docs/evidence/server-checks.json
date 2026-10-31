@@ -1,13 +1,13 @@
 {
-  "at": "2026-10-31T03:01:38.804Z",
+  "at": "2026-10-31T03:17:37.904Z",
   "checks": [
     {
       "name": "Real service status",
       "status": "PASS",
       "detail": {
-        "ready": false,
+        "ready": true,
         "provider": "koios",
-        "buyerBalanceLovelace": "0",
+        "buyerBalanceLovelace": "9997831419",
         "model": {
           "available": true,
           "model": "qwen3:4b"
@@ -70,26 +70,6 @@
       "status": "PASS",
       "detail": {
         "http": 409
-      }
-    },
-    {
-      "name": "Duplicate source input retains same logical intent",
-      "status": "PASS",
-      "detail": {
-        "intentId": "batch_3335c09a068c20633a3c8e1c",
-        "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
-        "status": "blocked",
-        "transaction": null
-      }
-    },
-    {
-      "name": "Unfunded wallet fails closed",
-      "status": "PASS",
-      "detail": {
-        "status": "blocked",
-        "error": "Fund the buyer with 5 test ADA on Cardano preprod to cover the service, bounded network fee and a valid change output.",
-        "paidResult": false,
-        "transaction": null
       }
     }
   ]

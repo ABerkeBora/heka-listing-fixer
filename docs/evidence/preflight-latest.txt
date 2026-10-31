@@ -3,7 +3,7 @@
 > tsx scripts/cardano-preflight.ts
 
 {
-  "checkedAt": "2026-10-31T03:04:32.830Z",
+  "checkedAt": "2026-10-31T03:14:56.285Z",
   "network": "cardano:preprod",
   "sdkVersion": "2.29.0",
   "officialStarter": "https://developers.cardano.org/templates/x402-express/",
@@ -40,15 +40,13 @@
   },
   "buyerAddress": "addr_test1qr8dn6eysm3fp68f8gsrcxtvhqewztsutc7asvzk43s0fs7edlkjxxvq4qhdegzkn5gy06xqk7ktqdd3ulrmxxu4r55q0zvpkc",
   "sellerAddress": "addr_test1qrj33p9fj9mu85q55fj9m3tdc4jexk7ehylm6qrta3vd66qysmcy6nrysklxspcs24erkzgt8yeelt4wa92swggjtczsawv229",
-  "buyerBalanceLovelace": "0",
+  "buyerBalanceLovelace": "9997831419",
   "providerError": null,
   "servicePriceLovelace": "2000000",
   "paymentPrerequisites": {
-    "status": "BLOCKED",
-    "ready": false,
-    "blockers": [
-      "Buyer requires at least 5 preprod test ADA for service, bounded fee and change."
-    ]
+    "status": "PASS",
+    "ready": true,
+    "blockers": []
   },
   "qualifyingPaidRequest": {
     "status": "PENDING",

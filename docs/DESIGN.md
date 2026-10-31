@@ -55,3 +55,13 @@ Phone list QA correction: removed the breadcrumb, tightened batch action gaps an
 Final phone density adjustment: the redundant mandate strip is omitted on phone because the primary action opens the complete mandate. Filters, search, receipt refresh, export and close controls retain44px targets; product rows stay early. Full initial desktop/tablet/phone CUA walkthrough completed; final screenshot files and browser-qa.json contain measured results.
 
 Tablet QA found that a selected source sheet could fall below all ten rows. At641–1040px, selecting a row now opens the source sheet in the workbench with an explicit All products return, keeping the chosen evidence visible. Phone import validation errors are rendered inside the dialog; sample identity survives loading the supplied JSON through import.
+
+## Final paid-state browser QA
+
+The actual confirmed catalog was retrieved from its existing intent through the UI, without creating a new input or payment. CUA Chrome screenshots at 1440×900, 768×1024 and 390×844 show the delivered state, with no horizontal overflow. On the phone the first source row starts at 432.55px; selecting a row starts its focused source pane at 68px. All ten product details show source-bound description composition. Counts agree throughout: ten products, five ready, five needing source, 33 source-linked changes. The missing manufacturer on LF-003 remains `Needs source` after paid processing.
+
+The expanded receipt shows the actual confirmed transaction, service 2.000000 tADA, network fee 0.168581 tADA and seller received 2.000000 tADA. Facilitator fee stays `Not separately quoted`. No localhost application console errors were observed; unrelated installed-browser-extension warnings were excluded. The temporary viewport override was reset and the isolated QA tab was closed.
+
+Evidence: `docs/evidence/browser-paid-qa.json`, `ui-paid-desktop.jpg`, `ui-paid-tablet.jpg`, `ui-paid-phone.jpg`, `ui-paid-receipt.jpg`, `ui-paid-source.jpg` and `ui-paid-phone-source.jpg` in the same evidence directory.
+
+The confirmed job can be opened directly with `?job=<intent-id>` using the same server-verified restore path. A new successful source review clears that job query so an old paid receipt cannot appear beside different input.

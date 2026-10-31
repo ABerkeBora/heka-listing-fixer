@@ -1,0 +1,60 @@
+{
+  "before": {
+    "checkedAt": "2026-10-31T03:09:58.973Z",
+    "intentId": "batch_3335c09a068c20633a3c8e1c",
+    "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+    "status": "processing",
+    "paymentStatus": "payment_pending",
+    "transaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+    "networkFeeLovelace": "168581",
+    "signedEvents": 1,
+    "settlementEvents": [
+      {
+        "at": "2026-10-31T03:09:15.774Z",
+        "decision": "settlement_requested",
+        "detail": "The facilitator receives the same persisted signed bytes."
+      }
+    ],
+    "publicResultReleased": false,
+    "faultInjection": "SIGTERM of verified Listing Fixer process after persisted signature/result and before final receipt, to test restart reconciliation.",
+    "serverPid": 69403
+  },
+  "recovery": "PASS",
+  "clientObservation": {
+    "at": "2026-10-31T03:10:05.323Z",
+    "outcome": "CLI polling connection failed with ECONNREFUSED while the intentionally stopped app was offline. No new POST/delegation/signature was issued."
+  },
+  "after": {
+    "checkedAt": "2026-10-31T03:14:03.911Z",
+    "intentId": "batch_3335c09a068c20633a3c8e1c",
+    "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+    "status": "complete",
+    "paymentStatus": "confirmed",
+    "transaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+    "receipt": {
+      "success": true,
+      "payer": "addr_test1qr8dn6eysm3fp68f8gsrcxtvhqewztsutc7asvzk43s0fs7edlkjxxvq4qhdegzkn5gy06xqk7ktqdd3ulrmxxu4r55q0zvpkc",
+      "transaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+      "network": "cardano:preprod",
+      "extra": {
+        "status": "confirmed",
+        "transactionId": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+        "confirmations": 1
+      }
+    },
+    "signedEvents": 1,
+    "resultDelivered": true,
+    "modelDurationMs": 68372,
+    "modelAcceptedEdits": 10
+  },
+  "duplicateRequest": {
+    "http": 200,
+    "duplicate": true,
+    "sameIntent": true,
+    "sameTransaction": true,
+    "signaturesBefore": 1,
+    "signaturesAfter": 1,
+    "sameResult": true
+  },
+  "conclusion": "Actual pending settlement crash interrupted the client. Startup and subsequent agent reconciliation reused one persisted signed transaction; confirmed receipt/result delivered. A duplicate POST returned the same completed intent without another signature/payment."
+}

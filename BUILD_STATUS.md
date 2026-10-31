@@ -29,3 +29,11 @@ This turn fixed read-only preflight reporting so setup readiness cannot overwrit
 Previous turn classification: progress (preflight assessment fix and evidence published). Fresh authoritative Koios balance remains0, facilitator/provider healthy, localserver3107 accessible. Same external funding/human-verification blocker persisted for three consecutive goal turns. No further independent required work was found by completion audit; paid transaction/receipt/result and live retry evidence remain absent. update_goal returned actual status **blocked**. No completed qualification or paid action claimed.
 
 Resume after isolated buyer test funding; preserve databases and reconcile the existing logical batch. See MORNING_HANDOFF for the5testADA faucet step and cardano:run command.
+
+## User resumed after funding — 31 October 2026 at 04:08:06 CET
+
+User explicitly requested completing the real Cardano flow and continuing the original Goal. Fresh Koios balance10000000000lovelace (10000testADA), provider/facilitator healthy. Previous funding blocker cleared. Original intent and DB retained; CLI initial delegation service2000000/networkfee300000/total2300000lovelace, APIfee0, max1action,15minuteexpiry. Root is sole payment executor; independent agents verify chain/result read-only. get_goal still returned blocked; tools cannot directly resume status, so authorized implementation resumes without creating a duplicate Goal. Completion will be marked only after full evidence audit.
+
+## Funded paid delivery verified — 2026-10-31T03:22:38.086Z
+
+User funding cleared the original blocker. Actual agentic payment 1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0 confirmed and delivered; source/result binding independently verified.37tests/build,13chainchecks,53deliverychecks and paid3-widthbrowserQA pass. Pending-settlementprocessrestart + duplicatePOST preserved the same signedhash/signaturecount1. Sourcepublication and finalGoalstatusupdate are being finalized. Actualvideo/Devfolio submission remainusersteps; requestedoutline/draft exist.

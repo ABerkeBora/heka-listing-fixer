@@ -19,12 +19,12 @@ Direct address payments provide no automatic refund or on-chain quality decision
 ## Current evidence — fill from final handoff
 
 - Public repository: https://github.com/ABerkeBora/heka-listing-fixer
-- Live paid preprod transaction: **BLOCKED until actual funded request succeeds; never substitute a fixture hash.**
+- Live paid preprod transaction: https://preprod.cardanoscan.io/transaction/1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0 —2 tADA seller payment,0.168581 tADA fee, matching10-product result and confirmed receipt.
 - Setup, tests, model evidence and known limits: README, TRACK_REQUIREMENTS and MORNING_HANDOFF.
-- Video: **PENDING recording after live payment verification**, maximum 2.5 minutes.
+- Video: **PENDING recording**, maximum 2.5 minutes; live payment and screenshots are now available.
 
 ## Beyond the event
 
 A production version would isolate each customer signer, authenticate service access, establish seller operating procedures and source licensing, price against real compute costs, and evaluate a proper dispute/refund mechanism if the business needs one. It would retain the same source-bound acceptance rules and reconciliation discipline.
 
-Do not submit this text with a live payment claim until the matching evidence exists. No competition entry has been submitted by the build agent.
+Matching live payment evidence now exists. No competition entry has been submitted by the build agent; record the video and submit through the user/team process.

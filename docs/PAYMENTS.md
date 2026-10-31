@@ -4,9 +4,11 @@ Listing Fixer uses the official x402 Cardano `exact` SDK and resource-server pri
 
 ## Current live status
 
-`docs/evidence/payment-preflight.json` records the actual check. The hosted Cardano Foundation facilitator is reachable and supports the selected scheme. The buyer can read preprod UTXOs through public Koios without a Blockfrost key. Both distinct test wallets were generated locally; the buyer has **0 lovelace** at the recorded check. No qualifying paid request, confirmed receipt, seller proceeds or paid result exists yet.
+A real delegated x402 request completed on Cardano preprod. Transaction [1305799c…66dc0](https://preprod.cardanoscan.io/transaction/1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0) paid the fixed seller **2000000 lovelace**, with **168581 lovelace** network fee. Total spend **2168581** is below the delegated **2300000** cap. The facilitator returned a confirmed receipt; independent Koios reads and public transaction decoding verified inputs, exact outputs, signatures, fee, value conservation and newer canonical blocks.
 
-The official Cardano faucet requires a human reCAPTCHA; the inspected widget also displayed a free-quota warning. It was not solved or bypassed. The official Masumi dispenser requires a registration verification code, which is unavailable. These are access blockers, not test failures disguised as payments. Blockfrost is an optional provider for this buyer; it is no longer the blocking dependency.
+`docs/evidence/payment-live.json` binds the intent, input, transaction, receipt and useful catalog result. `payment-chain.json` independently verifies the ledger; `delivery-verification.json` checks all source facts and actual exports. The paid local model generated10 accepted source compositions:5 ready rows and5 needing source information.
+
+The initial funding blocker is resolved: the user completed the official faucet's human verification and funded the isolated buyer. Public Koios works without a Blockfrost key. Buyer and seller are distinct local test-wallet roles; the test does not assert an external customer sale or production revenue.
 
 ## Roles and bought result
 
@@ -74,7 +76,7 @@ npm run cardano:preflight
 
 Wallet generation is idempotent. It stores credentials only in ignored `.local/cardano-wallets.json` with mode `0600`; only public addresses print. Optional `.env` variables are `CARDANO_WALLET_FILE`, `CARDANO_BUYER_MNEMONIC`, `SELLER_ADDRESS`, `BLOCKFROST_PROJECT_ID`. The provider and facilitator are pinned to preprod. Never paste mnemonic/private keys into chat, logs, screenshots or model prompts.
 
-Fund the printed buyer address with 5 **test ADA on preprod** (funding reserve, not the service charge; excess remains in the buyer change output), complete the official faucet's human challenge, wait for UTXOs, refresh the connection check, and start one fresh catalog delegation in the app. Save its actual transaction, seller output and result. Until that succeeds, Cardano qualification and the real delegated economic action remain **BLOCKED**.
+For a fresh installation, fund the printed buyer with at least 5 **test ADA on preprod** (funding reserve, not the service charge; excess stays in buyer change). Complete the official faucet human challenge, wait for UTXOs and start one bounded delegation. The shipped evidence already records the successfully completed build scenario; fresh wallets need their own funds.
 
 ## Verification
 
@@ -83,3 +85,20 @@ Fund the printed buyer address with 5 **test ADA on preprod** (funding reserve, 
 The reference starter pins x402 2.26.0. This project pins the compatible 2.29.0 releases and Express 5.3.0 after an npm audit identified a vulnerable transitive validation dependency in the older release. API typechecking and the payment tests were rerun after upgrading; package-lock.json records exact versions.
 
 The read-only preflight reports setup prerequisites separately from qualification. It does not assess or overwrite a completed payment record; `payment-live.json` and its matching receipt/result remain the authoritative run evidence. A later low wallet balance does not invalidate a previously completed job.
+
+## Live restart and rejection evidence
+
+`payment-restart.json` records an intentional process stop while settlement was pending and the result still private. The CLI observed a lost connection. On startup and subsequent agent reconciliation, the same persisted signed bytes produced the confirmed receipt; the signature count stayed1. Repeating the completed input returned the same transaction and result without another payment.
+
+The CLI now tolerates transient polling errors and performs at most4 reconciliation requests for an existing signed intent, within a 4-minute observation window. It cannot create a replacement job inside the recovery loop. Unsigned attempts are not reconciled as payments. The UI also exposes Check existing payment.
+
+`payment-policy-live.json` validates the actual stored quote, then rejects a lower service budget and a changed recipient. Before/after transaction, receipt, result and signature count remain identical. These are local policy rejection tests using a real quote; no rejected transaction is broadcast, so they incur no extra chain fee.
+
+```sh
+npm run cardano:run
+npm run cardano:verify
+npm run cardano:policy-proof
+npm run verify:delivery
+```
+
+Preserve local databases and evidence. A repeated sample is an observation of its existing paid intent, not a fresh purchase. Public verification scripts read chain/API evidence and never sign or settle transactions.

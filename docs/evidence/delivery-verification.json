@@ -1,0 +1,271 @@
+{
+  "checkedAt": "2026-10-31T03:18:33.217Z",
+  "status": "PASS",
+  "audit": "Independent delivered-catalog and read-only HTTP export verification. No model, signature or payment operation performed.",
+  "sourcePath": "samples/catalog.json",
+  "resultPath": "docs/evidence/payment-live-result.json",
+  "paymentPath": "docs/evidence/payment-live.json",
+  "expectedInputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+  "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+  "resultHash": "05f15c335e49591d6e1d2d97dc295e817fb1d66ccc88f5dcec86a13871224095",
+  "intentId": "batch_3335c09a068c20633a3c8e1c",
+  "transaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+  "checks": [
+    {
+      "name": "source file is the approved ten-product synthetic batch",
+      "pass": true
+    },
+    {
+      "name": "independently recomputed source hash matches initial request",
+      "pass": true,
+      "detail": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2"
+    },
+    {
+      "name": "same input is bound to original intent, payment evidence and result",
+      "pass": true
+    },
+    {
+      "name": "saved result matches hash recorded by paid request",
+      "pass": true,
+      "detail": "05f15c335e49591d6e1d2d97dc295e817fb1d66ccc88f5dcec86a13871224095"
+    },
+    {
+      "name": "paid request explicitly completed",
+      "pass": true
+    },
+    {
+      "name": "receipt binds exact preprod transaction with numeric confirmed evidence",
+      "pass": true
+    },
+    {
+      "name": "result schema and row count match approved source",
+      "pass": true
+    },
+    {
+      "name": "actual local model produced accepted source compositions",
+      "pass": true
+    },
+    {
+      "name": "LF-001: original source bytes retained",
+      "pass": true
+    },
+    {
+      "name": "LF-001: money and protected facts unchanged",
+      "pass": true
+    },
+    {
+      "name": "LF-001: missing source stays marked and excluded from ready status",
+      "pass": true
+    },
+    {
+      "name": "LF-001: every displayed edit has exact field or complete clause provenance",
+      "pass": true
+    },
+    {
+      "name": "LF-002: original source bytes retained",
+      "pass": true
+    },
+    {
+      "name": "LF-002: money and protected facts unchanged",
+      "pass": true
+    },
+    {
+      "name": "LF-002: missing source stays marked and excluded from ready status",
+      "pass": true
+    },
+    {
+      "name": "LF-002: every displayed edit has exact field or complete clause provenance",
+      "pass": true
+    },
+    {
+      "name": "LF-003: original source bytes retained",
+      "pass": true
+    },
+    {
+      "name": "LF-003: money and protected facts unchanged",
+      "pass": true
+    },
+    {
+      "name": "LF-003: missing source stays marked and excluded from ready status",
+      "pass": true
+    },
+    {
+      "name": "LF-003: every displayed edit has exact field or complete clause provenance",
+      "pass": true
+    },
+    {
+      "name": "LF-004: original source bytes retained",
+      "pass": true
+    },
+    {
+      "name": "LF-004: money and protected facts unchanged",
+      "pass": true
+    },
+    {
+      "name": "LF-004: missing source stays marked and excluded from ready status",
+      "pass": true
+    },
+    {
+      "name": "LF-004: every displayed edit has exact field or complete clause provenance",
+      "pass": true
+    },
+    {
+      "name": "LF-005: original source bytes retained",
+      "pass": true
+    },
+    {
+      "name": "LF-005: money and protected facts unchanged",
+      "pass": true
+    },
+    {
+      "name": "LF-005: missing source stays marked and excluded from ready status",
+      "pass": true
+    },
+    {
+      "name": "LF-005: every displayed edit has exact field or complete clause provenance",
+      "pass": true
+    },
+    {
+      "name": "LF-006: original source bytes retained",
+      "pass": true
+    },
+    {
+      "name": "LF-006: money and protected facts unchanged",
+      "pass": true
+    },
+    {
+      "name": "LF-006: missing source stays marked and excluded from ready status",
+      "pass": true
+    },
+    {
+      "name": "LF-006: every displayed edit has exact field or complete clause provenance",
+      "pass": true
+    },
+    {
+      "name": "LF-007: original source bytes retained",
+      "pass": true
+    },
+    {
+      "name": "LF-007: money and protected facts unchanged",
+      "pass": true
+    },
+    {
+      "name": "LF-007: missing source stays marked and excluded from ready status",
+      "pass": true
+    },
+    {
+      "name": "LF-007: every displayed edit has exact field or complete clause provenance",
+      "pass": true
+    },
+    {
+      "name": "LF-008: original source bytes retained",
+      "pass": true
+    },
+    {
+      "name": "LF-008: money and protected facts unchanged",
+      "pass": true
+    },
+    {
+      "name": "LF-008: missing source stays marked and excluded from ready status",
+      "pass": true
+    },
+    {
+      "name": "LF-008: every displayed edit has exact field or complete clause provenance",
+      "pass": true
+    },
+    {
+      "name": "LF-009: original source bytes retained",
+      "pass": true
+    },
+    {
+      "name": "LF-009: money and protected facts unchanged",
+      "pass": true
+    },
+    {
+      "name": "LF-009: missing source stays marked and excluded from ready status",
+      "pass": true
+    },
+    {
+      "name": "LF-009: every displayed edit has exact field or complete clause provenance",
+      "pass": true
+    },
+    {
+      "name": "LF-010: original source bytes retained",
+      "pass": true
+    },
+    {
+      "name": "LF-010: money and protected facts unchanged",
+      "pass": true
+    },
+    {
+      "name": "LF-010: missing source stays marked and excluded from ready status",
+      "pass": true
+    },
+    {
+      "name": "LF-010: every displayed edit has exact field or complete clause provenance",
+      "pass": true
+    },
+    {
+      "name": "paid result adds useful supplied details beyond free normalization",
+      "pass": true,
+      "detail": "10 products with composed source details"
+    },
+    {
+      "name": "summary is computed from delivered rows and agrees with payment evidence",
+      "pass": true
+    },
+    {
+      "name": "actual paid JSON export includes exactly ready rows and unchanged output",
+      "pass": true
+    },
+    {
+      "name": "actual paid CSV export excludes every needs-source/review product",
+      "pass": true
+    },
+    {
+      "name": "actual full report preserves all rows, source gaps and receipt transaction",
+      "pass": true
+    }
+  ],
+  "checksPassed": 53,
+  "checksTotal": 53,
+  "summary": {
+    "total": 10,
+    "ready": 5,
+    "needsSource": 5,
+    "review": 0,
+    "changes": 33
+  },
+  "usefulCompositionSkus": [
+    "LF-001",
+    "LF-002",
+    "LF-003",
+    "LF-004",
+    "LF-005",
+    "LF-006",
+    "LF-007",
+    "LF-008",
+    "LF-009",
+    "LF-010"
+  ],
+  "exports": {
+    "jsonRows": 5,
+    "csvRows": 5,
+    "reportRows": 10,
+    "readySkus": [
+      "LF-001",
+      "LF-002",
+      "LF-004",
+      "LF-006",
+      "LF-009"
+    ],
+    "excludedSkus": [
+      "LF-003",
+      "LF-005",
+      "LF-007",
+      "LF-008",
+      "LF-010"
+    ]
+  },
+  "qualificationBoundary": "Verifies matching useful delivery and receipt binding. Independent chain settlement/output proof is recorded separately."
+}

@@ -1,8 +1,8 @@
 {
-  "at": "2026-10-31T03:01:06.474Z",
-  "filesScanned": 78,
+  "at": "2026-10-31T03:23:17.288Z",
+  "filesScanned": 104,
   "walletSecretsChecked": 2,
   "secretMatches": [],
   "privatePathsStaged": [],
-  "note": "Actual selected-project recovery phrases compared against every staged public file without printing values. .local, .env, databases and dependencies excluded."
+  "note": "Actual selected-project recovery phrases compared with every staged public file without printing values; actual paid receipts contain no private signed request payload or keys."
 }

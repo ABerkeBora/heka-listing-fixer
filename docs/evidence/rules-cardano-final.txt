@@ -1,4 +1,4 @@
-Checked 31 October2026 03:53 Europe/Berlin.
+Checked31 October2026 04:15 Europe/Berlin after the actual paid flow.
 Source: https://hackathon.tum-blockchain.com/prizes#cardano
-Method: reloaded page, selected actual Cardano tab, expanded submission, judging and examples.
-Verified: working useful service with a completed paid job/request on Cardano preprod, via Masumi or x402. Submission needs its transaction hash, an end-to-end video explaining customer/problem/business case and a description of implementation, Cardano tooling and real use. Judging preferences include useful customer workflow, originality, execution and clear result-linked payment. Escrow is optional for this selected direct-address x402 path. No rule change identified relative to start check.
+Method: selected actualCardano tab in live browser; expanded submission,judging,examples.
+Verified unchanged: useful completed paid preprod job/request viaMasumi orx402; transactionhash; end-to-end video describingcustomer/problem/businesscase; descriptionofimplementation/Cardanotools/realuse. Escrow is optionalforselecteddirect-addresspath. Actualpaidrequestandtx evidence nowPASS. Video/Devfolio delivery remainPENDING, withoutline/draftprepared.

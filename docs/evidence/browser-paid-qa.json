@@ -1,0 +1,204 @@
+{
+  "checkedAt": "2026-10-31T03:16:51.080Z",
+  "browser": "Chrome through CUA (own isolated tab); IAB unavailable to child",
+  "url": "http://127.0.0.1:3107/",
+  "actionBoundary": "Retrieved the existing completed ten-product sample intent through the UI; no new catalog or new payment was authorized or submitted.",
+  "paidState": {
+    "explorerUrl": "https://preprod.cardanoscan.io/transaction/1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+    "fees": [
+      {
+        "label": "Service price",
+        "value": "2.000000 tADA"
+      },
+      {
+        "label": "Network fee",
+        "value": "0.168581 tADA"
+      },
+      {
+        "label": "Facilitator fee",
+        "value": "Not separately quoted"
+      },
+      {
+        "label": "Seller received",
+        "value": "2.000000 tADA"
+      }
+    ],
+    "intent": [
+      {
+        "label": "Intent",
+        "value": "batch_3335c09a068c20633a3c8e1c"
+      },
+      {
+        "label": "Input hash",
+        "value": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2"
+      }
+    ],
+    "receiptState": "Receipt state: confirmed",
+    "transaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0"
+  },
+  "desktop": {
+    "firstRowTop": 616.59375,
+    "height": 900,
+    "listRows": 10,
+    "resultState": "Result deliveredbatch_3335c09aRefresh job",
+    "scrollWidth": 1440,
+    "sourceComposition": "Title−  DESK   ORGANISER — OAK  +DESK ORGANISER — OAKTrim and collapse source whitespace; wording unchanged.Row 1 · TitleOpenPrice−24,90+24.90Format supplied amount to two decimals; value unchanged.Row 1 · PriceOpenCurrency−eur+EURNormalize supplied currency code.Row 1 · CurrencyOpenDescription− Solid oak desk organiser.   Three compartments. +Solid oak desk organiser. Three compartments. Material: solid oak Dimensions: 24 × 12 × 8 cm Colour: naturalModel selected complete supplied specification clauses; deterministic renderer preserved the original display field and validated every source part.Row 1 · description + sourceText + sourceText + sourceTextOpen",
+    "summary": "5 ready · 5 need attention33 source-linked changes",
+    "width": 1440
+  },
+  "tablet": {
+    "firstRowTop": 623.09375,
+    "height": 1024,
+    "resultState": "Result deliveredbatch_3335c09aRefresh job",
+    "scrollWidth": 768,
+    "summary": "5 ready · 5 need attention33 source-linked changes",
+    "tableWidth": 712,
+    "width": 768
+  },
+  "phone": {
+    "firstRowTop": 432.546875,
+    "height": 844,
+    "resultState": "Result deliveredbatch_3335c09aRefresh job",
+    "reviewLabel": "Paid result",
+    "scrollWidth": 390,
+    "summary": "5 ready · 5 need attention33 source-linked changes",
+    "visibleListCount": 10,
+    "width": 390
+  },
+  "phoneDetail": {
+    "batchHeadingVisible": false,
+    "description": "Title−  DESK   ORGANISER — OAK  +DESK ORGANISER — OAKTrim and collapse source whitespace; wording unchanged.Row 1 · TitleOpenPrice−24,90+24.90Format supplied amount to two decimals; value unchanged.Row 1 · PriceOpenCurrency−eur+EURNormalize supplied currency code.Row 1 · CurrencyOpenDescription− Solid oak desk organiser.   Three compartments. +Solid oak desk organiser. Three compartments. Material: solid oak Dimensions: 24 × 12 × 8 cm Colour: naturalModel selected complete supplied specification clauses; deterministic renderer preserved the original display field and validated every source part.Row 1 · description + sourceText + sourceText + sourceTextOpen",
+    "detailTop": 68,
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "compositionChecks": [
+    {
+      "hasSourceComposition": true,
+      "sku": "LF-001",
+      "sourceReferences": [
+        "Row 1 · TitleOpen",
+        "Row 1 · PriceOpen",
+        "Row 1 · CurrencyOpen",
+        "Row 1 · description + sourceText + sourceText + sourceTextOpen"
+      ]
+    },
+    {
+      "hasSourceComposition": true,
+      "sku": "LF-002",
+      "sourceReferences": [
+        "Row 2 · TitleOpen",
+        "Row 2 · PriceOpen",
+        "Row 2 · description + sourceText + sourceText + sourceTextOpen"
+      ]
+    },
+    {
+      "hasSourceComposition": true,
+      "sku": "LF-003",
+      "sourceReferences": [
+        "Row 3 · TitleOpen",
+        "Row 3 · PriceOpen",
+        "Row 3 · CurrencyOpen",
+        "Row 3 · description + sourceText + sourceText + sourceTextOpen"
+      ]
+    },
+    {
+      "hasSourceComposition": true,
+      "sku": "LF-004",
+      "sourceReferences": [
+        "Row 4 · TitleOpen",
+        "Row 4 · PriceOpen",
+        "Row 4 · description + sourceText + sourceTextOpen"
+      ]
+    },
+    {
+      "hasSourceComposition": true,
+      "sku": "LF-005",
+      "sourceReferences": [
+        "Row 5 · TitleOpen",
+        "Row 5 · PriceOpen",
+        "Row 5 · description + sourceText + sourceTextOpen"
+      ]
+    },
+    {
+      "hasSourceComposition": true,
+      "sku": "LF-006",
+      "sourceReferences": [
+        "Row 6 · TitleOpen",
+        "Row 6 · PriceOpen",
+        "Row 6 · CurrencyOpen",
+        "Row 6 · description + sourceText + sourceTextOpen"
+      ]
+    },
+    {
+      "hasSourceComposition": true,
+      "sku": "LF-007",
+      "sourceReferences": [
+        "Row 7 · TitleOpen",
+        "Row 7 · PriceOpen",
+        "Row 7 · description + sourceText + sourceText + sourceTextOpen"
+      ]
+    },
+    {
+      "hasSourceComposition": true,
+      "sku": "LF-008",
+      "sourceReferences": [
+        "Row 8 · TitleOpen",
+        "Row 8 · CurrencyOpen",
+        "Row 8 · description + sourceText + sourceText + sourceTextOpen"
+      ]
+    },
+    {
+      "hasSourceComposition": true,
+      "sku": "LF-009",
+      "sourceReferences": [
+        "Row 9 · TitleOpen",
+        "Row 9 · PriceOpen",
+        "Row 9 · description + sourceText + sourceText + sourceTextOpen"
+      ]
+    },
+    {
+      "hasSourceComposition": true,
+      "sku": "LF-010",
+      "sourceReferences": [
+        "Row 10 · TitleOpen",
+        "Row 10 · PriceOpen",
+        "Row 10 · description + sourceText + sourceText + sourceTextOpen"
+      ]
+    }
+  ],
+  "missingSourceCheck": {
+    "checks": "ManufacturerNo manufacturer supplied. Obtain a source before marking this listing ready.Return to the source before importMissing manufacturer, safety, certification or price information stays missing.",
+    "sku": "LF-003",
+    "status": "Needs source"
+  },
+  "checks": {
+    "confirmedTransactionMatchesExpected": true,
+    "allTenSourceCompositionsVisible": true,
+    "noHorizontalOverflow": true,
+    "phoneFirstRowBefore500px": true,
+    "phoneSourceDetailFocused": true,
+    "missingManufacturerRemainsFlagged": true
+  },
+  "applicationConsoleErrors": [],
+  "notes": [
+    "Initial Chrome extension navigation exposed overly broad cross-site GET rejection. Root authorized a narrow app-shell document-navigation exception; real HTTP security tests passed before this paid walkthrough.",
+    "Existing Chrome extension warnings were observed; no localhost application errors were present.",
+    "All displayed counts agree: 10 products, 5 ready, 5 needing source, 33 source-linked changes."
+  ],
+  "screenshots": [
+    "ui-paid-desktop.jpg",
+    "ui-paid-tablet.jpg",
+    "ui-paid-phone.jpg",
+    "ui-paid-receipt.jpg",
+    "ui-paid-source.jpg",
+    "ui-paid-phone-source.jpg"
+  ],
+  "directLink": {
+    "confirmedReceipt": true,
+    "exactFee": true,
+    "expectedTransaction": true,
+    "resultDelivered": true,
+    "url": "http://127.0.0.1:3107/?job=batch_3335c09a068c20633a3c8e1c"
+  }
+}

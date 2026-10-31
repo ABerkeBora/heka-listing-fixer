@@ -1,0 +1,108 @@
+{
+  "checkedAt": "2026-10-31T03:18:32.917Z",
+  "status": "PASS",
+  "network": "cardano:preprod",
+  "readOnly": true,
+  "intentId": "batch_3335c09a068c20633a3c8e1c",
+  "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+  "transaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+  "policyDecisionAt": "2026-10-31T03:08:05.531Z",
+  "policyTimeMeaning": "Deterministic replay at the actual recorded quote acceptance time. No mandate expiry is changed, renewed or bypassed; this command never requests a payment.",
+  "actualQuote": {
+    "x402Version": 2,
+    "resource": {
+      "url": "http://127.0.0.1:3107/api/service/jobs/batch_3335c09a068c20633a3c8e1c",
+      "description": "Source-linked repair, field diff and deterministic validation for up to ten catalog products.",
+      "mimeType": "application/json"
+    },
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "cardano:preprod",
+        "amount": "2000000",
+        "asset": "lovelace",
+        "payTo": "addr_test1qrj33p9fj9mu85q55fj9m3tdc4jexk7ehylm6qrta3vd66qysmcy6nrysklxspcs24erkzgt8yeelt4wa92swggjtczsawv229",
+        "maxTimeoutSeconds": 600,
+        "extra": {
+          "confirmationPolicy": {
+            "l1Confirmations": 1
+          },
+          "areFeesSponsored": false
+        }
+      }
+    ]
+  },
+  "originalMandate": {
+    "serviceCapLovelace": "2000000",
+    "feeCapLovelace": "300000",
+    "totalCapLovelace": "2300000",
+    "expiresAt": "2026-10-31T03:23:05.501Z",
+    "maxActions": 1,
+    "apiFeeCapLovelace": "0",
+    "network": "cardano:preprod",
+    "asset": "lovelace",
+    "allowedSeller": "addr_test1qrj33p9fj9mu85q55fj9m3tdc4jexk7ehylm6qrta3vd66qysmcy6nrysklxspcs24erkzgt8yeelt4wa92swggjtczsawv229",
+    "endpoint": "http://127.0.0.1:3107/api/service/jobs/batch_3335c09a068c20633a3c8e1c",
+    "beneficiary": "Catalog owner: local workspace"
+  },
+  "decisions": [
+    {
+      "case": "original_paid_quote",
+      "decision": "accepted",
+      "reason": null,
+      "detail": "The actual quote fits the unchanged original mandate at its recorded acceptance time."
+    },
+    {
+      "case": "service_cap_1000000_lovelace",
+      "decision": "rejected_before_signing",
+      "reason": "over_budget",
+      "detail": "The real 2000000 lovelace service exceeds the deliberately reduced 1000000 lovelace cap."
+    },
+    {
+      "case": "quote_recipient_changed_to_buyer",
+      "decision": "rejected_before_signing",
+      "reason": "seller_denied",
+      "detail": "The cloned offer redirects to the public buyer address instead of the fixed seller; no transaction is constructed."
+    }
+  ],
+  "protectedState": {
+    "unchanged": true,
+    "before": {
+      "intentId": "batch_3335c09a068c20633a3c8e1c",
+      "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+      "jobStatus": "complete",
+      "paymentStatus": "confirmed",
+      "transaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+      "receiptHash": "3d84ec9505cca753581f06749eb4e162bcb89278ba05b9e57e0eb8132236660e",
+      "resultHash": "05f15c335e49591d6e1d2d97dc295e817fb1d66ccc88f5dcec86a13871224095",
+      "signedPaymentEvents": 1,
+      "networkFeeLovelace": "168581",
+      "sellerNetLovelace": "2000000"
+    },
+    "after": {
+      "intentId": "batch_3335c09a068c20633a3c8e1c",
+      "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+      "jobStatus": "complete",
+      "paymentStatus": "confirmed",
+      "transaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+      "receiptHash": "3d84ec9505cca753581f06749eb4e162bcb89278ba05b9e57e0eb8132236660e",
+      "resultHash": "05f15c335e49591d6e1d2d97dc295e817fb1d66ccc88f5dcec86a13871224095",
+      "signedPaymentEvents": 1,
+      "networkFeeLovelace": "168581",
+      "sellerNetLovelace": "2000000"
+    }
+  },
+  "existingIntentReadComparison": {
+    "status": "PASS",
+    "detail": "The same recorded input still resolves to the same completed intent, transaction, receipt/result hashes and exactly one signed-payment event. This script performs no duplicate POST; its separate live retry proof is owned by the application executor."
+  },
+  "actionsPerformed": [
+    "GET the existing completed job",
+    "Validate its actual quote against the original mandate",
+    "Validate the same quote against a cloned lower service cap",
+    "Validate a cloned wrong-recipient quote against the original mandate",
+    "GET the existing completed job again and compare protected state"
+  ],
+  "economicActionsPerformed": [],
+  "warning": "Rejected variants are policy mutations of the actual paid offer; neither is submitted, signed, paid or reconciled. This proof does not replace the separately recorded real Cardano payment."
+}

@@ -2,7 +2,9 @@
 
 Source-bound catalog repair for small ecommerce teams. A buyer agent hires one fixed catalog service with a short-lived budget, pays a Cardano preprod x402 request, and receives a checked catalog, field diffs and source references.
 
-**Current integration status is recorded in [MORNING_HANDOFF.md](MORNING_HANDOFF.md) and [TRACK_REQUIREMENTS.md](TRACK_REQUIREMENTS.md). A source preview is free and is never payment evidence.**
+**Live preprod request confirmed:** [transaction1305799c…66dc0](https://preprod.cardanoscan.io/transaction/1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0),2 tADA service +0.168581 tADA network fee. The paid10-product result, receipt, independent chain checks and restart recovery are saved in [evidence](docs/evidence/VERIFICATION.md). A source preview is free and never payment evidence.
+
+[Open paid result locally](http://127.0.0.1:3107/?job=batch_3335c09a068c20633a3c8e1c) · [Morning handoff](MORNING_HANDOFF.md) · [Track requirements](TRACK_REQUIREMENTS.md) · [Paid result](docs/evidence/payment-live-result.json)
 
 ## Run locally
 
@@ -44,6 +46,9 @@ Direct address payments do not provide automatic refunds or an on-chain quality 
 ```sh
 npm test
 npm run build
+npm run cardano:verify
+npm run cardano:policy-proof
+npm run verify:delivery
 ```
 
 [Evidence](docs/evidence/) records what was actually run. [Presentation outline](PRESENTATION.md) fits 2.5 minutes; [submission draft](SUBMISSION_DRAFT.md) is prepared text only. No competition entry is submitted by this repository.

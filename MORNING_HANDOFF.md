@@ -1,24 +1,24 @@
 # Listing Fixer — sabah teslimi
 
-**Yerel ürün incelemeye hazır; Cardano qualification ve gerçek agent ödemesi tamamlanmadı.** Alıcı cüzdan bakiyesi0. İnsan faucet doğrulaması/test fonu bekleniyor. Üç ardışık güncel kontrolde aynı dış fonlama engeli sürdü; Goal aracı gerçek durumu **blocked** olarak döndürdü. Tamamlandı sayılmadı.
+**Gerçek Cardano preprod ödemesi ve kaynaklı katalog teslimi tamamlandı.** İlk fonlama engeli kullanıcı faucet adımıyla çözüldü. Satıcıya 2 tADA gitti; ağ ücreti 0,168581 tADA; toplam 2,168581 tADA, yetki sınırı 2,3 tADA. Kontrollü pending-settlement restart ve duplicate istekte aynı hash/tek imza korundu.
 
-- Aç: http://127.0.0.1:3107
-- Public repo: https://github.com/ABerkeBora/heka-listing-fixer
+- Paid sonucu doğrudan aç: http://127.0.0.1:3107/?job=batch_3335c09a068c20633a3c8e1c
+- Yeni kaynak incelemesi: http://127.0.0.1:3107
+- Public repo: https://github.com/ABerkeBora/heka-listing-fixer — `codex/build`
 - Dizin: `/Users/wargly/Documents/ChatGPT/Heka/projects/listing-fixer`
-- Branch: `codex/build`; public source push doğrulandı (`57a9f4a`); GitHub author ve committer login'leri `ABerkeBora`. Son dokümantasyon güncellemeleri aynı branch'tedir.
-- Hedef inceleme:31 Ekim 2026 08:00–09:00 Europe/Berlin. Bağımsız build işleri erken tamamlandı; hosted deploy veya yarışma başvurusu yapılmadı.
+- [Gerçek işlem / Cardanoscan](https://preprod.cardanoscan.io/transaction/1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0)
+- Intent: `batch_3335c09a068c20633a3c8e1c`
+- Sonuç hash'i: `05f15c335e49591d6e1d2d97dc295e817fb1d66ccc88f5dcec86a13871224095`
 
 ## Ne çalışıyor
 
-- JSON/CSV ile1–10 ürün, tek İngilizce şema; aynı kaynaktan hesaplanan ready/needs-source sayıları.
-- Kaynak→değişiklik→kontrol detayı, filtre/search, ready-only CSV/JSON ve tüm satırları kapsayan rapor.
-- Gerçek Ollama qwen3:4b akışı: tam10 ürün, 10 kabul edilen kaynak kompozisyonu, 0 ret, fiyatlar korundu.5 ürün eksik kaynak yüzünden hâlâ ready değil.102.623sn, küçük ardışık çağrılar. Bu **ücretsiz entegrasyon testi**dir; paid receipt değildir.
-- Ayrı payer/seller rolleri; sabit preprod/lovelace/seller/endpoint/beneficiary, tamsayı service+network+APIcap0+total, tek mantıksal batch ve expiry.
-- Gerçek x402402 challenge. Bütçe/yanlış alıcı/asset/endpoint/fee/timing/receipt müdahaleleri reddediliyor. Model key veya işlem aracı görmüyor.
-- Kalıcı input/intent/signedbytes/hash/receipt bağı, unsigned crash recovery, signed-byte reconciliation, eşzamanlı duplicate kilidi; ücretsiz kontrol veya faydasız model sonucu settlement'a gönderilmiyor.
-- İş pointer'ı yenilemede aynı girdiyi açıyor; kaynak preview ile paid result ayrı. Gerçek ödeme olmadığı için on-chain başarı ekranı doğrulanmış sayılmıyor.
+10 ürün için JSON/CSV import, kaynak/diff/check görünümü, filtre/search ve ready-only dosyalar var. Gerçek ücretli Ollama qwen3:4b çağrısı10 kaynak kompozisyonu üretti. Teslimde **5 ready, 5 needs source, 33 değişiklik** var; fiyat/para birimi/üretici/güvenlik/sertifika alanları kaynakla korunuyor. Eksik alanlar tamamlanmış gibi sunulmuyor.
 
-## Çalıştırma
+Alıcı agent tek initial mandate sonrası gerçek402 teklifi seçti, fiyat/seller/ağ/asset/endpoint/fee/expiry kontrolü yaptı, işlemi imzaladı ve isteği yürüttü. Model key veya arbitrary transaction yetkisi görmedi. Servis fiyatı2000000, fee cap300000, API cap0, total cap2300000 lovelace; max 1 ekonomik aksiyon. UI varsayılan fee cap0,5 tADA, CLI bu senaryoda0,3 tADA kullanıyor.
+
+Receipt gelmeden uygulama kontrollü kapatıldı; CLI bağlantı kaybı gördü. Kalıcı signed bytes/intent/result ile yeniden başlatma ve agent reconciliation aynı işlemi tamamladı. Sonraki duplicate POST aynı completed intent/receipt/result döndürdü; imza sayısı 1 kaldı. CLI artık geçici polling hatalarını tolere eder ve mevcut signed intent için en fazla 4 uzlaştırma dener. Yeni iş/ödeme recovery döngüsünde oluşturulmaz.
+
+## Açma ve yeniden doğrulama
 
 ```sh
 npm ci
@@ -27,47 +27,42 @@ npm run build
 npm start
 ```
 
-Node 24+ gerekir. Ollama varsa `http://127.0.0.1:11434`, model `qwen3:4b`; paylaşılan süreç değiştirilmedi. App sadece loopback3107'yi dinler. Açık sunucu kapanırsa `npm start` yeterli.
+Mevcut kurulumda server açıksa tekrar başlatmak gerekmez. Node 24+, yerel Ollama `qwen3:4b` gerekir. Paylaşılan Ollama süreci değiştirilmedi. App yalnız loopback 3107'yi dinler; ayrı cüzdan/env/DB kullanır. Repo global Git kimliğini değiştirmez; commit author/committer `ABerkeBora` hesabına bağlandı.
 
-## Dış engel ve en küçük sabah adımı
+```sh
+npm run cardano:preflight
+npm run cardano:run
+npm run cardano:verify
+npm run cardano:policy-proof
+npm run verify:delivery
+```
 
-1. **5–10dk + faucet/ağ bekleme:** [resmî Cardano faucet](https://docs.cardano.org/cardano-testnets/tools/faucet) üzerinde **Preprod** seçip insan reCAPTCHA'sını tamamla; aşağıdaki alıcıya test ADA sağla. İncelemede faucet ücretsiz kota uyarısı da gösteriyordu. Masumi dispenser alternatifinde kayıt e-postası doğrulama kodu gerekiyor; erişim bulunmadı. Ücretli servis veya mainnet kullanılmadı.
-
-   Buyer:
-   `addr_test1qr8dn6eysm3fp68f8gsrcxtvhqewztsutc7asvzk43s0fs7edlkjxxvq4qhdegzkn5gy06xqk7ktqdd3ulrmxxu4r55q0zvpkc`
-
-  5 test ADA önerilen minimum **fonlama**; ücret değil. UI service2tADA + fee cap0.5tADA = totalcap2.5tADA; CLI senaryosu2+0.3=2.3tADA. Change UTXO için yeterli fon bırakılır. Seller farklı adrestir; public adresler preflight kanıtında bulunur.
-
-2. **3–5dk:** server açıkken:
-
-   ```sh
-   npm run cardano:preflight
-   npm run cardano:run
-   ```
-
-   Preflight bakiye/facilitator'ı gerçek okur. `cardano:run` bir initial bounded delegation verir; quote/sign/request/result adımlarını agent yürütür. Aynı input aynı intent'i kullanır. Başarılı gerçek işlem `docs/evidence/payment-live.json`, receipt/result ve işlem-hash adlı arşiv dosyalarına yazılır. Şu an komutun exit2 vermesi ve BLOCKED yazması doğru davranış. Yeni ödeme için veritabanını silme. Timeout varsa app'te **Check existing payment** kullan; aynı signed bytes uzlaştırılır.
-
-3. **5–10dk:** gerçek seller output/fee/receipt/result doğrulandıktan sonra TRACK_REQUIREMENTS'daki ilgili BLOCKED/PENDING maddelerini kanıtla güncelle; canlı duplicate/timeout senaryosunu çalıştır. Gerçekchainfailure-path henüz test edilmiş sayılmıyor.
-4. **10–15dk:** `PRESENTATION.md` akışıyla en fazla150s video kaydet. `SUBMISSION_DRAFT.md` metnini gerçek tx ile tamamla. Devfolio gönderimini kullanıcı yapar. Resmî son tarih31 Ekim 15:00 Europe/Berlin; takım başına tek başvuru/en fazla üç partnertrack kuralını koordinasyonda dikkate al.
-
-Blockfrost anahtarı artık zorunlu engel değil: resmî SDK'nın ücretsiz Koios sağlayıcısı gerçek UTXO okuyor; CF hosted facilitator erişilebilir. **Eksik olan gerçek test fonu ve tamamlanmış paid request**.
+Aynı sample tekrar çalıştırıldığında mevcut paid intent kullanılır. **Veritabanlarını ödeme retry için silme.** Yeni clone kendi cüzdanını `npm run cardano:wallets` ile oluşturur ve kendi test fonuna ihtiyaç duyar. Public repo private key/recovery phrase içermez.
 
 ## Kanıt ve kontroller
 
-- `docs/evidence/catalog-llm-full.json`: tam10 ürün gerçek model + validator.
-- `payment-preflight.json`: gerçek Koios/facilitator ve bakiye0.
-- `payment-challenge.json`: aynı batch'in gerçek402'si, henüz imza/ödeme yok.
-- `payment-live.json`: gerçek app denemesi **BLOCKED**, transaction/receipt/result yok.
-- `server-checks.json`: gerçek HTTP input/red/duplicate/paid-export kontrolü.
-- `tests.txt`: **33/33 PASS**; `build.txt`: TypeScript + production build PASS.
-- `dependency-audit.json`:0 bilinen açık. Starter2.26'dan patched2.29'a kontrollü güncelleme yapıldı.
-- `ui-*.jpg`, `browser-qa.json`: gerçek browser desktop1440×900, tablet768×1024, phone390×844. TasteSkill rawCDP inspector yerine izinli CUA yolu kullanıldı.
-- `publish-scan.json`: kendi buyer/seller recovery phrase'ları publishable tree ile içerik göstermeden karşılaştırıldı; eşleşme yok. `.local`, `.env`, SQLite ve build çıktıları ignored.
+| Kanıt | Gerçek sonuç |
+|---|---|
+| `payment-live.json`, işlem-hash adlı arşiv ve `payment-live-result.json` | Confirmed receipt + aynı input/intent'e bağlı yararlı10 ürün sonucu |
+| `payment-chain.json` | Bağımsız Koios/CBOR kontrolü **13/13 PASS**: seller2000000, fee168581, buyer change9997831419; hash/signature/input/output/value conservation ve canonical depth |
+| `delivery-verification.json` | **53/53 PASS**: kaynak/sonuç hash, korunan alanlar, provenance, sayaçlar, gerçek JSON/CSV/report export'ları |
+| `payment-restart.json` | Gerçek pending restart + bağlantı kaybı, recovery PASS, aynı tx, tek imza, duplicate ikinci ödeme yok |
+| `payment-policy-live.json` | Gerçek teklif üzerinde düşük bütçe ve yanlış seller reddi; korunan durum değişmedi; ek ücret yok |
+| `tests.txt`, `build.txt` | **37 test PASS**, TypeScript + production build PASS |
+| `browser-qa.json`, `browser-paid-qa.json`, `ui-*.jpg` | Desktop/tablet/phone gerçek browser kontrolü; paid receipt ve kaynak sonucu |
+| `dependency-audit.json`, `publish-scan.json` |0 bilinen dependency açığı; publishable tree'de seçilen wallet secret eşleşmesi yok |
 
-## Sınırlar
+## Güven sınırları
 
-Caps local executor/transaction validator tarafından uygulanıyor; on-chain session budget yok. Direct x402 adres ödemesinde escrow, otomatik refund veya on-chain kalite hakemi yok; confirmed payment/networkfee sonradan kaynak kontrolü başarısız diye geri alınamaz. Facilitator ayrıca fiyatlandırılmayan ücreti0diye gösterilmez; ek API harcaması yetkilendirilmez. Kaynak gerçekliği devralınır, schema-ready hukuki/ürün güvenliği onayı değildir. Sample tedarikçi verisi ve `.example` kaynaklar açıkça sentetiktir.
+Bu direct-address x402 yolunda ayrı contract deploy edilmez. Bütçe sınırları local executor ve imzalanan işlem kontrolündedir; on-chain session allowance yok. Escrow, otomatik refund veya on-chain kalite hakemi uygulanmadı. Confirmed hizmet bedeli ve network fee sonraki kalite değerlendirmesiyle geri alınamaz. Ayrı fiyatlanmamış facilitator ücreti sıfır diye gösterilmez; ek API harcaması yetkilendirilmez.
 
-Zorunlu eksikler: gerçek preprod ödeme+hash+receipt+teslim **BLOCKED**; canlı retry/timeout kanıtı ve video/Devfolio submission **PENDING**. Tamamlanmış qualification iddiası yok.
+İki cüzdan yerel test rolleri; gerçek müşteri satışı veya production geliri iddiası yok. Kaynaklar kullanıcı/tedarikçiden devralınır; schema-ready hukuki/ürün güvenliği sertifikası değildir. Sample katalog açıkça sentetiktir; **ödeme, model çalışması ve receipt ise gerçektir**. Cardano finality olasılıksaldır; bağımsız verifier güncel canonical depth'i tekrar okur.
 
-Son engel denetimi: 31 October 2026 at 04:05:15 CET. Alıcı bakiye0; sağlayıcı ve facilitator çalışıyor. Fon sağlandıktan sonra Goal yeniden sürdürülebilir; DB/intent geçmişini silmeden mevcut batch ile devam edilir.
+## Sabah kalanlar
+
+Onaylı yerel uygulama, entegrasyon, kanıt ve sunum taslağı teslimi tamamlandı. Competition submission ayrı izlenir:
+
+1. **10–15dk:** `PRESENTATION.md` 150 saniyelik akışla videoyu kaydet; gerçek receipt/işlem ve kaynak eksiğini göster. Taslak hazır, kayıt henüz yok.
+2. **5–10dk:** `SUBMISSION_DRAFT.md` ve repo/işlem/video bağlantılarını Devfolio'ya kullanıcı/takım eklesin. Başvuru gönderilmedi.
+
+Resmî kurallar 04:15 Europe/Berlin'de yeniden kontrol edildi: son tarih **31 Ekim 2026 15:00 Europe/Berlin**, takım başına tek başvuru, en fazla üç partner track. Cardano working paid-request qualification ve tx kanıtı **PASS**; video ve Devfolio teslimi **PENDING**. Bütün submission şartları tamamlandı iddiası yok.

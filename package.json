@@ -18,7 +18,10 @@
     "catalog:preflight": "tsx scripts/catalog-preflight.ts",
     "cardano:run": "tsx scripts/cardano-run.ts",
     "check:server": "tsx scripts/check-server.ts",
-    "cardano:challenge": "tsx scripts/cardano-challenge.ts"
+    "cardano:challenge": "tsx scripts/cardano-challenge.ts",
+    "cardano:verify": "tsx scripts/cardano-verify.ts",
+    "cardano:policy-proof": "tsx scripts/cardano-policy-proof.ts",
+    "verify:delivery": "tsx scripts/verify-delivery.ts"
   },
   "dependencies": {
     "@evolution-sdk/evolution": "0.5.14",

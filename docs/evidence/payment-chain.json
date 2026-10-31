@@ -1,0 +1,147 @@
+{
+  "checkedAt": "2026-10-31T03:22:22.299Z",
+  "checkedAtEuropeBerlin": "31 Oct 2026, 04:22:22 CET",
+  "network": "cardano:preprod",
+  "status": "PASS",
+  "chainStatus": "PASS",
+  "readOnly": true,
+  "expectedRolesSource": "docs/evidence/payment-live.json",
+  "verificationSources": [
+    {
+      "url": "https://api.koios.rest/koiosapi.yaml",
+      "purpose": "Official request/response schema for tx_info, tx_cbor, tx_status and tip."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/cardano-community/koios-artifacts/master/files/grest/rpc/transactions/tx_status.sql",
+      "purpose": "Confirmation convention: blocks newer than the block containing the transaction."
+    },
+    {
+      "url": "https://preprod.koios.rest/api/v1",
+      "purpose": "Independent public preprod chain-indexer observations; no facilitator response used as chain evidence."
+    }
+  ],
+  "chain": {
+    "transaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+    "observed": true,
+    "explorerUrl": "https://preprod.cardanoscan.io/transaction/1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+    "blockHash": "e61ccbf943fd09715b00c2ffe67bc54a10b215eb0864baca3981324ab2d32e74",
+    "blockHeight": 5355530,
+    "tipHeight": 5355566,
+    "newerCanonicalBlocks": 36,
+    "reportedNewerBlocks": 36,
+    "transactionTimestamp": 1793416221,
+    "networkFeeLovelace": "168581",
+    "servicePriceLovelace": "2000000",
+    "sellerNetOutputLovelace": "2000000",
+    "buyerInputLovelace": "10000000000",
+    "buyerChangeLovelace": "9997831419",
+    "totalOutputLovelace": "9999831419",
+    "payer": "addr_test1qr8dn6eysm3fp68f8gsrcxtvhqewztsutc7asvzk43s0fs7edlkjxxvq4qhdegzkn5gy06xqk7ktqdd3ulrmxxu4r55q0zvpkc",
+    "recipient": "addr_test1qrj33p9fj9mu85q55fj9m3tdc4jexk7ehylm6qrta3vd66qysmcy6nrysklxspcs24erkzgt8yeelt4wa92swggjtczsawv229",
+    "inputs": [
+      {
+        "transaction": "6a992a516696e549dbf0f7d7d4e844732fcb6a835dadab6a7c0d3a74cd616aa0",
+        "index": 0,
+        "address": "addr_test1qr8dn6eysm3fp68f8gsrcxtvhqewztsutc7asvzk43s0fs7edlkjxxvq4qhdegzkn5gy06xqk7ktqdd3ulrmxxu4r55q0zvpkc",
+        "lovelace": "10000000000"
+      }
+    ],
+    "outputs": [
+      {
+        "index": 0,
+        "address": "addr_test1qrj33p9fj9mu85q55fj9m3tdc4jexk7ehylm6qrta3vd66qysmcy6nrysklxspcs24erkzgt8yeelt4wa92swggjtczsawv229",
+        "value": "2000000"
+      },
+      {
+        "index": 1,
+        "address": "addr_test1qr8dn6eysm3fp68f8gsrcxtvhqewztsutc7asvzk43s0fs7edlkjxxvq4qhdegzkn5gy06xqk7ktqdd3ulrmxxu4r55q0zvpkc",
+        "value": "9997831419"
+      }
+    ],
+    "publicCborSha256": "28567f7860c167825f634fef13104f9cc79c3c01295d98aed16fe57bcf1ed68f",
+    "rawCborPublishedByThisVerifier": false,
+    "indexerValidContractFlagAvailable": false,
+    "publicCborLedgerIsValid": true,
+    "publicCborSignaturesValid": true,
+    "scriptWitnessCount": 0,
+    "redeemerCount": 0
+  },
+  "checks": [
+    {
+      "name": "canonical_transaction_hash",
+      "status": "PASS",
+      "detail": "Canonical hash computed from the public transaction body matches the requested hash."
+    },
+    {
+      "name": "valid_transaction",
+      "status": "PASS",
+      "detail": "The observed Koios responses omit valid_contract. The exact public CBOR has ledger is_valid=true, valid Ed25519 signatures and no scripts/redeemers; its canonical indexed outputs match the body. Any explicit provider invalid flag is rejected."
+    },
+    {
+      "name": "preprod_provider_and_testnet_body",
+      "status": "PASS",
+      "detail": "Data is queried only from the preprod endpoint; the decoded body does not select mainnet. Testnet address syntax alone cannot distinguish preview from preprod."
+    },
+    {
+      "name": "distinct_payer_and_recipient",
+      "status": "PASS",
+      "detail": "Every consumed regular input belongs to the pinned buyer; buyer and seller are distinct addresses."
+    },
+    {
+      "name": "input_binding",
+      "status": "PASS",
+      "detail": "Public CBOR inputs agree exactly with indexed input references."
+    },
+    {
+      "name": "exact_seller_payment",
+      "status": "PASS",
+      "detail": "Exactly 2000000 lovelace is delivered to the pinned seller in both indexed outputs and public CBOR."
+    },
+    {
+      "name": "change_and_output_allowlist",
+      "status": "PASS",
+      "detail": "Every remaining output returns change to the buyer; no third-party fee recipient exists in this transaction."
+    },
+    {
+      "name": "indexed_outputs_match_signed_body",
+      "status": "PASS",
+      "detail": "Every indexed output address and lovelace amount matches the signed transaction body."
+    },
+    {
+      "name": "lovelace_only",
+      "status": "PASS",
+      "detail": "This paid request transfers lovelace only; no native token output is included."
+    },
+    {
+      "name": "no_other_balance_actions",
+      "status": "PASS",
+      "detail": "No mint, withdrawal, deposit, donation or script execution can obscure this direct payment balance."
+    },
+    {
+      "name": "network_fee_and_value_conservation",
+      "status": "PASS",
+      "detail": "All consumed lovelace equals all outputs plus the exact network fee; no balance is inferred from a UI label."
+    },
+    {
+      "name": "canonical_depth",
+      "status": "PASS",
+      "detail": "At least one newer canonical block exists in both tip-height subtraction and the separate tx_status query."
+    },
+    {
+      "name": "delegated_fee_and_total_caps",
+      "status": "PASS",
+      "detail": "The independently observed economic action stays within the recorded initial service, network fee, API fee and total caps."
+    }
+  ],
+  "delivery": {
+    "status": "PASS",
+    "paidRecordSource": "docs/evidence/payment-live.json",
+    "resultSource": "docs/evidence/payment-1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0-result.json",
+    "intentId": "batch_3335c09a068c20633a3c8e1c",
+    "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+    "resultHash": "05f15c335e49591d6e1d2d97dc295e817fb1d66ccc88f5dcec86a13871224095",
+    "receiptTransaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+    "detail": "The separately recorded paid receipt and delivered catalog hash match this observed chain transaction and input."
+  },
+  "trust": "This independently checks the hosted facilitator receipt against the public Koios preprod indexer and exact public signed CBOR. It is not a self-hosted Cardano node or a proof of irreversible finality. The catalog input/result association is application evidence; the direct address payment does not commit catalog hashes on chain."
+}

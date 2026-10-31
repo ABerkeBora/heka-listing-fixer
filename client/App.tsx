@@ -133,6 +133,7 @@ export default function App() {
       if (valueFormat === 'json') { try { sourceIsSample ||= Boolean(JSON.parse(value).sample); } catch { /* Already validated by server. */ } }
       setSample(sourceIsSample); setFilter('all'); setSearch(''); setJob(null); setModal(null);
       try { window.localStorage.removeItem('listing-fixer:last-job'); } catch { /* New source review is still usable without storage. */ }
+      const location = new URL(window.location.href); location.searchParams.delete('job'); window.history.replaceState(null, '', location.pathname + location.search + location.hash);
     } catch (e) {
       setError((e as Error).message);
       const details = (e as Error & { details?: unknown[] }).details;
@@ -148,7 +149,9 @@ export default function App() {
     void refreshSystem();
     async function initialize() {
       let lastJob: string | null = null;
-      try { lastJob = window.localStorage.getItem('listing-fixer:last-job'); } catch { /* local storage can be unavailable */ }
+      const linkedJob = new URLSearchParams(window.location.search).get('job');
+      if (linkedJob && /^[A-Za-z0-9_-]{1,100}$/.test(linkedJob)) lastJob = linkedJob;
+      else { try { lastJob = window.localStorage.getItem('listing-fixer:last-job'); } catch { /* local storage can be unavailable */ } }
       if (!lastJob) { await loadSample(); return; }
       try {
         const response = await api.job(lastJob);
