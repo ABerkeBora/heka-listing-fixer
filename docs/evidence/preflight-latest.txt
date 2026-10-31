@@ -1,0 +1,69 @@
+
+> heka-listing-fixer@0.1.0 cardano:preflight
+> tsx scripts/cardano-preflight.ts
+
+{
+  "checkedAt": "2026-10-31T03:03:38.478Z",
+  "network": "cardano:preprod",
+  "sdkVersion": "2.29.0",
+  "officialStarter": "https://developers.cardano.org/templates/x402-express/",
+  "provider": "koios",
+  "providerUrl": "https://preprod.koios.rest/api/v1",
+  "facilitator": {
+    "url": "https://x402.preprod.dev.ecosyseng.cf-deployments.org/supported",
+    "supported": {
+      "kinds": [
+        {
+          "x402Version": 2,
+          "scheme": "exact",
+          "network": "cardano:preprod",
+          "extra": {
+            "assetTransferMethods": [
+              "default",
+              "masumi",
+              "script"
+            ],
+            "areFeesSponsored": false,
+            "l1Confirmations": {
+              "minimum": 0,
+              "maximum": 20
+            }
+          }
+        }
+      ],
+      "extensions": [],
+      "signers": {
+        "cardano:*": []
+      }
+    },
+    "error": null
+  },
+  "buyerAddress": "addr_test1qr8dn6eysm3fp68f8gsrcxtvhqewztsutc7asvzk43s0fs7edlkjxxvq4qhdegzkn5gy06xqk7ktqdd3ulrmxxu4r55q0zvpkc",
+  "sellerAddress": "addr_test1qrj33p9fj9mu85q55fj9m3tdc4jexk7ehylm6qrta3vd66qysmcy6nrysklxspcs24erkzgt8yeelt4wa92swggjtczsawv229",
+  "buyerBalanceLovelace": "0",
+  "providerError": null,
+  "servicePriceLovelace": "2000000",
+  "paymentPrerequisites": {
+    "status": "BLOCKED",
+    "ready": false,
+    "blockers": [
+      "Buyer requires at least 5 preprod test ADA for service, bounded fee and change."
+    ]
+  },
+  "qualifyingPaidRequest": {
+    "status": "PENDING",
+    "assessed": false,
+    "reason": "This read-only setup check does not submit or verify a completed paid request. It never overwrites payment-live.json; inspect that actual transaction/receipt/result evidence separately."
+  },
+  "fundingPaths": [
+    {
+      "url": "https://docs.cardano.org/cardano-testnets/tools/faucet",
+      "state": "Prior browser inspection required human reCAPTCHA; not solved or bypassed. This command does not repeat that UI inspection."
+    },
+    {
+      "url": "https://dispenser.masumi.network/",
+      "state": "Prior inspection required a registration verification code; none was available. This command does not inspect email or repeat that UI inspection."
+    }
+  ],
+  "warning": "Wallet generation, public provider access and /supported are setup evidence, not a paid Cardano request."
+}

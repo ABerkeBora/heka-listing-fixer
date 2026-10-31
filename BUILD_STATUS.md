@@ -16,3 +16,9 @@
 - Cardano live setup and same-job402 work. Actual delegated payment/receipt remains BLOCKED: buyer0lovelace; human faucet verification/testADA needed. No mainnet funds spent or fixture hash claimed.
 - Public source push verified:57a9f4a on codex/build; GitHub author/committer bothABerkeBora. See repository evidence and MORNING_HANDOFF.
 - External blocker first observed in this original goal turn. Do not mark Goal complete or prematurely blocked contrary to goal status rules; independent work is delivered and the required live economic action remains open.
+
+## Goal continuation 2 — 31 October 2026 at 04:04:09 CET
+
+Previous goal turn classification: progress (application, live model/402 evidence, tests, browser QA and public source delivery). Fresh Koios balance remains0; facilitator available. Same external funding/human-verification blocker recurred for the second consecutive goal turn. Goal remains active; completion unproven.
+
+This turn fixed read-only preflight reporting so setup readiness cannot overwrite or mislabel qualification after a future completed payment. Actual run now separates BLOCKED prerequisites from unassessed paid-job evidence; TypeScript check passed. Independent completion audit found no additional local deliverable gap.

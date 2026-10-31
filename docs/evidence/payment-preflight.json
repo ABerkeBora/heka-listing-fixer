@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-31T02:51:01.150Z",
+  "checkedAt": "2026-10-31T03:03:38.478Z",
   "network": "cardano:preprod",
   "sdkVersion": "2.29.0",
   "officialStarter": "https://developers.cardano.org/templates/x402-express/",
@@ -39,21 +39,26 @@
   "buyerBalanceLovelace": "0",
   "providerError": null,
   "servicePriceLovelace": "2000000",
-  "qualifyingPaidRequest": {
+  "paymentPrerequisites": {
     "status": "BLOCKED",
-    "transaction": null,
-    "receipt": null,
-    "result": null,
-    "reason": "Buyer requires preprod test ADA; official faucet requires a human reCAPTCHA."
+    "ready": false,
+    "blockers": [
+      "Buyer requires at least 5 preprod test ADA for service, bounded fee and change."
+    ]
+  },
+  "qualifyingPaidRequest": {
+    "status": "PENDING",
+    "assessed": false,
+    "reason": "This read-only setup check does not submit or verify a completed paid request. It never overwrites payment-live.json; inspect that actual transaction/receipt/result evidence separately."
   },
   "fundingPaths": [
     {
       "url": "https://docs.cardano.org/cardano-testnets/tools/faucet",
-      "state": "Browser verified: reCAPTCHA required; not solved or bypassed."
+      "state": "Prior browser inspection required human reCAPTCHA; not solved or bypassed. This command does not repeat that UI inspection."
     },
     {
       "url": "https://dispenser.masumi.network/",
-      "state": "Requires verification code from registration email; no code available."
+      "state": "Prior inspection required a registration verification code; none was available. This command does not inspect email or repeat that UI inspection."
     }
   ],
   "warning": "Wallet generation, public provider access and /supported are setup evidence, not a paid Cardano request."
