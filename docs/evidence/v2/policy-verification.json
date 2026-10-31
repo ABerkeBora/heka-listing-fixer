@@ -1,0 +1,83 @@
+{
+  "checkedAt": "2026-10-31T03:42:31.088Z",
+  "status": "PASS",
+  "intentId": "next_79721f59050ed46dc6cccef5de7394df",
+  "transaction": "7869104649f7723510e722ce0621078e81daf7fc6b4d9cb535d3fbebb19a21b2",
+  "checks": {
+    "tamperedHashRejected": true,
+    "changedBudgetRejected": true,
+    "duplicatesReusedOneIntent": true,
+    "protectedStateUnchanged": true,
+    "oneSignature": true,
+    "oneSettlement": true,
+    "originalQuoteAccepted": true,
+    "budgetPolicyRejected": true,
+    "changedQuoteRejected": true
+  },
+  "decisions": [
+    {
+      "scenario": "actual_quote",
+      "decision": "accepted"
+    },
+    {
+      "scenario": "quote_exceeds_service_cap",
+      "decision": "rejected",
+      "code": "over_budget"
+    },
+    {
+      "scenario": "quote_acceptance_changed",
+      "decision": "rejected",
+      "code": "acceptance_binding"
+    }
+  ],
+  "httpAttempts": [
+    {
+      "scenario": "tampered_acceptance_hash",
+      "status": 409,
+      "error": "acceptance_binding"
+    },
+    {
+      "scenario": "changed_budget",
+      "status": 409,
+      "error": "mandate_immutable"
+    },
+    {
+      "scenario": "concurrent_duplicate_retry",
+      "statuses": [
+        200,
+        200
+      ]
+    }
+  ],
+  "protectedState": {
+    "before": {
+      "id": "next_79721f59050ed46dc6cccef5de7394df",
+      "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+      "acceptanceHash": "1742cd9c1001c8297fa399f1eb22a2cf9b44168933ca51c163eabad0e0a4d73f",
+      "orderHash": "79721f59050ed46dc6cccef5de7394df4294bf7d58ff3b09d5d3fbd906240497",
+      "status": "complete",
+      "mandate": "a09825707a6b33f28e83bbe7bc639dbd33fc2e12fde08a8b03576fb7b0af3e76",
+      "transaction": "7869104649f7723510e722ce0621078e81daf7fc6b4d9cb535d3fbebb19a21b2",
+      "receipt": "2645235f90563b4bd2f6d01f638d9b53bb05d190c4b9579bbc995187332a351b",
+      "result": "432aaf5df15075ee53c0bcf0ed649c288c49463bc00ba29f277a8aff28b66e94",
+      "manifest": "babde51666fddf96560e6d417426a941ea1f99a896c3a9d4d069f8d4bb2e4dc6",
+      "settlementCalls": 1,
+      "signatures": 1
+    },
+    "after": {
+      "id": "next_79721f59050ed46dc6cccef5de7394df",
+      "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+      "acceptanceHash": "1742cd9c1001c8297fa399f1eb22a2cf9b44168933ca51c163eabad0e0a4d73f",
+      "orderHash": "79721f59050ed46dc6cccef5de7394df4294bf7d58ff3b09d5d3fbd906240497",
+      "status": "complete",
+      "mandate": "a09825707a6b33f28e83bbe7bc639dbd33fc2e12fde08a8b03576fb7b0af3e76",
+      "transaction": "7869104649f7723510e722ce0621078e81daf7fc6b4d9cb535d3fbebb19a21b2",
+      "receipt": "2645235f90563b4bd2f6d01f638d9b53bb05d190c4b9579bbc995187332a351b",
+      "result": "432aaf5df15075ee53c0bcf0ed649c288c49463bc00ba29f277a8aff28b66e94",
+      "manifest": "babde51666fddf96560e6d417426a941ea1f99a896c3a9d4d069f8d4bb2e4dc6",
+      "settlementCalls": 1,
+      "signatures": 1
+    }
+  },
+  "note": "Only the original confirmed V2 intent is reused. Policy replay uses its actual quote-acceptance time and never renews the saved mandate. Rejected mutations create no new signature, settlement or paid delivery."
+}

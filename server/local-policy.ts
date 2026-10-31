@@ -10,7 +10,7 @@ export function localOnly(port:number) {
   if(origin&&!origins.has(origin))return res.status(403).json({error:'Requests from another website are blocked.'});
   const fetchSite=req.headers['sec-fetch-site'];
   // External links may open the harmless app shell. APIs, assets, embeds and writes stay same-site.
-  const shellNavigation=req.method==='GET'&&req.path==='/'&&req.headers['sec-fetch-mode']==='navigate'&&req.headers['sec-fetch-dest']==='document';
+  const shellNavigation=req.method==='GET'&&['/','/next','/next/'].includes(req.path)&&req.headers['sec-fetch-mode']==='navigate'&&req.headers['sec-fetch-dest']==='document';
   if(fetchSite==='cross-site'&&!shellNavigation)return res.status(403).json({error:'Cross-site requests are blocked.'});
   if(['POST','PUT','PATCH','DELETE'].includes(req.method)&&!req.is('application/json'))return res.status(415).json({error:'Send application/json.'});
   next();

@@ -1,3 +1,5 @@
+import { createHash } from 'node:crypto';
+import { canonicalOrder } from '../../shared/acceptance.js';
 import { Address } from '@evolution-sdk/evolution';
 import { decodeCardanoTransaction, slotToPosixMs, type DecodedCardanoTransaction } from '@x402/cardano';
 import type { PaymentRequired, PaymentRequirements, SettleResponse } from '@x402/core/types';
@@ -17,6 +19,8 @@ export interface PaymentMandate {
   totalCapLovelace: string;
   expiresAt: string;
   maxActions: 1;
+  acceptanceHash?: string;
+  orderHash?: string;
 }
 export class PaymentPolicyError extends Error {
   constructor(public code: string, message: string) { super(message); this.name = 'PaymentPolicyError'; }
@@ -37,6 +41,7 @@ export function validatePreprodAddress(address: string): void {
 export function validateMandate(m: PaymentMandate, seller: string, endpoint: string, now = Date.now()): void {
   if (!m || m.network !== NETWORK || m.asset !== ASSET) reject('network_asset_denied', 'Only Cardano preprod lovelace is authorized.');
   if(m.apiFeeCapLovelace!=='0')reject('api_fee_denied','No extra paid API charges are authorized.');
+  validateAcceptanceBindingShape(m);
   validatePreprodAddress(m.allowedSeller);
   if (m.allowedSeller !== seller) reject('seller_denied', 'The seller is outside this delegation.');
   if (m.endpoint !== endpoint) reject('endpoint_denied', 'The endpoint is outside this delegation.');
@@ -54,6 +59,7 @@ export function validateMandate(m: PaymentMandate, seller: string, endpoint: str
 }
 export function validateQuote(q: PaymentRequired, m: PaymentMandate, seller: string, endpoint: string, now = Date.now()): PaymentRequirements {
   validateMandate(m, seller, endpoint, now);
+  validateQuoteAcceptanceBinding(q,m);
   if (q.x402Version !== 2 || q.resource?.url !== endpoint || q.accepts?.length !== 1)
     reject('quote_binding', 'Quote must bind the exact protected batch endpoint and one x402 v2 offer.');
   const r = q.accepts[0]!;
@@ -132,4 +138,18 @@ export function validatePaidCatalogResult(value:unknown,inputHash:string):void {
   const statuses=r.products.map(row=>row&&typeof row==='object'?(row as {status?:unknown}).status:undefined);
   if(statuses.some(status=>!['ready','needs_source','review'].includes(String(status)))||!summary||summary.total!==r.products.length||summary.ready!==statuses.filter(status=>status==='ready').length||summary.needsSource!==statuses.filter(status=>status==='needs_source').length||summary.review!==statuses.filter(status=>status==='review').length)
     reject('result_binding','Seller result counts do not match its checked product rows.');
+}
+
+export function validateAcceptanceBindingShape(m:PaymentMandate):void {
+  if(m.acceptanceHash===undefined&&m.orderHash===undefined)return;
+  if(typeof m.acceptanceHash!=='string'||!/^[a-f0-9]{64}$/.test(m.acceptanceHash)||typeof m.orderHash!=='string'||!/^[a-f0-9]{64}$/.test(m.orderHash))
+    reject('acceptance_binding','Acceptance and order hashes must be supplied together as SHA-256 hashes.');
+}
+
+export function validateQuoteAcceptanceBinding(q:PaymentRequired,m:PaymentMandate):void {
+  if(m.acceptanceHash===undefined&&m.orderHash===undefined)return;
+  const entry=q.extensions?.['listing-acceptance'] as {info?:Record<string,unknown>}|undefined;
+  const info=entry?.info;
+  if(!info||Object.keys(info).sort().join(',')!=='acceptanceHash,inputHash,orderHash'||info.acceptanceHash!==m.acceptanceHash||info.orderHash!==m.orderHash||typeof info.inputHash!=='string'||!/^[a-f0-9]{64}$/.test(info.inputHash)||createHash('sha256').update(canonicalOrder(info.inputHash,m.acceptanceHash!)).digest('hex')!==m.orderHash)
+    reject('acceptance_binding','Quote acceptance metadata differs from the immutable source and condition.');
 }

@@ -6,9 +6,40 @@ Source-bound catalog repair for small ecommerce teams. A buyer agent hires one f
 
 [Open paid result locally](http://127.0.0.1:3107/?job=batch_3335c09a068c20633a3c8e1c) · [Morning handoff](MORNING_HANDOFF.md) · [Track requirements](TRACK_REQUIREMENTS.md) · [Paid result](docs/evidence/payment-live-result.json)
 
+## Buyer acceptance — V2
+
+Open [the acceptance workbench](http://127.0.0.1:3107/next). The original [V1 workbench](http://127.0.0.1:3107/) and paid receipt remain intact; the immutable [`v1-baseline`](https://github.com/ABerkeBora/heka-listing-fixer/tree/v1-baseline) tag records commit `4bb9d5b`. V2 source lives on [`codex/next`](https://github.com/ABerkeBora/heka-listing-fixer/tree/codex/next).
+
+**V2 live proof:** [confirmed new transaction](https://preprod.cardanoscan.io/transaction/7869104649f7723510e722ce0621078e81daf7fc6b4d9cb535d3fbebb19a21b2) —2tADA service +0.168405tADA network fee, one signature/one settlement. [Open the paid V2 result](http://127.0.0.1:3107/next?job=next_79721f59050ed46dc6cccef5de7394df) · [Open the unpaid six-ready rejection](http://127.0.0.1:3107/next?job=next_686079ceccc9fc622b09a8970793e65a). Independent chain, acceptance, delivery and retry proofs live in [V2 evidence](docs/evidence/v2/).
+
+Before delegation, the buyer fixes a **minimum ready product count** and whether the service may edit **title, description, or both**. A canonical SHA-256 acceptance hash binds those conditions to the source, quote, mandate and intent. The source-bound model and existing useful-output check run first. The deterministic acceptance check then runs **before the facilitator settlement call**. An insufficient result stays unpaid and is labeled “Acceptance not met”. A successful delivery binds the exact source, acceptance, result hash and confirmed receipt in one downloadable manifest, checked again by the browser.
+
+The policy is enforced by this local application. It is not a ledger-enforced quality condition, escrow or automatic refund. A signed authorization may exist before the check; it is not a broadcast or a collection. A rejected authorization is never retried, and a new order cannot reuse its wallet inputs until the signed transaction expires plus a30-second safety margin. Confirmed payments remain final under the direct-payment trust model.
+
+V2 uses `/api/next`, `data/v2-jobs.sqlite`, `data/v2-payment.sqlite`, `.local/v2/cardano-wallets.json` and its own browser storage namespace. The unchanged catalog and payment validators are shared. Same source + same condition resolves to one intent; a different condition is a distinct order. Existing mandates cannot be changed by retrying with another budget.
+
+```sh
+npm run v2:wallets
+npm run v2:fund
+```
+
+The funding command defaults to a plan. In the prepared local workspace, an isolated10testADA setup transfer is already recorded; reruns only reconcile that saved hash. On a fresh clone, fund the printed V2 buyer through the preprod faucet, or explicitly execute the fixed small setup transfer from this project's own funded V1 test wallet with `npm run v2:fund -- --execute`. Secrets and signed checkpoints remain ignored. Generate/fund wallets before `npm start`, or restart the app after first provisioning. No automatic top-up occurs.
+
+```sh
+npm run v2:run -- --reject  # fixed six-ready rule; real model, no settlement
+npm run v2:verify-rejection # after the rejected authorization expires +30seconds
+npm run v2:run              # fixed five-ready rule; distinct real paid order
+npm run v2:verify-chain
+npm run v2:verify-delivery
+npm run v2:policy-proof
+npm run v2:v1-regression
+```
+
+The shipped synthetic sample has five schema-ready products and five source gaps. The no-settlement script captures the unspent-input snapshot **after rejection expiry and before the successful order spends those same inputs**. Its historical PASS is retained if a later observation finds the inputs spent by subsequent work. Never delete SQLite or signed intents to retry. See [V2 handoff](MORNING_HANDOFF_V2.md), [current Goal](NEXT_GOAL_STATUS.md) and [V2 track mapping](TRACK_REQUIREMENTS_V2.md) for actual run evidence and limitations.
+
 ## Run locally
 
-Requires Node.js 24+ and npm. No parent repository or hosted deployment is needed.
+Requires Node.js 24+ and npm. For V2, clone/check out the `codex/next` branch; the `v1-baseline` tag preserves V1. No parent repository or hosted deployment is needed.
 
 ```sh
 npm ci

@@ -25,6 +25,7 @@ test('cross-site top-level GET may open only the app shell; APIs, assets, embeds
  const addr=server.address();if(!addr||typeof addr==='string')throw new Error();
  app.use(localOnly(addr.port));
  app.get('/',(_q,r)=>r.send('<main>Listing Fixer</main>'));
+ app.get('/next',(_q,r)=>r.send('<main>Listing Fixer acceptance</main>'));
  app.get('/api/status',(_q,r)=>r.json({privateStatus:true}));
  app.get('/assets/app.js',(_q,r)=>r.send('private asset'));
  app.post(['/', '/api/authorize'],(_q,r)=>{writes++;r.json({ok:true});});
@@ -37,6 +38,9 @@ test('cross-site top-level GET may open only the app shell; APIs, assets, embeds
  });
  try{
   const shell=await read('/');assert.equal(shell.status,200);assert.match(shell.body,/Listing Fixer/);
+  assert.equal((await read('/next')).status,200);
+  assert.equal((await read('/api/next/status')).status,403);
+  assert.equal((await read('/next','GET',{'sec-fetch-dest':'iframe'})).status,403);
   assert.equal((await read('/api/status')).status,403);
   assert.equal((await read('/assets/app.js')).status,403);
   assert.equal((await read('/','POST',{'content-type':'application/json'})).status,403);

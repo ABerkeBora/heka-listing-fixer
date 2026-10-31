@@ -46,7 +46,7 @@ export type Job = {
   createdAt: string;
 };
 
-async function request<T>(url: string, body?: unknown): Promise<T> {
+export async function request<T>(url: string, body?: unknown): Promise<T> {
   const response = await fetch(url, body === undefined ? undefined : {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

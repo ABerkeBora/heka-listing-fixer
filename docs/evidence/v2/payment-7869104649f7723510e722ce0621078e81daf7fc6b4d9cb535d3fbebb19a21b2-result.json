@@ -1,0 +1,860 @@
+{
+  "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+  "schema": "listing-v1",
+  "language": "en",
+  "mode": "model_checked",
+  "products": [
+    {
+      "sku": "LF-001",
+      "title": "DESK ORGANISER — OAK",
+      "description": "Solid oak desk organiser. Three compartments. Material: solid oak Dimensions: 24 × 12 × 8 cm Colour: natural",
+      "priceMinor": 2490,
+      "currency": "EUR",
+      "manufacturer": "Pinebridge Workshop",
+      "safety": "Keep away from open flames.",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-001",
+      "status": "ready",
+      "issues": [],
+      "diffs": [
+        {
+          "field": "title",
+          "before": "  DESK   ORGANISER — OAK  ",
+          "after": "DESK ORGANISER — OAK",
+          "source": {
+            "row": 1,
+            "field": "title",
+            "url": "https://supplier.example/catalog/lf-001"
+          },
+          "reason": "Trim and collapse source whitespace; wording unchanged."
+        },
+        {
+          "field": "price",
+          "before": "24,90",
+          "after": "24.90",
+          "source": {
+            "row": 1,
+            "field": "price",
+            "url": "https://supplier.example/catalog/lf-001"
+          },
+          "reason": "Format supplied amount to two decimals; value unchanged."
+        },
+        {
+          "field": "currency",
+          "before": "eur",
+          "after": "EUR",
+          "source": {
+            "row": 1,
+            "field": "currency",
+            "url": "https://supplier.example/catalog/lf-001"
+          },
+          "reason": "Normalize supplied currency code."
+        },
+        {
+          "field": "description",
+          "before": " Solid oak desk organiser.   Three compartments. ",
+          "after": "Solid oak desk organiser. Three compartments. Material: solid oak Dimensions: 24 × 12 × 8 cm Colour: natural",
+          "source": {
+            "row": 1,
+            "field": "description + sourceText + sourceText + sourceText",
+            "url": "https://supplier.example/catalog/lf-001",
+            "parts": [
+              {
+                "field": "description",
+                "text": "Solid oak desk organiser. Three compartments."
+              },
+              {
+                "field": "sourceText",
+                "text": "Material: solid oak"
+              },
+              {
+                "field": "sourceText",
+                "text": "Dimensions: 24 × 12 × 8 cm"
+              },
+              {
+                "field": "sourceText",
+                "text": "Colour: natural"
+              }
+            ]
+          },
+          "reason": "Model selected complete supplied specification clauses; deterministic renderer preserved the original display field and validated every source part."
+        }
+      ],
+      "source": {
+        "sku": "LF-001",
+        "title": "  DESK   ORGANISER — OAK  ",
+        "description": " Solid oak desk organiser.   Three compartments. ",
+        "price": "24,90",
+        "currency": "eur",
+        "manufacturer": "Pinebridge Workshop",
+        "safety": "Keep away from open flames.",
+        "certification": "No certification claim supplied.",
+        "sourceUrl": "https://supplier.example/catalog/lf-001",
+        "sourceText": "Material: solid oak | Dimensions: 24 × 12 × 8 cm | Colour: natural"
+      }
+    },
+    {
+      "sku": "LF-002",
+      "title": "CERAMIC MUG 350 ml",
+      "description": "Glazed ceramic mug, 350 ml. Hand wash only. Material: glazed ceramic Capacity: 350 ml Colour: white",
+      "priceMinor": 1250,
+      "currency": "EUR",
+      "manufacturer": "Clayline Studio",
+      "safety": "Not suitable for use on a hob.",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-002",
+      "status": "ready",
+      "issues": [],
+      "diffs": [
+        {
+          "field": "title",
+          "before": "  CERAMIC MUG  350 ml",
+          "after": "CERAMIC MUG 350 ml",
+          "source": {
+            "row": 2,
+            "field": "title",
+            "url": "https://supplier.example/catalog/lf-002"
+          },
+          "reason": "Trim and collapse source whitespace; wording unchanged."
+        },
+        {
+          "field": "price",
+          "before": "12.5",
+          "after": "12.50",
+          "source": {
+            "row": 2,
+            "field": "price",
+            "url": "https://supplier.example/catalog/lf-002"
+          },
+          "reason": "Format supplied amount to two decimals; value unchanged."
+        },
+        {
+          "field": "description",
+          "before": "Glazed ceramic mug, 350 ml. Hand wash only.",
+          "after": "Glazed ceramic mug, 350 ml. Hand wash only. Material: glazed ceramic Capacity: 350 ml Colour: white",
+          "source": {
+            "row": 2,
+            "field": "description + sourceText + sourceText + sourceText",
+            "url": "https://supplier.example/catalog/lf-002",
+            "parts": [
+              {
+                "field": "description",
+                "text": "Glazed ceramic mug, 350 ml. Hand wash only."
+              },
+              {
+                "field": "sourceText",
+                "text": "Material: glazed ceramic"
+              },
+              {
+                "field": "sourceText",
+                "text": "Capacity: 350 ml"
+              },
+              {
+                "field": "sourceText",
+                "text": "Colour: white"
+              }
+            ]
+          },
+          "reason": "Model selected complete supplied specification clauses; deterministic renderer preserved the original display field and validated every source part."
+        }
+      ],
+      "source": {
+        "sku": "LF-002",
+        "title": "  CERAMIC MUG  350 ml",
+        "description": "Glazed ceramic mug, 350 ml. Hand wash only.",
+        "price": "12.5",
+        "currency": "EUR",
+        "manufacturer": "Clayline Studio",
+        "safety": "Not suitable for use on a hob.",
+        "certification": "No certification claim supplied.",
+        "sourceUrl": "https://supplier.example/catalog/lf-002",
+        "sourceText": "Material: glazed ceramic | Capacity: 350 ml | Colour: white"
+      }
+    },
+    {
+      "sku": "LF-003",
+      "title": "cotton tote bag",
+      "description": "Natural cotton tote bag with two handles. Material: natural cotton Dimensions: 38 × 42 cm Colour: natural",
+      "priceMinor": 900,
+      "currency": "EUR",
+      "manufacturer": "",
+      "safety": "Wash at 30 °C.",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-003",
+      "status": "needs_source",
+      "issues": [
+        {
+          "code": "needs_source",
+          "field": "manufacturer",
+          "message": "No manufacturer supplied. Obtain a source before marking this listing ready.",
+          "severity": "review"
+        }
+      ],
+      "diffs": [
+        {
+          "field": "title",
+          "before": " cotton   tote bag ",
+          "after": "cotton tote bag",
+          "source": {
+            "row": 3,
+            "field": "title",
+            "url": "https://supplier.example/catalog/lf-003"
+          },
+          "reason": "Trim and collapse source whitespace; wording unchanged."
+        },
+        {
+          "field": "price",
+          "before": "9,00",
+          "after": "9.00",
+          "source": {
+            "row": 3,
+            "field": "price",
+            "url": "https://supplier.example/catalog/lf-003"
+          },
+          "reason": "Format supplied amount to two decimals; value unchanged."
+        },
+        {
+          "field": "currency",
+          "before": "eur",
+          "after": "EUR",
+          "source": {
+            "row": 3,
+            "field": "currency",
+            "url": "https://supplier.example/catalog/lf-003"
+          },
+          "reason": "Normalize supplied currency code."
+        },
+        {
+          "field": "description",
+          "before": "Natural cotton tote bag with two handles.",
+          "after": "Natural cotton tote bag with two handles. Material: natural cotton Dimensions: 38 × 42 cm Colour: natural",
+          "source": {
+            "row": 3,
+            "field": "description + sourceText + sourceText + sourceText",
+            "url": "https://supplier.example/catalog/lf-003",
+            "parts": [
+              {
+                "field": "description",
+                "text": "Natural cotton tote bag with two handles."
+              },
+              {
+                "field": "sourceText",
+                "text": "Material: natural cotton"
+              },
+              {
+                "field": "sourceText",
+                "text": "Dimensions: 38 × 42 cm"
+              },
+              {
+                "field": "sourceText",
+                "text": "Colour: natural"
+              }
+            ]
+          },
+          "reason": "Model selected complete supplied specification clauses; deterministic renderer preserved the original display field and validated every source part."
+        }
+      ],
+      "source": {
+        "sku": "LF-003",
+        "title": " cotton   tote bag ",
+        "description": "Natural cotton tote bag with two handles.",
+        "price": "9,00",
+        "currency": "eur",
+        "manufacturer": "",
+        "safety": "Wash at 30 °C.",
+        "certification": "No certification claim supplied.",
+        "sourceUrl": "https://supplier.example/catalog/lf-003",
+        "sourceText": "Material: natural cotton | Dimensions: 38 × 42 cm | Colour: natural"
+      }
+    },
+    {
+      "sku": "LF-004",
+      "title": "LINEN NOTEBOOK — A5",
+      "description": "A5 notebook with linen cover and 96 ruled pages. Material: linen, paper Pages: 96 ruled",
+      "priceMinor": 1400,
+      "currency": "EUR",
+      "manufacturer": "Paperfield Works",
+      "safety": "Keep dry.",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-004",
+      "status": "ready",
+      "issues": [],
+      "diffs": [
+        {
+          "field": "title",
+          "before": "  LINEN NOTEBOOK — A5",
+          "after": "LINEN NOTEBOOK — A5",
+          "source": {
+            "row": 4,
+            "field": "title",
+            "url": "https://supplier.example/catalog/lf-004"
+          },
+          "reason": "Trim and collapse source whitespace; wording unchanged."
+        },
+        {
+          "field": "price",
+          "before": "14.0",
+          "after": "14.00",
+          "source": {
+            "row": 4,
+            "field": "price",
+            "url": "https://supplier.example/catalog/lf-004"
+          },
+          "reason": "Format supplied amount to two decimals; value unchanged."
+        },
+        {
+          "field": "description",
+          "before": "A5 notebook with linen cover and 96 ruled pages.",
+          "after": "A5 notebook with linen cover and 96 ruled pages. Material: linen, paper Pages: 96 ruled",
+          "source": {
+            "row": 4,
+            "field": "description + sourceText + sourceText",
+            "url": "https://supplier.example/catalog/lf-004",
+            "parts": [
+              {
+                "field": "description",
+                "text": "A5 notebook with linen cover and 96 ruled pages."
+              },
+              {
+                "field": "sourceText",
+                "text": "Material: linen, paper"
+              },
+              {
+                "field": "sourceText",
+                "text": "Pages: 96 ruled"
+              }
+            ]
+          },
+          "reason": "Model selected complete supplied specification clauses; deterministic renderer preserved the original display field and validated every source part."
+        }
+      ],
+      "source": {
+        "sku": "LF-004",
+        "title": "  LINEN NOTEBOOK — A5",
+        "description": "A5 notebook with linen cover and 96 ruled pages.",
+        "price": "14.0",
+        "currency": "EUR",
+        "manufacturer": "Paperfield Works",
+        "safety": "Keep dry.",
+        "certification": "No certification claim supplied.",
+        "sourceUrl": "https://supplier.example/catalog/lf-004",
+        "sourceText": "Material: linen, paper | Dimensions: 21 × 14.8 cm | Pages: 96 ruled"
+      }
+    },
+    {
+      "sku": "LF-005",
+      "title": "felt desk mat",
+      "description": "Felt desk mat, 60 × 30 cm. Material: felt Colour: grey",
+      "priceMinor": 1990,
+      "currency": "EUR",
+      "manufacturer": "Quietdesk Supply",
+      "safety": "",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-005",
+      "status": "needs_source",
+      "issues": [
+        {
+          "code": "needs_source",
+          "field": "safety",
+          "message": "No safety statement supplied. Obtain a source before marking this listing ready.",
+          "severity": "review"
+        }
+      ],
+      "diffs": [
+        {
+          "field": "title",
+          "before": " felt   desk mat ",
+          "after": "felt desk mat",
+          "source": {
+            "row": 5,
+            "field": "title",
+            "url": "https://supplier.example/catalog/lf-005"
+          },
+          "reason": "Trim and collapse source whitespace; wording unchanged."
+        },
+        {
+          "field": "price",
+          "before": "19,90",
+          "after": "19.90",
+          "source": {
+            "row": 5,
+            "field": "price",
+            "url": "https://supplier.example/catalog/lf-005"
+          },
+          "reason": "Format supplied amount to two decimals; value unchanged."
+        },
+        {
+          "field": "description",
+          "before": "Felt desk mat, 60 × 30 cm.",
+          "after": "Felt desk mat, 60 × 30 cm. Material: felt Colour: grey",
+          "source": {
+            "row": 5,
+            "field": "description + sourceText + sourceText",
+            "url": "https://supplier.example/catalog/lf-005",
+            "parts": [
+              {
+                "field": "description",
+                "text": "Felt desk mat, 60 × 30 cm."
+              },
+              {
+                "field": "sourceText",
+                "text": "Material: felt"
+              },
+              {
+                "field": "sourceText",
+                "text": "Colour: grey"
+              }
+            ]
+          },
+          "reason": "Model selected complete supplied specification clauses; deterministic renderer preserved the original display field and validated every source part."
+        }
+      ],
+      "source": {
+        "sku": "LF-005",
+        "title": " felt   desk mat ",
+        "description": "Felt desk mat, 60 × 30 cm.",
+        "price": "19,90",
+        "currency": "EUR",
+        "manufacturer": "Quietdesk Supply",
+        "safety": "",
+        "certification": "No certification claim supplied.",
+        "sourceUrl": "https://supplier.example/catalog/lf-005",
+        "sourceText": "Material: felt | Dimensions: 60 × 30 cm | Colour: grey"
+      }
+    },
+    {
+      "sku": "LF-006",
+      "title": "GLASS WATER BOTTLE 500 ml",
+      "description": "Clear glass bottle with steel screw cap, 500 ml. Material: glass, steel Colour: clear",
+      "priceMinor": 1600,
+      "currency": "EUR",
+      "manufacturer": "Clearwell Goods",
+      "safety": "Handle glass with care. Not for hot liquids.",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-006",
+      "status": "ready",
+      "issues": [],
+      "diffs": [
+        {
+          "field": "title",
+          "before": " GLASS WATER BOTTLE  500 ml",
+          "after": "GLASS WATER BOTTLE 500 ml",
+          "source": {
+            "row": 6,
+            "field": "title",
+            "url": "https://supplier.example/catalog/lf-006"
+          },
+          "reason": "Trim and collapse source whitespace; wording unchanged."
+        },
+        {
+          "field": "price",
+          "before": "16",
+          "after": "16.00",
+          "source": {
+            "row": 6,
+            "field": "price",
+            "url": "https://supplier.example/catalog/lf-006"
+          },
+          "reason": "Format supplied amount to two decimals; value unchanged."
+        },
+        {
+          "field": "currency",
+          "before": "eur",
+          "after": "EUR",
+          "source": {
+            "row": 6,
+            "field": "currency",
+            "url": "https://supplier.example/catalog/lf-006"
+          },
+          "reason": "Normalize supplied currency code."
+        },
+        {
+          "field": "description",
+          "before": "Clear glass bottle with steel screw cap, 500 ml.",
+          "after": "Clear glass bottle with steel screw cap, 500 ml. Material: glass, steel Colour: clear",
+          "source": {
+            "row": 6,
+            "field": "description + sourceText + sourceText",
+            "url": "https://supplier.example/catalog/lf-006",
+            "parts": [
+              {
+                "field": "description",
+                "text": "Clear glass bottle with steel screw cap, 500 ml."
+              },
+              {
+                "field": "sourceText",
+                "text": "Material: glass, steel"
+              },
+              {
+                "field": "sourceText",
+                "text": "Colour: clear"
+              }
+            ]
+          },
+          "reason": "Model selected complete supplied specification clauses; deterministic renderer preserved the original display field and validated every source part."
+        }
+      ],
+      "source": {
+        "sku": "LF-006",
+        "title": " GLASS WATER BOTTLE  500 ml",
+        "description": "Clear glass bottle with steel screw cap, 500 ml.",
+        "price": "16",
+        "currency": "eur",
+        "manufacturer": "Clearwell Goods",
+        "safety": "Handle glass with care. Not for hot liquids.",
+        "certification": "No certification claim supplied.",
+        "sourceUrl": "https://supplier.example/catalog/lf-006",
+        "sourceText": "Material: glass, steel | Capacity: 500 ml | Colour: clear"
+      }
+    },
+    {
+      "sku": "LF-007",
+      "title": "recycled paper cards",
+      "description": "Set of 12 blank cards made from recycled paper. Material: recycled paper Dimensions: 14.8 × 10.5 cm Colour: white",
+      "priceMinor": 750,
+      "currency": "EUR",
+      "manufacturer": "Paperfield Works",
+      "safety": "Keep dry.",
+      "certification": "",
+      "sourceUrl": "https://supplier.example/catalog/lf-007",
+      "status": "needs_source",
+      "issues": [
+        {
+          "code": "needs_source",
+          "field": "certification",
+          "message": "No certification supplied. Obtain a source before marking this listing ready.",
+          "severity": "review"
+        }
+      ],
+      "diffs": [
+        {
+          "field": "title",
+          "before": " recycled paper   cards ",
+          "after": "recycled paper cards",
+          "source": {
+            "row": 7,
+            "field": "title",
+            "url": "https://supplier.example/catalog/lf-007"
+          },
+          "reason": "Trim and collapse source whitespace; wording unchanged."
+        },
+        {
+          "field": "price",
+          "before": "7,50",
+          "after": "7.50",
+          "source": {
+            "row": 7,
+            "field": "price",
+            "url": "https://supplier.example/catalog/lf-007"
+          },
+          "reason": "Format supplied amount to two decimals; value unchanged."
+        },
+        {
+          "field": "description",
+          "before": "Set of 12 blank cards made from recycled paper.",
+          "after": "Set of 12 blank cards made from recycled paper. Material: recycled paper Dimensions: 14.8 × 10.5 cm Colour: white",
+          "source": {
+            "row": 7,
+            "field": "description + sourceText + sourceText + sourceText",
+            "url": "https://supplier.example/catalog/lf-007",
+            "parts": [
+              {
+                "field": "description",
+                "text": "Set of 12 blank cards made from recycled paper."
+              },
+              {
+                "field": "sourceText",
+                "text": "Material: recycled paper"
+              },
+              {
+                "field": "sourceText",
+                "text": "Dimensions: 14.8 × 10.5 cm"
+              },
+              {
+                "field": "sourceText",
+                "text": "Colour: white"
+              }
+            ]
+          },
+          "reason": "Model selected complete supplied specification clauses; deterministic renderer preserved the original display field and validated every source part."
+        }
+      ],
+      "source": {
+        "sku": "LF-007",
+        "title": " recycled paper   cards ",
+        "description": "Set of 12 blank cards made from recycled paper.",
+        "price": "7,50",
+        "currency": "EUR",
+        "manufacturer": "Paperfield Works",
+        "safety": "Keep dry.",
+        "certification": "",
+        "sourceUrl": "https://supplier.example/catalog/lf-007",
+        "sourceText": "Material: recycled paper | Dimensions: 14.8 × 10.5 cm | Colour: white"
+      }
+    },
+    {
+      "sku": "LF-008",
+      "title": "BEECH PHONE STAND",
+      "description": "Beech wood phone stand with one cable slot. Material: beech wood Dimensions: 8 × 8 × 2 cm Colour: natural",
+      "priceMinor": 1190,
+      "currency": "EUR",
+      "manufacturer": "",
+      "safety": "Keep away from open flames.",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-008",
+      "status": "needs_source",
+      "issues": [
+        {
+          "code": "needs_source",
+          "field": "manufacturer",
+          "message": "No manufacturer supplied. Obtain a source before marking this listing ready.",
+          "severity": "review"
+        }
+      ],
+      "diffs": [
+        {
+          "field": "title",
+          "before": "  BEECH PHONE STAND ",
+          "after": "BEECH PHONE STAND",
+          "source": {
+            "row": 8,
+            "field": "title",
+            "url": "https://supplier.example/catalog/lf-008"
+          },
+          "reason": "Trim and collapse source whitespace; wording unchanged."
+        },
+        {
+          "field": "currency",
+          "before": "eur",
+          "after": "EUR",
+          "source": {
+            "row": 8,
+            "field": "currency",
+            "url": "https://supplier.example/catalog/lf-008"
+          },
+          "reason": "Normalize supplied currency code."
+        },
+        {
+          "field": "description",
+          "before": "Beech wood phone stand with one cable slot.",
+          "after": "Beech wood phone stand with one cable slot. Material: beech wood Dimensions: 8 × 8 × 2 cm Colour: natural",
+          "source": {
+            "row": 8,
+            "field": "description + sourceText + sourceText + sourceText",
+            "url": "https://supplier.example/catalog/lf-008",
+            "parts": [
+              {
+                "field": "description",
+                "text": "Beech wood phone stand with one cable slot."
+              },
+              {
+                "field": "sourceText",
+                "text": "Material: beech wood"
+              },
+              {
+                "field": "sourceText",
+                "text": "Dimensions: 8 × 8 × 2 cm"
+              },
+              {
+                "field": "sourceText",
+                "text": "Colour: natural"
+              }
+            ]
+          },
+          "reason": "Model selected complete supplied specification clauses; deterministic renderer preserved the original display field and validated every source part."
+        }
+      ],
+      "source": {
+        "sku": "LF-008",
+        "title": "  BEECH PHONE STAND ",
+        "description": "Beech wood phone stand with one cable slot.",
+        "price": "11.90",
+        "currency": "eur",
+        "manufacturer": "",
+        "safety": "Keep away from open flames.",
+        "certification": "No certification claim supplied.",
+        "sourceUrl": "https://supplier.example/catalog/lf-008",
+        "sourceText": "Material: beech wood | Dimensions: 8 × 8 × 2 cm | Colour: natural"
+      }
+    },
+    {
+      "sku": "LF-009",
+      "title": "CORK COASTER SET",
+      "description": "Four round cork coasters, 10 cm diameter. Material: cork Dimensions: 10 cm Colour: brown",
+      "priceMinor": 800,
+      "currency": "EUR",
+      "manufacturer": "Corkroom Supply",
+      "safety": "Keep away from open flames.",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-009",
+      "status": "ready",
+      "issues": [],
+      "diffs": [
+        {
+          "field": "title",
+          "before": " CORK COASTER SET  ",
+          "after": "CORK COASTER SET",
+          "source": {
+            "row": 9,
+            "field": "title",
+            "url": "https://supplier.example/catalog/lf-009"
+          },
+          "reason": "Trim and collapse source whitespace; wording unchanged."
+        },
+        {
+          "field": "price",
+          "before": "8",
+          "after": "8.00",
+          "source": {
+            "row": 9,
+            "field": "price",
+            "url": "https://supplier.example/catalog/lf-009"
+          },
+          "reason": "Format supplied amount to two decimals; value unchanged."
+        },
+        {
+          "field": "description",
+          "before": "Four round cork coasters, 10 cm diameter.",
+          "after": "Four round cork coasters, 10 cm diameter. Material: cork Dimensions: 10 cm Colour: brown",
+          "source": {
+            "row": 9,
+            "field": "description + sourceText + sourceText + sourceText",
+            "url": "https://supplier.example/catalog/lf-009",
+            "parts": [
+              {
+                "field": "description",
+                "text": "Four round cork coasters, 10 cm diameter."
+              },
+              {
+                "field": "sourceText",
+                "text": "Material: cork"
+              },
+              {
+                "field": "sourceText",
+                "text": "Dimensions: 10 cm"
+              },
+              {
+                "field": "sourceText",
+                "text": "Colour: brown"
+              }
+            ]
+          },
+          "reason": "Model selected complete supplied specification clauses; deterministic renderer preserved the original display field and validated every source part."
+        }
+      ],
+      "source": {
+        "sku": "LF-009",
+        "title": " CORK COASTER SET  ",
+        "description": "Four round cork coasters, 10 cm diameter.",
+        "price": "8",
+        "currency": "EUR",
+        "manufacturer": "Corkroom Supply",
+        "safety": "Keep away from open flames.",
+        "certification": "No certification claim supplied.",
+        "sourceUrl": "https://supplier.example/catalog/lf-009",
+        "sourceText": "Material: cork | Dimensions: 10 cm | Colour: brown"
+      }
+    },
+    {
+      "sku": "LF-010",
+      "title": "COTTON CABLE TIES",
+      "description": "Set of six reusable cotton cable ties. Material: cotton Dimensions: 15 × 1.5 cm Colour: natural",
+      "priceMinor": 690,
+      "currency": "EUR",
+      "manufacturer": "Quietdesk Supply",
+      "safety": "",
+      "certification": "No certification claim supplied.",
+      "sourceUrl": "https://supplier.example/catalog/lf-010",
+      "status": "needs_source",
+      "issues": [
+        {
+          "code": "needs_source",
+          "field": "safety",
+          "message": "No safety statement supplied. Obtain a source before marking this listing ready.",
+          "severity": "review"
+        }
+      ],
+      "diffs": [
+        {
+          "field": "title",
+          "before": "  COTTON CABLE TIES ",
+          "after": "COTTON CABLE TIES",
+          "source": {
+            "row": 10,
+            "field": "title",
+            "url": "https://supplier.example/catalog/lf-010"
+          },
+          "reason": "Trim and collapse source whitespace; wording unchanged."
+        },
+        {
+          "field": "price",
+          "before": "6,90",
+          "after": "6.90",
+          "source": {
+            "row": 10,
+            "field": "price",
+            "url": "https://supplier.example/catalog/lf-010"
+          },
+          "reason": "Format supplied amount to two decimals; value unchanged."
+        },
+        {
+          "field": "description",
+          "before": "Set of six reusable cotton cable ties.",
+          "after": "Set of six reusable cotton cable ties. Material: cotton Dimensions: 15 × 1.5 cm Colour: natural",
+          "source": {
+            "row": 10,
+            "field": "description + sourceText + sourceText + sourceText",
+            "url": "https://supplier.example/catalog/lf-010",
+            "parts": [
+              {
+                "field": "description",
+                "text": "Set of six reusable cotton cable ties."
+              },
+              {
+                "field": "sourceText",
+                "text": "Material: cotton"
+              },
+              {
+                "field": "sourceText",
+                "text": "Dimensions: 15 × 1.5 cm"
+              },
+              {
+                "field": "sourceText",
+                "text": "Colour: natural"
+              }
+            ]
+          },
+          "reason": "Model selected complete supplied specification clauses; deterministic renderer preserved the original display field and validated every source part."
+        }
+      ],
+      "source": {
+        "sku": "LF-010",
+        "title": "  COTTON CABLE TIES ",
+        "description": "Set of six reusable cotton cable ties.",
+        "price": "6,90",
+        "currency": "EUR",
+        "manufacturer": "Quietdesk Supply",
+        "safety": "",
+        "certification": "No certification claim supplied.",
+        "sourceUrl": "https://supplier.example/catalog/lf-010",
+        "sourceText": "Material: cotton | Dimensions: 15 × 1.5 cm | Colour: natural"
+      }
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "ready": 5,
+    "needsSource": 5,
+    "review": 0,
+    "changes": 33
+  },
+  "model": {
+    "provider": "ollama",
+    "model": "qwen3:4b",
+    "called": true,
+    "acceptedEdits": 10,
+    "rejectedEdits": 0,
+    "durationMs": 74599
+  },
+  "createdAt": "2026-10-31T03:41:26.128Z"
+}

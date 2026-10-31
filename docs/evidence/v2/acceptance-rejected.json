@@ -1,0 +1,141 @@
+{
+  "startedAt": "2026-10-31T03:36:34.599Z",
+  "checkedAt": "2026-10-31T03:37:44.135Z",
+  "status": "PASS",
+  "case": "acceptance_not_met",
+  "network": "cardano:preprod",
+  "asset": "lovelace",
+  "inputIsShippedSample": true,
+  "intentId": "next_686079ceccc9fc622b09a8970793e65a",
+  "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+  "acceptance": {
+    "schema": "listing-acceptance-v1",
+    "minimumReadyProducts": 6,
+    "allowedDisplayEditFields": [
+      "title",
+      "description"
+    ]
+  },
+  "acceptanceHash": "e7ab2cd584b77b7eccd7a298872cefcd9777caa42c1133def57f3a969cbe8c3f",
+  "orderHash": "686079ceccc9fc622b09a8970793e65abde3a3c4bafa43d8f156c7766e69b17b",
+  "mandate": {
+    "serviceCapLovelace": "2000000",
+    "feeCapLovelace": "300000",
+    "totalCapLovelace": "2300000",
+    "expiresAt": "2026-10-31T03:39:34.643Z",
+    "maxActions": 1,
+    "apiFeeCapLovelace": "0",
+    "network": "cardano:preprod",
+    "asset": "lovelace",
+    "allowedSeller": "addr_test1qrekcfd0csjjlsqjd72vfla2fsekq86z9pwsndkwyhjad3mtavugg9kh2klr82aqayddasngrhh4gdz2qmx4vsqntkhqgy6c5d",
+    "endpoint": "http://127.0.0.1:3107/api/next/service/jobs/next_686079ceccc9fc622b09a8970793e65a",
+    "beneficiary": "Catalog owner: local V2 workspace",
+    "acceptanceHash": "e7ab2cd584b77b7eccd7a298872cefcd9777caa42c1133def57f3a969cbe8c3f",
+    "orderHash": "686079ceccc9fc622b09a8970793e65abde3a3c4bafa43d8f156c7766e69b17b"
+  },
+  "jobStatus": "acceptance_not_met",
+  "paymentStatus": "acceptance_not_met",
+  "transaction": "7d73c213e169d1aab1acebf3d763c5238807c4e0c4e14beed8ad6d53bea10658",
+  "explorerUrl": "https://preprod.cardanoscan.io/transaction/7d73c213e169d1aab1acebf3d763c5238807c4e0c4e14beed8ad6d53bea10658",
+  "receipt": null,
+  "settlementCalls": 0,
+  "servicePriceLovelace": "2000000",
+  "networkFeeLovelace": "168405",
+  "sellerNetLovelace": null,
+  "resultHash": null,
+  "decision": {
+    "schema": "listing-acceptance-decision-v1",
+    "met": false,
+    "code": "acceptance_not_met",
+    "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+    "acceptanceHash": "e7ab2cd584b77b7eccd7a298872cefcd9777caa42c1133def57f3a969cbe8c3f",
+    "orderHash": "686079ceccc9fc622b09a8970793e65abde3a3c4bafa43d8f156c7766e69b17b",
+    "readyProducts": 5,
+    "minimumReadyProducts": 6,
+    "allowedDisplayEditFields": [
+      "title",
+      "description"
+    ],
+    "violations": [
+      {
+        "code": "minimum_ready_not_met",
+        "message": "5 products pass the checks; the buyer requires 6."
+      }
+    ]
+  },
+  "manifest": null,
+  "resultSummary": null,
+  "events": [
+    {
+      "at": "2026-10-31T03:36:34.655Z",
+      "stage": "intent",
+      "message": "V2 source and buyer acceptance bound before delegation. One request; fixed spending limits."
+    },
+    {
+      "at": "2026-10-31T03:36:34.667Z",
+      "stage": "payment",
+      "message": "Executing the one delegated request with fixed acceptance conditions."
+    },
+    {
+      "at": "2026-10-31T03:36:36.572Z",
+      "stage": "processing",
+      "message": "Verified signed authorization. Creating a source-bound result before any settlement request."
+    },
+    {
+      "at": "2026-10-31T03:37:42.337Z",
+      "stage": "validated",
+      "message": "Real model result validated: 5 ready. Checking the buyer’s fixed acceptance next."
+    },
+    {
+      "at": "2026-10-31T03:37:42.347Z",
+      "stage": "acceptance_not_met",
+      "message": "Acceptance not met. 5 of 6 required ready products; settlement not requested."
+    }
+  ],
+  "paymentEvents": [
+    {
+      "at": "2026-10-31T03:36:34.663Z",
+      "decision": "mandate_accepted",
+      "detail": "One catalog batch; fixed seller, endpoint, network, asset, expiry and separate integer spend caps."
+    },
+    {
+      "at": "2026-10-31T03:36:34.675Z",
+      "decision": "service_selected",
+      "detail": "The source-bound catalog request fits the approved one-batch service."
+    },
+    {
+      "at": "2026-10-31T03:36:34.683Z",
+      "decision": "quote_issued",
+      "detail": "The x402 v2 offer is bound to this exact catalog batch endpoint."
+    },
+    {
+      "at": "2026-10-31T03:36:34.687Z",
+      "decision": "quote_accepted",
+      "detail": "Pinned seller, resource, price, network, asset and confirmation policy match the delegation."
+    },
+    {
+      "at": "2026-10-31T03:36:36.112Z",
+      "decision": "signed_payment_persisted",
+      "detail": "Exact signed transaction, nonce and intent were durably checkpointed before network submission."
+    },
+    {
+      "at": "2026-10-31T03:36:36.571Z",
+      "decision": "payment_verified",
+      "detail": "Official facilitator accepted the exact signed transaction; no result released."
+    },
+    {
+      "at": "2026-10-31T03:37:42.341Z",
+      "decision": "result_validated",
+      "detail": "Catalog result is cached privately before settlement; no second model call on retry."
+    },
+    {
+      "at": "2026-10-31T03:37:42.349Z",
+      "decision": "acceptance_not_met",
+      "detail": "Acceptance not met: 5 ready; 6 required. No settlement requested."
+    }
+  ],
+  "reason": "Acceptance not met: 5 ready; 6 required. No settlement requested.",
+  "reconciliations": 0,
+  "paymentClaim": "Signed authorization retained locally; zero settlement calls, no confirmed collection or paid delivery.",
+  "broadcastMeasurement": "Local SDK settlement invocations are counted; hosted facilitator internal broadcasts are not directly observable. No-settlement chain/UTXO observations are recorded separately."
+}

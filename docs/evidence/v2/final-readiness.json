@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-31T03:43:20.257Z",
+  "payment": {
+    "configured": true,
+    "ready": true,
+    "network": "cardano:preprod",
+    "asset": "lovelace",
+    "sellerAddress": "addr_test1qrekcfd0csjjlsqjd72vfla2fsekq86z9pwsndkwyhjad3mtavugg9kh2klr82aqayddasngrhh4gdz2qmx4vsqntkhqgy6c5d",
+    "buyerAddress": "addr_test1qrsetswsnnc2gldcvts2nr747txh39trpkffkn0u3svacyrch48n7dfutfx0v8gj20jpxxl7dn5np355fw9dvm68ncqq46my56",
+    "provider": "koios",
+    "buyerBalanceLovelace": "7831595",
+    "blockers": [],
+    "servicePriceLovelace": "2000000",
+    "facilitatorUrl": "https://x402.preprod.dev.ecosyseng.cf-deployments.org",
+    "limitsEnforcedBy": "application validator and signed transaction; no budget smart contract",
+    "refundPolicy": "Direct payment; no escrow or automatic refund guarantee."
+  },
+  "model": {
+    "available": true,
+    "model": "qwen3:4b"
+  },
+  "qualificationEvidence": "Separate paid-request/chain/delivery files; readiness alone is not qualification."
+}

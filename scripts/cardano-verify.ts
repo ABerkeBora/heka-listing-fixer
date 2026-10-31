@@ -6,11 +6,13 @@ import {decodeCardanoTransaction} from '@x402/cardano';
 const KOIOS='https://preprod.koios.rest/api/v1';
 const publicJson=(file:string):Record<string,unknown>=>existsSync(file)?JSON.parse(readFileSync(file,'utf8')) as Record<string,unknown>:{};
 const asRecord=(value:unknown):Record<string,unknown>=>value&&typeof value==='object'&&!Array.isArray(value)?value as Record<string,unknown>:{};
-const latestPath='docs/evidence/payment-live.json';
+const v2=process.argv.includes('--v2');
+const evidenceDir=v2?'docs/evidence/v2':'docs/evidence';
+const latestPath=`${evidenceDir}/payment-live.json`;
 const latest=publicJson(latestPath);
-const hash=String(process.argv[2]??latest.transaction??'').toLowerCase();
+const hash=String(process.argv.slice(2).find(arg=>!arg.startsWith('--'))??latest.transaction??'').toLowerCase();
 if(!/^[0-9a-f]{64}$/.test(hash))throw new Error('Pass the actual Cardano preprod transaction hash: npm run cardano:verify -- <hash>. This command only reads chain data.');
-const archivePath=`docs/evidence/payment-${hash}.json`;
+const archivePath=`${evidenceDir}/payment-${hash}.json`;
 const archive=publicJson(archivePath);
 const matchesPaidRecord=(record:Record<string,unknown>)=>{const receipt=asRecord(record.receipt);return record.status==='PASS'&&record.transaction===hash&&record.network==='cardano:preprod'&&receipt.success===true&&receipt.transaction===hash&&receipt.network==='cardano:preprod';};
 const paidRecordSource=matchesPaidRecord(latest)?latestPath:matchesPaidRecord(archive)?archivePath:null;
@@ -18,7 +20,7 @@ const live=paidRecordSource===latestPath?latest:paidRecordSource===archivePath?a
 const hasMatchingPaidRecord=paidRecordSource!==null;
 const receipt=asRecord(live.receipt),mandate=asRecord(live.mandate);
 // Mutable setup is diagnostic only. A historical paid transaction always pins its own roles.
-const preflight=hasMatchingPaidRecord?{}:publicJson('docs/evidence/payment-preflight.json');
+const preflight=hasMatchingPaidRecord?{}:publicJson(`${evidenceDir}/payment-preflight.json`);
 const buyer=String(hasMatchingPaidRecord?receipt.payer??'':preflight.buyerAddress??'');
 const seller=String(hasMatchingPaidRecord?mandate.allowedSeller??'':preflight.sellerAddress??'');
 if(!buyer.startsWith('addr_test1')||!seller.startsWith('addr_test1')||buyer===seller)throw new Error('Matching paid evidence must pin distinct receipt.payer and mandate.allowedSeller addresses. Preflight addresses are used only for an unqualified chain diagnostic when no paid record matches. No keys are read.');
@@ -76,8 +78,8 @@ if(!observed){
  check('canonical_depth',newerBlocks!==null&&newerBlocks>=1&&Number.isInteger(reportedConfirmations)&&Number(reportedConfirmations)>=1,'At least one newer canonical block exists in both tip-height subtraction and the separate tx_status query.');
  chain={transaction:hash,observed:true,explorerUrl:`https://preprod.cardanoscan.io/transaction/${hash}`,blockHash:info.block_hash,blockHeight,tipHeight,newerCanonicalBlocks:newerBlocks,reportedNewerBlocks:reportedConfirmations,transactionTimestamp:info.tx_timestamp,networkFeeLovelace:fee.toString(),servicePriceLovelace:'2000000',sellerNetOutputLovelace:sellerOutputs.reduce((sum,row)=>sum+canonicalAmount(row.value),0n).toString(),buyerInputLovelace:inputTotal.toString(),buyerChangeLovelace:buyerOutputs.reduce((sum,row)=>sum+canonicalAmount(row.value),0n).toString(),totalOutputLovelace:outputTotal.toString(),payer:buyer,recipient:seller,inputs:inputs.map(row=>({transaction:String(row.tx_hash),index:Number(row.tx_index),address:address(row),lovelace:String(row.value)})),outputs:indexedOutputs,publicCborSha256:createHash('sha256').update(Buffer.from(cbor,'hex')).digest('hex'),rawCborPublishedByThisVerifier:false,indexerValidContractFlagAvailable:typeof info.valid_contract==='boolean'||typeof raw.valid_contract==='boolean',publicCborLedgerIsValid:decoded.isValid,publicCborSignaturesValid:decoded.signaturesValid,scriptWitnessCount:decoded.scriptWitnessCount,redeemerCount:decoded.redeemerCount};
 }
-const archivedResultPath=`docs/evidence/payment-${hash}-result.json`;
-const resultSource=existsSync(archivedResultPath)?archivedResultPath:latest.transaction===hash?'docs/evidence/payment-live-result.json':null;
+const archivedResultPath=`${evidenceDir}/payment-${hash}-result.json`;
+const resultSource=existsSync(archivedResultPath)?archivedResultPath:latest.transaction===hash?`${evidenceDir}/payment-live-result.json`:null;
 const result=resultSource?publicJson(resultSource):{};
 const resultHash=Object.keys(result).length?createHash('sha256').update(JSON.stringify(result)).digest('hex'):null;
 const deliveryMatches=hasMatchingPaidRecord&&live.status==='PASS'&&live.transaction===hash&&receipt.success===true&&receipt.transaction===hash&&receipt.network==='cardano:preprod'&&live.inputHash===result.inputHash&&typeof live.inputHash==='string'&&live.resultHash===resultHash&&result.mode==='model_checked'&&asRecord(result.model).called===true&&mandate.allowedSeller===seller;
@@ -88,6 +90,6 @@ if(deliveryMatches&&observed){
 }
 const chainStatusFinal=checks.some(c=>c.status==='FAIL')?'FAIL':checks.some(c=>c.status==='PENDING')?'PENDING':'PASS';
 const evidence={checkedAt,checkedAtEuropeBerlin:new Intl.DateTimeFormat('en-GB',{dateStyle:'medium',timeStyle:'long',timeZone:'Europe/Berlin'}).format(new Date(checkedAt)),network:'cardano:preprod',status:chainStatusFinal==='PASS'&&deliveryMatches?'PASS':chainStatusFinal==='FAIL'?'FAIL':'PENDING',chainStatus:chainStatusFinal,readOnly:true,expectedRolesSource:paidRecordSource??'diagnostic preflight fallback; never qualifies delivery',verificationSources:[{url:'https://api.koios.rest/koiosapi.yaml',purpose:'Official request/response schema for tx_info, tx_cbor, tx_status and tip.'},{url:'https://raw.githubusercontent.com/cardano-community/koios-artifacts/master/files/grest/rpc/transactions/tx_status.sql',purpose:'Confirmation convention: blocks newer than the block containing the transaction.'},{url:KOIOS,purpose:'Independent public preprod chain-indexer observations; no facilitator response used as chain evidence.'}],chain,checks,delivery,trust:'This independently checks the hosted facilitator receipt against the public Koios preprod indexer and exact public signed CBOR. It is not a self-hosted Cardano node or a proof of irreversible finality. The catalog input/result association is application evidence; the direct address payment does not commit catalog hashes on chain.'};
-mkdirSync('docs/evidence',{recursive:true});writeFileSync('docs/evidence/payment-chain.json',JSON.stringify(evidence,null,2)+'\n');
-console.log(JSON.stringify({status:evidence.status,chainStatus:evidence.chainStatus,transaction:hash,networkFeeLovelace:chain.networkFeeLovelace??null,sellerLovelace:chain.sellerNetOutputLovelace??null,newerCanonicalBlocks:chain.newerCanonicalBlocks??null,deliveryStatus:delivery.status,checks:checks.map(({name,status})=>({name,status})),evidence:'docs/evidence/payment-chain.json'},null,2));
+mkdirSync(evidenceDir,{recursive:true});writeFileSync(`${evidenceDir}/payment-chain.json`,JSON.stringify(evidence,null,2)+'\n');
+console.log(JSON.stringify({status:evidence.status,chainStatus:evidence.chainStatus,transaction:hash,networkFeeLovelace:chain.networkFeeLovelace??null,sellerLovelace:chain.sellerNetOutputLovelace??null,newerCanonicalBlocks:chain.newerCanonicalBlocks??null,deliveryStatus:delivery.status,checks:checks.map(({name,status})=>({name,status})),evidence:`${evidenceDir}/payment-chain.json`},null,2));
 if(evidence.status!=='PASS')process.exitCode=2;

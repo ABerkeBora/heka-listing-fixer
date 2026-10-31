@@ -1,0 +1,23 @@
+{
+  "checkedAtUtc": "2026-10-31T03:43:19.925982+00:00",
+  "checkedAtEuropeBerlin": "31 October 2026 04:42 CET",
+  "method": "Live browser: reloaded general submission tab, selected actual Cardano tab, expanded What to submit and What judges look for. Official starter/guide opened at start.",
+  "selectedTrack": "Cardano \u2014 Agentic Commerce on Cardano",
+  "sources": [
+    "https://hackathon.tum-blockchain.com/prizes#cardano",
+    "https://hackathon.tum-blockchain.com/prizes#how-to-submit",
+    "https://developers.cardano.org/x402/",
+    "https://developers.cardano.org/templates/x402-express/"
+  ],
+  "changedSinceStart": false,
+  "mandatoryQualification": "A working useful agent/service completing at least one paid request via x402 or job via Masumi on Cardano preprod, with transaction and result.",
+  "submission": {
+    "publicRepositoryAndSetup": "Required; source publication verified separately.",
+    "description": "Prepared draft; user/team submission pending.",
+    "video": "At most150seconds; outline prepared, recording pending.",
+    "deadline": "2026-10-31T15:00:00+01:00",
+    "oneSubmissionPerTeam": true,
+    "maxPartnerTracks": 3
+  },
+  "judgingPreferences": "Clear customer and useful job, original flow, technical execution, UX, business case, result-tied payment and explorer proof. Escrow/refund is not mandatory. V2 uses local acceptance before settlement, no on-chain quality claim."
+}

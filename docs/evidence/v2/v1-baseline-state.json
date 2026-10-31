@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-31T03:36:20.871Z",
+  "state": {
+    "id": "batch_3335c09a068c20633a3c8e1c",
+    "status": "complete",
+    "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+    "resultHash": "05f15c335e49591d6e1d2d97dc295e817fb1d66ccc88f5dcec86a13871224095",
+    "receiptHash": "3d84ec9505cca753581f06749eb4e162bcb89278ba05b9e57e0eb8132236660e",
+    "transaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+    "signatures": 1
+  }
+}

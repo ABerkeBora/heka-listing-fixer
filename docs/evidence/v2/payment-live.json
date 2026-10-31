@@ -1,0 +1,206 @@
+{
+  "startedAt": "2026-10-31T03:40:09.640Z",
+  "checkedAt": "2026-10-31T03:42:11.460Z",
+  "status": "PASS",
+  "case": "acceptance_met",
+  "network": "cardano:preprod",
+  "asset": "lovelace",
+  "inputIsShippedSample": true,
+  "intentId": "next_79721f59050ed46dc6cccef5de7394df",
+  "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+  "acceptance": {
+    "schema": "listing-acceptance-v1",
+    "minimumReadyProducts": 5,
+    "allowedDisplayEditFields": [
+      "title",
+      "description"
+    ]
+  },
+  "acceptanceHash": "1742cd9c1001c8297fa399f1eb22a2cf9b44168933ca51c163eabad0e0a4d73f",
+  "orderHash": "79721f59050ed46dc6cccef5de7394df4294bf7d58ff3b09d5d3fbd906240497",
+  "mandate": {
+    "serviceCapLovelace": "2000000",
+    "feeCapLovelace": "300000",
+    "totalCapLovelace": "2300000",
+    "expiresAt": "2026-10-31T03:55:09.679Z",
+    "maxActions": 1,
+    "apiFeeCapLovelace": "0",
+    "network": "cardano:preprod",
+    "asset": "lovelace",
+    "allowedSeller": "addr_test1qrekcfd0csjjlsqjd72vfla2fsekq86z9pwsndkwyhjad3mtavugg9kh2klr82aqayddasngrhh4gdz2qmx4vsqntkhqgy6c5d",
+    "endpoint": "http://127.0.0.1:3107/api/next/service/jobs/next_79721f59050ed46dc6cccef5de7394df",
+    "beneficiary": "Catalog owner: local V2 workspace",
+    "acceptanceHash": "1742cd9c1001c8297fa399f1eb22a2cf9b44168933ca51c163eabad0e0a4d73f",
+    "orderHash": "79721f59050ed46dc6cccef5de7394df4294bf7d58ff3b09d5d3fbd906240497"
+  },
+  "jobStatus": "complete",
+  "paymentStatus": "confirmed",
+  "transaction": "7869104649f7723510e722ce0621078e81daf7fc6b4d9cb535d3fbebb19a21b2",
+  "explorerUrl": "https://preprod.cardanoscan.io/transaction/7869104649f7723510e722ce0621078e81daf7fc6b4d9cb535d3fbebb19a21b2",
+  "receipt": {
+    "success": true,
+    "payer": "addr_test1qrsetswsnnc2gldcvts2nr747txh39trpkffkn0u3svacyrch48n7dfutfx0v8gj20jpxxl7dn5np355fw9dvm68ncqq46my56",
+    "transaction": "7869104649f7723510e722ce0621078e81daf7fc6b4d9cb535d3fbebb19a21b2",
+    "network": "cardano:preprod",
+    "extra": {
+      "status": "confirmed",
+      "transactionId": "7869104649f7723510e722ce0621078e81daf7fc6b4d9cb535d3fbebb19a21b2",
+      "confirmations": 1
+    }
+  },
+  "settlementCalls": 1,
+  "servicePriceLovelace": "2000000",
+  "networkFeeLovelace": "168405",
+  "sellerNetLovelace": "2000000",
+  "resultHash": "432aaf5df15075ee53c0bcf0ed649c288c49463bc00ba29f277a8aff28b66e94",
+  "decision": {
+    "schema": "listing-acceptance-decision-v1",
+    "met": true,
+    "code": "acceptance_met",
+    "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+    "acceptanceHash": "1742cd9c1001c8297fa399f1eb22a2cf9b44168933ca51c163eabad0e0a4d73f",
+    "orderHash": "79721f59050ed46dc6cccef5de7394df4294bf7d58ff3b09d5d3fbd906240497",
+    "readyProducts": 5,
+    "minimumReadyProducts": 5,
+    "allowedDisplayEditFields": [
+      "title",
+      "description"
+    ],
+    "violations": []
+  },
+  "manifest": {
+    "schema": "listing-delivery-v2",
+    "intentId": "next_79721f59050ed46dc6cccef5de7394df",
+    "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+    "acceptanceHash": "1742cd9c1001c8297fa399f1eb22a2cf9b44168933ca51c163eabad0e0a4d73f",
+    "orderHash": "79721f59050ed46dc6cccef5de7394df4294bf7d58ff3b09d5d3fbd906240497",
+    "resultHash": "432aaf5df15075ee53c0bcf0ed649c288c49463bc00ba29f277a8aff28b66e94",
+    "acceptance": {
+      "schema": "listing-acceptance-v1",
+      "minimumReadyProducts": 5,
+      "allowedDisplayEditFields": [
+        "title",
+        "description"
+      ]
+    },
+    "decision": {
+      "schema": "listing-acceptance-decision-v1",
+      "met": true,
+      "code": "acceptance_met",
+      "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+      "acceptanceHash": "1742cd9c1001c8297fa399f1eb22a2cf9b44168933ca51c163eabad0e0a4d73f",
+      "orderHash": "79721f59050ed46dc6cccef5de7394df4294bf7d58ff3b09d5d3fbd906240497",
+      "readyProducts": 5,
+      "minimumReadyProducts": 5,
+      "allowedDisplayEditFields": [
+        "title",
+        "description"
+      ],
+      "violations": []
+    },
+    "network": "cardano:preprod",
+    "transaction": "7869104649f7723510e722ce0621078e81daf7fc6b4d9cb535d3fbebb19a21b2",
+    "receipt": {
+      "success": true,
+      "payer": "addr_test1qrsetswsnnc2gldcvts2nr747txh39trpkffkn0u3svacyrch48n7dfutfx0v8gj20jpxxl7dn5np355fw9dvm68ncqq46my56",
+      "transaction": "7869104649f7723510e722ce0621078e81daf7fc6b4d9cb535d3fbebb19a21b2",
+      "network": "cardano:preprod",
+      "extra": {
+        "status": "confirmed",
+        "transactionId": "7869104649f7723510e722ce0621078e81daf7fc6b4d9cb535d3fbebb19a21b2",
+        "confirmations": 1
+      }
+    },
+    "createdAt": "2026-10-31T03:41:26.128Z"
+  },
+  "resultSummary": {
+    "total": 10,
+    "ready": 5,
+    "needsSource": 5,
+    "review": 0,
+    "changes": 33
+  },
+  "events": [
+    {
+      "at": "2026-10-31T03:40:09.707Z",
+      "stage": "intent",
+      "message": "V2 source and buyer acceptance bound before delegation. One request; fixed spending limits."
+    },
+    {
+      "at": "2026-10-31T03:40:09.712Z",
+      "stage": "payment",
+      "message": "Executing the one delegated request with fixed acceptance conditions."
+    },
+    {
+      "at": "2026-10-31T03:40:11.528Z",
+      "stage": "processing",
+      "message": "Verified signed authorization. Creating a source-bound result before any settlement request."
+    },
+    {
+      "at": "2026-10-31T03:41:26.130Z",
+      "stage": "validated",
+      "message": "Real model result validated: 5 ready. Checking the buyer’s fixed acceptance next."
+    },
+    {
+      "at": "2026-10-31T03:41:26.171Z",
+      "stage": "acceptance_met",
+      "message": "Fixed buyer acceptance passed before settlement."
+    },
+    {
+      "at": "2026-10-31T03:42:10.874Z",
+      "stage": "delivered",
+      "message": "Acceptance passed. Confirmed receipt, exact input and result hashes bound in the delivery manifest."
+    }
+  ],
+  "paymentEvents": [
+    {
+      "at": "2026-10-31T03:40:09.711Z",
+      "decision": "mandate_accepted",
+      "detail": "One catalog batch; fixed seller, endpoint, network, asset, expiry and separate integer spend caps."
+    },
+    {
+      "at": "2026-10-31T03:40:09.745Z",
+      "decision": "service_selected",
+      "detail": "The source-bound catalog request fits the approved one-batch service."
+    },
+    {
+      "at": "2026-10-31T03:40:09.775Z",
+      "decision": "quote_issued",
+      "detail": "The x402 v2 offer is bound to this exact catalog batch endpoint."
+    },
+    {
+      "at": "2026-10-31T03:40:09.777Z",
+      "decision": "quote_accepted",
+      "detail": "Pinned seller, resource, price, network, asset and confirmation policy match the delegation."
+    },
+    {
+      "at": "2026-10-31T03:40:11.174Z",
+      "decision": "signed_payment_persisted",
+      "detail": "Exact signed transaction, nonce and intent were durably checkpointed before network submission."
+    },
+    {
+      "at": "2026-10-31T03:40:11.527Z",
+      "decision": "payment_verified",
+      "detail": "Official facilitator accepted the exact signed transaction; no result released."
+    },
+    {
+      "at": "2026-10-31T03:41:26.137Z",
+      "decision": "result_validated",
+      "detail": "Catalog result is cached privately before settlement; no second model call on retry."
+    },
+    {
+      "at": "2026-10-31T03:41:26.173Z",
+      "decision": "settlement_requested",
+      "detail": "The local SDK settlement method receives the same persisted signed bytes. Counter counts local calls, not remote broadcasts."
+    },
+    {
+      "at": "2026-10-31T03:42:10.865Z",
+      "decision": "payment_confirmed",
+      "detail": "One newer canonical block confirmed the seller payment; cached result released."
+    }
+  ],
+  "reason": null,
+  "reconciliations": 0,
+  "paymentClaim": "New confirmed V2 paid request with a bound delivered result.",
+  "broadcastMeasurement": "Local SDK settlement invocations are counted; hosted facilitator internal broadcasts are not directly observable. No-settlement chain/UTXO observations are recorded separately."
+}

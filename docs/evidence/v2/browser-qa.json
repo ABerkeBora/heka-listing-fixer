@@ -1,0 +1,252 @@
+{
+  "checkedAt": "2026-10-31T03:45:54.082Z",
+  "checkedAtEuropeBerlin": "2026-10-31 04:45:54 CET",
+  "browser": "Chrome through CUA; isolated agent-created tab",
+  "build": {
+    "script": "/assets/index-CiaPJaTb.js",
+    "styles": [
+      "/assets/index-DuJ45rNd.css"
+    ]
+  },
+  "boundaries": {
+    "newFundedUiDelegations": 0,
+    "note": "Root executed the two real economic cases through CLI. This walkthrough only read those existing jobs, changed free review conditions, imported a one-row sample for free source review, opened preauthorization and cancelled it."
+  },
+  "preauthorization": {
+    "caps": [
+      "2000000",
+      "500000"
+    ],
+    "jobPresent": false,
+    "parties": "PayerYour bounded buyer agentBeneficiaryCatalog owner: local workspaceRecipientaddr_test1qrekcfd0csjjlsqjd72vfla2fsekq86z9pwsndkwyhjad3mtavugg9kh2klr82aqayddasngrhh4gdz2qmx4vsqntkhqgy6c5dNetwork / assetCardano preprod / tADAAllowed actionOne catalog correction requestDelegation expires15 minutes after authorization",
+    "rule": "Fixed acceptance ruleAt least 5 of 10 products ready. Display edits: Title, Description.Input hash3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2Acceptance hash1742cd9c1001c8297fa399f1eb22a2cf9b44168933ca51c163eabad0e0a4d73fThese conditions are immutable for this order. The agent requests settlement only after they pass.",
+    "total": "Maximum total2.50 tADA"
+  },
+  "emptyAllowlist": {
+    "applyDisabled": true,
+    "explanation": "Choose at least one display field and a valid minimum.",
+    "startDisabled": true
+  },
+  "changedPolicy": {
+    "hashText": "Input hash3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2Acceptance hashe7ab2cd584b77b7eccd7a298872cefcd9777caa42c1133def57f3a969cbe8c3fOrder hash686079ceccc9fc622b09a8970793e65abde3a3c4bafa43d8f156c7766e69b17b",
+    "minimumReadyProducts": "6",
+    "startDisabled": false
+  },
+  "oneProductUpload": {
+    "jobPresent": false,
+    "minimum": "1",
+    "startDisabled": false,
+    "summary": "1 ready · 0 need attention4 source-linked changes",
+    "total": "1"
+  },
+  "freshV2Isolation": {
+    "jobPresent": false,
+    "minimum": "5",
+    "sourceMode": "Source review · no paid correction run yet",
+    "summary": "5 ready · 5 need attention24 source-linked changes",
+    "url": "http://127.0.0.1:3107/next"
+  },
+  "paid": {
+    "desktop": {
+      "acceptance": "5 of 10 products ready requiredEdits: Title, Description",
+      "clientBinding": "Delivery bindings verified in this browser",
+      "decision": "Acceptance metSettlement calls: 1",
+      "downloadDisabled": false,
+      "firstRowTop": 715.78125,
+      "height": 900,
+      "jobState": "Result deliverednext_79721f590Refresh job",
+      "script": "/assets/index-CiaPJaTb.js",
+      "scrollWidth": 1440,
+      "styles": [
+        "https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&family=Geist+Mono:wght@400;500&display=swap",
+        "/assets/index-DuJ45rNd.css"
+      ],
+      "summary": "5 ready · 5 need attention33 source-linked changes",
+      "width": 1440
+    },
+    "tablet": {
+      "clientBinding": "Delivery bindings verified in this browser",
+      "firstRowTop": 715.78125,
+      "height": 1024,
+      "scrollWidth": 768,
+      "summary": "5 ready · 5 need attention33 source-linked changes",
+      "width": 768
+    },
+    "phone": {
+      "clientBinding": "Delivery bindings verified in this browser",
+      "firstRowTop": 668.9296875,
+      "height": 844,
+      "reviewLabel": "Paid result",
+      "scrollWidth": 390,
+      "summary": "5 ready · 5 need attention33 source-linked changes",
+      "width": 390
+    },
+    "receipt": {
+      "binding": "Delivery bindings verified in this browser",
+      "decision": "Acceptance metSettlement calls: 1",
+      "explorer": "https://preprod.cardanoscan.io/transaction/7869104649f7723510e722ce0621078e81daf7fc6b4d9cb535d3fbebb19a21b2",
+      "fees": [
+        {
+          "label": "Service price",
+          "value": "2.000000 tADA"
+        },
+        {
+          "label": "Network fee",
+          "value": "0.168405 tADA"
+        },
+        {
+          "label": "Facilitator fee",
+          "value": "Not separately quoted"
+        },
+        {
+          "label": "Seller received",
+          "value": "2.000000 tADA"
+        }
+      ],
+      "hashes": [
+        {
+          "label": "Intent",
+          "value": "next_79721f59050ed46dc6cccef5de7394df"
+        },
+        {
+          "label": "Input hash",
+          "value": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2"
+        },
+        {
+          "label": "Acceptance hash",
+          "value": "1742cd9c1001c8297fa399f1eb22a2cf9b44168933ca51c163eabad0e0a4d73f"
+        },
+        {
+          "label": "Order hash",
+          "value": "79721f59050ed46dc6cccef5de7394df4294bf7d58ff3b09d5d3fbd906240497"
+        },
+        {
+          "label": "Result hash",
+          "value": "432aaf5df15075ee53c0bcf0ed649c288c49463bc00ba29f277a8aff28b66e94"
+        }
+      ],
+      "jobState": "Result deliverednext_79721f590Refresh job",
+      "receiptState": "Receipt state: confirmed",
+      "transaction": "7869104649f7723510e722ce0621078e81daf7fc6b4d9cb535d3fbebb19a21b2"
+    },
+    "missingSource": {
+      "batchVisible": false,
+      "detailTop": 68,
+      "scrollWidth": 390,
+      "sku": "LF-003",
+      "sourceChecks": "ManufacturerNo manufacturer supplied. Obtain a source before marking this listing ready.Return to the source before importMissing manufacturer, safety, certification or price information stays missing.",
+      "status": "Needs source",
+      "width": 390
+    }
+  },
+  "rejected": {
+    "desktop": {
+      "decision": "5 ready / 6 requiredSettlement calls: 0No settlement requested. No accepted result delivered.",
+      "downloadDisabled": true,
+      "firstRowTop": 713.3828125,
+      "fixedRule": "6 of 10 products ready requiredEdits: Title, Description",
+      "height": 900,
+      "jobState": "Acceptance not metnext_686079cecRefresh job",
+      "policyInputCount": 0,
+      "scrollWidth": 1440,
+      "sourceMode": "Source review · no paid correction run yet",
+      "summary": "5 ready · 5 need attention24 source-linked changes",
+      "width": 1440
+    },
+    "tablet": {
+      "decision": "5 ready / 6 requiredSettlement calls: 0No settlement requested. No accepted result delivered.",
+      "downloadDisabled": true,
+      "firstRowTop": 713.3828125,
+      "height": 1024,
+      "scrollWidth": 768,
+      "width": 768
+    },
+    "phone": {
+      "decision": "5 ready / 6 requiredSettlement calls: 0No settlement requested. No accepted result delivered.",
+      "downloadDisabled": true,
+      "firstRowTop": 665.53125,
+      "height": 844,
+      "label": "Unpaid review",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    "receipt": {
+      "authorization": "Signed authorization · not submitted7d73c213e169d1aab1acebf3d763c5238807c4e0c4e14beed8ad6d53bea10658",
+      "decision": "5 ready / 6 requiredSettlement calls: 0No settlement requested. No accepted result delivered.",
+      "downloadDisabled": true,
+      "explorerLinks": 0,
+      "fees": "Service price2.000000 tADASigned network fee · not charged0.168405 tADAFacilitator feeNot separately quotedSeller receivedNot paid",
+      "hashes": [
+        {
+          "label": "Intent",
+          "value": "next_686079ceccc9fc622b09a8970793e65a"
+        },
+        {
+          "label": "Input hash",
+          "value": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2"
+        },
+        {
+          "label": "Acceptance hash",
+          "value": "e7ab2cd584b77b7eccd7a298872cefcd9777caa42c1133def57f3a969cbe8c3f"
+        },
+        {
+          "label": "Order hash",
+          "value": "686079ceccc9fc622b09a8970793e65abde3a3c4bafa43d8f156c7766e69b17b"
+        },
+        {
+          "label": "Result hash",
+          "value": "No verified delivery"
+        }
+      ],
+      "receiptState": "Not paid. Signed authorization is retained until TTL expiry; no network fee was charged.",
+      "state": "Acceptance not metnext_686079cecRefresh job"
+    }
+  },
+  "v1Regression": {
+    "hasV2AcceptancePanel": false,
+    "jobState": "Result deliveredbatch_3335c09aRefresh job",
+    "scrollWidth": 1440,
+    "sourceSummary": "5 ready · 5 need attention33 source-linked changes",
+    "title": "Catalog review",
+    "url": "http://127.0.0.1:3107/",
+    "versionLink": "/next",
+    "width": 1440,
+    "originalTransaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0"
+  },
+  "applicationConsoleErrorsOrWarnings": [],
+  "checks": {
+    "sixViewsNoHorizontalOverflow": true,
+    "paidNewTransactionMatches": true,
+    "paidClientBindingsVerified": true,
+    "paidOneSettlementCallVisible": true,
+    "rejectedZeroSettlementAndNoExport": true,
+    "rejectedAuthorizationNotShownAsSubmittedOrPaid": true,
+    "frozenConditionsReadOnly": true,
+    "emptyAllowlistBlocksDelegation": true,
+    "oneProductThresholdClampsToBatchCount": true,
+    "manufacturerGapPreserved": true,
+    "v1OriginalReceiptPreserved": true,
+    "v2FreshReviewDoesNotConsumeV1Receipt": true
+  },
+  "notes": [
+    "The accepted UI displays 10 products, 5 ready, 5 needing source and 33 source-linked changes. The rejected UI retains only the free source review with 24 formatting changes, not its rejected paid candidate.",
+    "The recorded-job layout was compacted after actual QA showed the first source row outside the first screen. Final source row positions are recorded above; source and acceptance/payment states are all visible on the first screen.",
+    "Browser WebCrypto recomputed input/acceptance/order/result bindings and verified the exact receipt. The valid live delivery passed. Browser response interception and an intentionally tampered client manifest were not performed.",
+    "No new V2 paid request or authorization was submitted from this browser. Temporary viewport override was reset; the tab remains on the already-paid accepted case for review."
+  ],
+  "screenshots": [
+    "ui-preauthorization.jpg",
+    "ui-paid-desktop.jpg",
+    "ui-paid-tablet.jpg",
+    "ui-paid-phone.jpg",
+    "ui-paid-receipt.jpg",
+    "ui-paid-source-gap.jpg",
+    "ui-rejected-desktop.jpg",
+    "ui-rejected-tablet.jpg",
+    "ui-rejected-phone.jpg",
+    "ui-rejected-receipt.jpg",
+    "ui-v1-regression.jpg"
+  ],
+  "reviewUrl": "http://127.0.0.1:3107/next?job=next_79721f59050ed46dc6cccef5de7394df",
+  "viewportReset": true
+}

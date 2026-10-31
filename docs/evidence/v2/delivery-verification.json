@@ -1,0 +1,116 @@
+{
+  "checkedAt": "2026-10-31T03:42:29.793Z",
+  "status": "PASS",
+  "audit": "Read-only live V2 API/catalog/export verification. No model, signature, payment, job creation or reconciliation call performed.",
+  "intentId": "next_79721f59050ed46dc6cccef5de7394df",
+  "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+  "acceptanceHash": "1742cd9c1001c8297fa399f1eb22a2cf9b44168933ca51c163eabad0e0a4d73f",
+  "orderHash": "79721f59050ed46dc6cccef5de7394df4294bf7d58ff3b09d5d3fbd906240497",
+  "resultHash": "432aaf5df15075ee53c0bcf0ed649c288c49463bc00ba29f277a8aff28b66e94",
+  "transaction": "7869104649f7723510e722ce0621078e81daf7fc6b4d9cb535d3fbebb19a21b2",
+  "policy": {
+    "schema": "listing-acceptance-v1",
+    "minimumReadyProducts": 5,
+    "allowedDisplayEditFields": [
+      "title",
+      "description"
+    ]
+  },
+  "decision": {
+    "schema": "listing-acceptance-decision-v1",
+    "met": true,
+    "code": "acceptance_met",
+    "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+    "acceptanceHash": "1742cd9c1001c8297fa399f1eb22a2cf9b44168933ca51c163eabad0e0a4d73f",
+    "orderHash": "79721f59050ed46dc6cccef5de7394df4294bf7d58ff3b09d5d3fbd906240497",
+    "readyProducts": 5,
+    "minimumReadyProducts": 5,
+    "allowedDisplayEditFields": [
+      "title",
+      "description"
+    ],
+    "violations": []
+  },
+  "summary": {
+    "total": 10,
+    "ready": 5,
+    "needsSource": 5,
+    "review": 0,
+    "changes": 33
+  },
+  "readyExportCount": 5,
+  "excludedSkus": [
+    "LF-003",
+    "LF-005",
+    "LF-007",
+    "LF-008",
+    "LF-010"
+  ],
+  "settlementCalls": 1,
+  "originalV1Transaction": "1305799c411826f9f8463db3b9067913db0286da42320a2297c265aafcd66dc0",
+  "checks": [
+    {
+      "name": "live V2 job is complete with a distinct acceptance-bound intent",
+      "pass": true
+    },
+    {
+      "name": "approved source bytes and input hash preserved",
+      "pass": true
+    },
+    {
+      "name": "canonical buyer acceptance and order hashes agree everywhere",
+      "pass": true
+    },
+    {
+      "name": "initial mandate retains the same acceptance and order hashes",
+      "pass": true
+    },
+    {
+      "name": "real x402 quote carries the same source, acceptance and order commitment",
+      "pass": true
+    },
+    {
+      "name": "independent deterministic acceptance passes with actual ready rows",
+      "pass": true
+    },
+    {
+      "name": "recorded acceptance decision agrees with recomputation",
+      "pass": true
+    },
+    {
+      "name": "paid result, saved result and manifest result hashes match",
+      "pass": true
+    },
+    {
+      "name": "full delivery manifest recomputes from the fixed order and confirmed receipt",
+      "pass": true
+    },
+    {
+      "name": "new receipt is confirmed preprod and does not reuse the V1 transaction",
+      "pass": true
+    },
+    {
+      "name": "one local settlement invocation and one persisted signature",
+      "pass": true
+    },
+    {
+      "name": "actual ready-only JSON export contains no source-gap rows",
+      "pass": true
+    },
+    {
+      "name": "actual full report binds all source rows, decision and payment",
+      "pass": true
+    },
+    {
+      "name": "actual ready-only CSV export includes exactly the accepted ready identities",
+      "pass": true
+    },
+    {
+      "name": "original V1 paid receipt and result remain intact",
+      "pass": true
+    }
+  ],
+  "checksPassed": 15,
+  "checksTotal": 15,
+  "boundary": "Local SDK settlement calls are counted; hosted facilitator internal retry/broadcast counts are not independently observed by this audit. Chain/output proof is recorded separately."
+}

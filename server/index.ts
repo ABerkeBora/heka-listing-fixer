@@ -10,6 +10,8 @@ import { localOnly,safeError } from './local-policy.ts';
 import { createJobRunner } from './jobs.ts';
 import { createPaymentService } from './payment/index.ts';
 import { validatePaidCatalogResult,type PaymentMandate } from './payment/policy.ts';
+import {createNextApi} from './next/index.ts';
+import {AcceptancePolicyError} from '../shared/acceptance.ts';
 
 const port=Number(process.env.PORT||3107);
 if(port!==3107)throw new Error('Listing Fixer is isolated on port 3107.');
@@ -86,10 +88,13 @@ app.get('/api/jobs/:id/download/:format',(req,res)=>{
  return res.json(format==='report'?{intentId:job.id,inputHash:job.inputHash,payment:job.payment,result:job.result}:{...job.result,products:job.result.products.filter(row=>row.status==='ready')});
 });
 app.get('/api/service/jobs/:id',payment.sellerMiddleware,payment.sellerHandler);
+const nextApi=createNextApi(baseUrl,modelStatus);
+app.use('/api/next',nextApi.router);
 app.use('/api',(_req,res)=>res.status(404).json({error:'Unknown API route.'}));
 const onError:ErrorRequestHandler=(error,_req,res,_next)=>{
  if(error instanceof z.ZodError)return void res.status(422).json({error:'Check the input and delegation fields.',issues:error.issues.map(i=>({field:i.path.join('.'),message:i.message}))});
  if(error instanceof CatalogError)return void res.status(422).json({error:error.message,issues:error.issues});
+ if(error instanceof AcceptancePolicyError)return void res.status(422).json({error:error.message,code:error.code});
  if(error?.type==='entity.too.large')return void res.status(413).json({error:'Catalog request is too large. Maximum 100 KB source text.'});
  if(error instanceof SyntaxError)return void res.status(400).json({error:'Request body is not valid JSON.'});
  console.error('Request failed:',error instanceof Error?error.name:'unknown');res.status(500).json({error:'The request could not be completed. Check the local service and retry the same batch.'});
@@ -97,4 +102,4 @@ const onError:ErrorRequestHandler=(error,_req,res,_next)=>{
 app.use(onError);
 if(existsSync(resolve('dist/client/index.html'))){app.use(express.static(resolve('dist/client')));app.get('/{*path}',(_req,res)=>res.sendFile(resolve('dist/client/index.html')));}
 else{const vite=await createViteServer({server:{middlewareMode:true,host:'127.0.0.1',hmr:false},appType:'spa'});app.use(vite.middlewares);}
-app.listen(port,'127.0.0.1',()=>{console.log(`Listing Fixer: ${baseUrl}`);for(const job of store.unfinished())void runner.run(job.id);});
+app.listen(port,'127.0.0.1',()=>{console.log(`Listing Fixer: ${baseUrl}`);for(const job of store.unfinished())void runner.run(job.id);nextApi.start();});

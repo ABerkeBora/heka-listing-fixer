@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-10-31T03:40:08.934Z",
+  "status": "PASS",
+  "intentId": "next_686079ceccc9fc622b09a8970793e65a",
+  "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+  "acceptanceHash": "e7ab2cd584b77b7eccd7a298872cefcd9777caa42c1133def57f3a969cbe8c3f",
+  "orderHash": "686079ceccc9fc622b09a8970793e65abde3a3c4bafa43d8f156c7766e69b17b",
+  "decision": {
+    "schema": "listing-acceptance-decision-v1",
+    "met": false,
+    "code": "acceptance_not_met",
+    "inputHash": "3335c09a068c20633a3c8e1ccd926c1269450653995cb2a762cbbac5603c25a2",
+    "acceptanceHash": "e7ab2cd584b77b7eccd7a298872cefcd9777caa42c1133def57f3a969cbe8c3f",
+    "orderHash": "686079ceccc9fc622b09a8970793e65abde3a3c4bafa43d8f156c7766e69b17b",
+    "readyProducts": 5,
+    "minimumReadyProducts": 6,
+    "allowedDisplayEditFields": [
+      "title",
+      "description"
+    ],
+    "violations": [
+      {
+        "code": "minimum_ready_not_met",
+        "message": "5 products pass the checks; the buyer requires 6."
+      }
+    ]
+  },
+  "unpaidModel": {
+    "report": {
+      "provider": "ollama",
+      "model": "qwen3:4b",
+      "called": true,
+      "acceptedEdits": 10,
+      "rejectedEdits": 0,
+      "durationMs": 65761
+    },
+    "summary": {
+      "total": 10,
+      "ready": 5,
+      "needsSource": 5,
+      "review": 0,
+      "changes": 33
+    },
+    "resultHash": "5f534079f82d1c8e9dfbaa1482260fb4ab9c6894d1cf49684b9fea55b3c42206"
+  },
+  "signedAuthorization": {
+    "transaction": "7d73c213e169d1aab1acebf3d763c5238807c4e0c4e14beed8ad6d53bea10658",
+    "expiresAt": "2026-10-31T03:39:32.000Z",
+    "settlementCalls": 0,
+    "receiptPresent": false,
+    "payloadPublished": false
+  },
+  "chainObservation": {
+    "provider": "https://preprod.koios.rest/api/v1",
+    "transactionObserved": false,
+    "allInputsUnspent": true,
+    "inputs": [
+      "3d1beb10f12b4c70c6e0b939462c9dff102da5630344ec6e5fa7056ba5528943#0"
+    ]
+  },
+  "checks": {
+    "actualModelCalled": true,
+    "actualUsefulEdits": true,
+    "acceptanceRejected": true,
+    "zeroLocalSettlementCalls": true,
+    "noReceipt": true,
+    "noPaidResult": true,
+    "sameSignedHash": true,
+    "noChainTransaction": true,
+    "allInputsUnspent": true,
+    "signedAuthorizationExpired": true
+  },
+  "trust": "Zero local settlement invocations prove this application did not request broadcast. Hosted facilitator verification is not settlement. Independent transaction absence, unspent inputs and expiry are reported by the checks above; mempool internals are not observed. This draft is unpaid and is never claimed as delivered paid work."
+}

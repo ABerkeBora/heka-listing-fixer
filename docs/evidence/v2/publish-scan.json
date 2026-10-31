@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-10-31T03:46:27.531157+00:00",
+  "status": "PASS",
+  "publishableFilesChecked": 157,
+  "privateSecretOrSignedPayloadPatternsChecked": 8,
+  "matches": [],
+  "ignoredPrivatePathsAccidentallyIncluded": [],
+  "note": "Exact selected-project secrets and persisted signed transaction payload patterns checked in memory; no private values exported."
+}

@@ -21,7 +21,15 @@
     "cardano:challenge": "tsx scripts/cardano-challenge.ts",
     "cardano:verify": "tsx scripts/cardano-verify.ts",
     "cardano:policy-proof": "tsx scripts/cardano-policy-proof.ts",
-    "verify:delivery": "tsx scripts/verify-delivery.ts"
+    "verify:delivery": "tsx scripts/verify-delivery.ts",
+    "v2:wallets": "tsx scripts/v2-wallets.ts",
+    "v2:fund": "tsx scripts/v2-fund.ts",
+    "v2:run": "tsx scripts/v2-run.ts",
+    "v2:verify-rejection": "tsx scripts/v2-verify-rejection.ts",
+    "v2:verify-chain": "tsx scripts/cardano-verify.ts --v2",
+    "v2:verify-delivery": "tsx scripts/v2-verify-delivery.ts",
+    "v2:policy-proof": "tsx scripts/v2-policy-proof.ts",
+    "v2:v1-regression": "tsx scripts/v2-v1-regression.ts"
   },
   "dependencies": {
     "@evolution-sdk/evolution": "0.5.14",

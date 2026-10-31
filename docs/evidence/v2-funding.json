@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-31T03:36:23.359Z",
+  "network": "cardano:preprod",
+  "status": "PASS",
+  "purpose": "Setup funding only; not the V2 customer paid request.",
+  "transaction": "3d1beb10f12b4c70c6e0b939462c9dff102da5630344ec6e5fa7056ba5528943",
+  "explorerUrl": "https://preprod.cardanoscan.io/transaction/3d1beb10f12b4c70c6e0b939462c9dff102da5630344ec6e5fa7056ba5528943",
+  "source": "addr_test1qr8dn6eysm3fp68f8gsrcxtvhqewztsutc7asvzk43s0fs7edlkjxxvq4qhdegzkn5gy06xqk7ktqdd3ulrmxxu4r55q0zvpkc",
+  "destination": "addr_test1qrsetswsnnc2gldcvts2nr747txh39trpkffkn0u3svacyrch48n7dfutfx0v8gj20jpxxl7dn5np355fw9dvm68ncqq46my56",
+  "amountLovelace": "10000000",
+  "networkFeeLovelace": "168581",
+  "totalSourceSpendLovelace": "10168581",
+  "feeCapLovelace": "300000"
+}
