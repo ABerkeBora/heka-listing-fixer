@@ -1,6 +1,6 @@
 # Listing Fixer — V2 sabah teslimi
 
-V2'nin gerçek Cardano preprod paid request'i ve ücret alınmayan kabul reddi doğrulandı. Tarayıcı kontrolü ve kaynak yayını da tamamlandı; gerçek Goal kapanış durumu NEXT_GOAL_STATUS.md'ye araç sonucuyla kaydedilir.
+V2'nin gerçek Cardano preprod paid request'i ve ücret alınmayan kabul reddi doğrulandı. Tarayıcı kontrolü ve kaynak yayını da tamamlandı. **Goal: COMPLETE**, gerçek `update_goal` sonucu 31 Ekim 2026 04:47:04 CET; yaklaşık 15 dakikalık V2 çalışması.
 
 - **V2:** http://localhost:3107/next
 - **V2 ücretli sonuç:** http://localhost:3107/next?job=next_79721f59050ed46dc6cccef5de7394df

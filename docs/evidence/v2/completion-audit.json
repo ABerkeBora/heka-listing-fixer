@@ -1,7 +1,7 @@
 {
   "checkedAt": "2026-10-31T03:46:49.871768+00:00",
   "status": "PASS",
-  "goalStatus": "active \u2014 all approved results achieved; actual completion update follows publication of these final summaries",
+  "goalStatus": "complete",
   "sourceCommit": "376b368c70040e3b2fbef715fe298173d6e61430",
   "evidence": {
     "realModelRejectionZeroSettlement": "no-settlement-verification.json",
@@ -31,5 +31,11 @@
     "No escrow or automatic refund",
     "Synthetic source sample; real local model and preprod payments",
     "Hosted facilitator internal broadcasts are not counted by local settlement counter"
-  ]
+  ],
+  "goalStatusUpdate": {
+    "confirmedBy": "update_goal",
+    "status": "complete",
+    "recordedAt": "2026-10-31T03:47:04Z",
+    "timeUsedSeconds": 917
+  }
 }

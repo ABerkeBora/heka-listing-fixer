@@ -1,15 +1,25 @@
 # Listing Fixer next Goal
 
-- State: ACTIVE — create_goal and get_goal both returned active at 2026-10-31T03:31:46Z. Owner thread01a18fd2-92d6-7100-88a7-6232ab986e44; no separate Goal ID returned. No token budget requested/set.
-- Checked: 31 October 2026 04:31 Europe/Berlin; Goal tool UTC timestamp03:31:46Z is authoritative.
-- get_goal: null; previous actual completion verified in V1 completion audit and BUILD_STATUS.md at04:25:12 CET.
-- Objective: Bind the buyer's immutable catalog acceptance conditions to the paid job. Reject before settlement/broadcast when the result fails; otherwise deliver one verifiable record binding acceptance, input, receipt and result hash.
-- Source brief: local readonly docs/NEXT_GOALS/listing-fixer.md and PROTOCOL.md in the coordinating Heka workspace.
-- Scope: 1–10 English listing-v1 products; buyer minimumReadyProducts + allowed title/description fields; immutable canonical acceptance hash; separate V2 API/job/storage/executor; real no-settlement and new paid preprod evidence. Preserve V1 `/` and data. No escrow/automatic refund/on-chain quality judge, no mainnet/hosting/submission/new paid services.
+- **State: COMPLETE**, actual `update_goal` result at **31 October 2026 04:47:04 CET** (`2026-10-31T03:47:04Z`).
+- Owner thread: `01a18fd2-92d6-7100-88a7-6232ab986e44`; no separate Goal ID returned. No token budget requested or set.
+- Goal accounting: 917 seconds, approximately 15 minutes. This excludes earlier V1 work.
 
-## Progress
+## Objective
 
-- Baseline commit4bb9d5b and immutable v1-baseline tag published; working branchcodex/next.
-- Start gate completed in live Cardano/general tabs before V2 code; official x402 starter/guide read.
-- Isolated V2 buyer funded with10testADA via setup transaction3d1beb10f12b4c70c6e0b939462c9dff102da5630344ec6e5fa7056ba5528943; fee168581lovelace. Not paid-job evidence.
-- Final57tests and production build PASS. Real model rejection:5ready/6required,0settlements, no receipt; after-TTL chain absence/unspent snapshotPASS. New paid success:7869104649f7723510e722ce0621078e81daf7fc6b4d9cb535d3fbebb19a21b2, one signature/settlement;13chain,15delivery,9policy and6V1regression checksPASS. Final rule recheck04:42CET unchanged. Browser QA12/12PASS with11finalscreenshots. Source publication/summary metadata are being finalized; Goal remains ACTIVE until the actual completion tool succeeds.
+Bind the buyer's immutable minimum-ready count and allowed title/description fields to the paid job. Reject before settlement/broadcast when the result fails; otherwise deliver one verifiable record binding acceptance, input, receipt and result hash. Preserve V1 and isolate V2 API/job/storage/executor.
+
+## Verified transitions
+
+1. **QUEUED:** V1 real completion was verified from BUILD_STATUS.md and its completion audit at04:25:12CET. `get_goal` returned null (no active Goal), not a newly inferred completion. Baseline/tag committed and published.
+2. **ACTIVE:** `create_goal` and `get_goal` both returned active at `2026-10-31T03:31:46Z` (04:31:46CET). Branch `codex/next`; start rules gate completed before V2 code. Same model/reasoning preference retained.
+3. **COMPLETE:** `update_goal` returned complete at the timestamp above after verified public source, comparison summary, real successful and rejected paths, tests/build, three-width QA and rule reconciliation.
+
+## Final evidence
+
+- Immutable `v1-baseline` → `4bb9d5b88cb3484db0b6d612cde68a67978c5cd7`.
+- V2 application source: `376b368c70040e3b2fbef715fe298173d6e61430`; public `codex/next`. Later commits record delivery/status metadata only.
+- New paid preprod transaction: `7869104649f7723510e722ce0621078e81daf7fc6b4d9cb535d3fbebb19a21b2`, one signature/settlement, seller2000000 + network168405lovelace, within2300000total cap.
+- Actual rejected model result:5ready/6required,0settlements/no receipt; expired authorization absent from chain, inputs unspent in the recorded pre-success snapshot.
+- PASS:57tests, production build,13chain +15delivery +9policy +10no-settlement +6V1regression +12browser checks.11final screenshots; dependency audit0; publish scan clean.
+- Actual Cardano/general rules rechecked04:42CET; mandatory paid-request qualificationPASS. Video recording/Devfolio submission remain separate user/team actions. No real customer pilot, escrow/refund, on-chain quality judge, hosted deployment or mainnet spend is claimed.
+- `REVIEW_SUMMARY.json` recommends V2 with V1 as preserved fallback. Server remains accessible on3107.
