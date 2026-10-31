@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-10-31T03:46:49.871768+00:00",
+  "status": "PASS",
+  "goalStatus": "active \u2014 all approved results achieved; actual completion update follows publication of these final summaries",
+  "sourceCommit": "376b368c70040e3b2fbef715fe298173d6e61430",
+  "evidence": {
+    "realModelRejectionZeroSettlement": "no-settlement-verification.json",
+    "newConfirmedPaidRequest": "payment-live.json",
+    "chainChecks": 13,
+    "deliveryChecks": 15,
+    "policyChecks": 9,
+    "v1RegressionChecks": 6,
+    "unitIntegrationTests": 57,
+    "browserChecks": 12,
+    "screenshots": 11,
+    "productionBuild": "PASS",
+    "dependencyVulnerabilities": 0,
+    "publishScan": "PASS",
+    "remotePublication": "repository.json"
+  },
+  "mandatoryQualification": "PASS Cardano preprod paid request + result; selected rules rechecked04:42CET",
+  "userRequestedVersionComparison": "REVIEW_SUMMARY.json and MORNING_HANDOFF_V2.md",
+  "remainingApprovedBuildWork": [],
+  "outsideAuthorizedExecution": [
+    "Video recording",
+    "Devfolio submission",
+    "Production customer pilot not performed and not claimed"
+  ],
+  "trustLimits": [
+    "Acceptance and spending limits enforced locally, not a quality/budget contract",
+    "No escrow or automatic refund",
+    "Synthetic source sample; real local model and preprod payments",
+    "Hosted facilitator internal broadcasts are not counted by local settlement counter"
+  ]
+}

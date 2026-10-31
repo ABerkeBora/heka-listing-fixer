@@ -1,6 +1,6 @@
 # Listing Fixer — V2 sabah teslimi
 
-V2'nin gerçek Cardano preprod paid request'i ve ücret alınmayan kabul reddi doğrulandı. Goal'ın son yayın/tarayıcı kontrolü tamamlanınca gerçek araç durumu NEXT_GOAL_STATUS.md'ye kaydedilir.
+V2'nin gerçek Cardano preprod paid request'i ve ücret alınmayan kabul reddi doğrulandı. Tarayıcı kontrolü ve kaynak yayını da tamamlandı; gerçek Goal kapanış durumu NEXT_GOAL_STATUS.md'ye araç sonucuyla kaydedilir.
 
 - **V2:** http://localhost:3107/next
 - **V2 ücretli sonuç:** http://localhost:3107/next?job=next_79721f59050ed46dc6cccef5de7394df
@@ -25,7 +25,7 @@ V1 kaynak koruyan katalog hizmetini gerçek x402 ödemesiyle teslim eder; restar
 - Gerçek model sonucu **5 ready / 5 needs source / 33 değişiklik**. En az 5 koşulu geçti; aynı input'un en az 6 koşulu ayrı intent'te reddedildi.
 - Rette gerçek model çalıştı, **0 settlement**, receipt ve paid export yok. İmzalı yetki süresi dolduktan sonra zincirde işlem yoktu ve girdiler harcanmamıştı. Bu tarihli snapshot sonraki başarılı ödeme öncesinde alındı; sonradan aynı girdilerin meşru yeni işte harcanması eski ret kanıtını bozmaz.
 
-`docs/evidence/v2/` içindeki `payment-live.json`, `payment-chain.json` (**13 kontrol**), `delivery-verification.json` (**15**), `policy-verification.json` (**9**), `no-settlement-verification.json` (**10**) ve `v1-regression.json` (**6**) PASS. V1'in orijinal receipt/result/hash/tek imza kaydı korunuyor. Testler **57/57 PASS**, TypeScript + production build PASS, dependency audit 0 açık. Tarayıcı QA **12/12 PASS**: desktop 1440×900, tablet 768×1024 ve phone 390×844; ücretli teslim/ret, kaynak eksiği, hash doğrulaması ve V1 dönüşü. `browser-qa.json` ile 11 ekran görüntüsü mevcut. Kaynak yayını commit kaydı ayrıca eklenir.
+`docs/evidence/v2/` içindeki `payment-live.json`, `payment-chain.json` (**13 kontrol**), `delivery-verification.json` (**15**), `policy-verification.json` (**9**), `no-settlement-verification.json` (**10**) ve `v1-regression.json` (**6**) PASS. V1'in orijinal receipt/result/hash/tek imza kaydı korunuyor. Testler **57/57 PASS**, TypeScript + production build PASS, dependency audit 0 açık. Tarayıcı QA **12/12 PASS**: desktop 1440×900, tablet 768×1024 ve phone 390×844; ücretli teslim/ret, kaynak eksiği, hash doğrulaması ve V1 dönüşü. `browser-qa.json` ile 11 ekran görüntüsü mevcut. Public V2 kaynak commit'i `376b368c70040e3b2fbef715fe298173d6e61430`; GitHub author/committer ABerkeBora ve remote eşleşmesi doğrulandı. Sonraki commit'ler yalnız teslim/Goal durum metadata'sını kaydeder.
 
 ## Açma ve yeniden kontrol
 

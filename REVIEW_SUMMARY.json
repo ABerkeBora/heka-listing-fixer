@@ -1,0 +1,36 @@
+{
+  "project": "Listing Fixer",
+  "checkedAtUtc": "2026-10-31T03:46:49.871768+00:00",
+  "v1": {
+    "url": "http://localhost:3107/",
+    "status": "PASS",
+    "baselineCommit": "4bb9d5b88cb3484db0b6d612cde68a67978c5cd7"
+  },
+  "v2": {
+    "url": "http://localhost:3107/next",
+    "status": "PASS",
+    "commit": "376b368c70040e3b2fbef715fe298173d6e61430"
+  },
+  "changes": [
+    "Alıcı minimum hazır ürün sayısını ve izinli display alanlarını ödeme öncesinde sabitler.",
+    "Koşul sağlanmazsa settlement yapılmaz; gerçek model reddinde çağrı sayısı sıfır.",
+    "Başarıda acceptance/input/result/receipt tek manifestte, ayrı V2 cüzdanı ve veri alanında doğrulanır."
+  ],
+  "verified": [
+    "docs/evidence/v2/no-settlement-verification.json",
+    "docs/evidence/v2/payment-chain.json",
+    "docs/evidence/v2/delivery-verification.json",
+    "docs/evidence/v2/browser-qa.json",
+    "57 test + build PASS",
+    "tx:7869104649f7723510e722ce0621078e81daf7fc6b4d9cb535d3fbebb19a21b2"
+  ],
+  "pending": [
+    "Video kaydı ve Devfolio gönderimi kullanıcı/takıma ait.",
+    "Gerçek müşteri pilotu yapılmadı; teknik kanıt sentetik katalogla gerçek model/ödemedir."
+  ],
+  "recommendation": {
+    "version": "V2",
+    "reason": "V2, tahsilat öncesindeki alıcı koşulunu gerçek ret ve yeni ödeme ile kanıtlıyor. V1 hazır yedek olarak korunuyor.",
+    "demoRisk": "medium"
+  }
+}
