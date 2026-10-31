@@ -1,9 +1,9 @@
 {
-  "checkedAt": "2026-10-31T03:04:09.392Z",
+  "checkedAt": "2026-10-31T03:05:15.452Z",
   "scope": "Approved HANDOFF, no narrower replacement objective",
-  "goal": "active",
+  "goal": "blocked",
   "previousTurnClassification": "progress",
-  "consecutiveFundingBlockerTurns": 2,
+  "consecutiveFundingBlockerTurns": 3,
   "requirements": [
     {
       "item": "Local compact source-bound catalog service, max10, English, JSON/CSV/diff/provenance",
@@ -79,5 +79,7 @@
       ]
     }
   ],
-  "conclusion": "Completion not proven. All independent delivery work is present; genuine paid action and live payment evidence remain blocked."
+  "conclusion": "Completion not proven. All independent delivery work is present; genuine paid action and live payment evidence remain blocked.",
+  "blockedStatusConfirmed": true,
+  "blocker": "Isolated buyer balance0 on live Koios; human faucet verification/test ADA required. No meaningful independent work remains without external funding."
 }

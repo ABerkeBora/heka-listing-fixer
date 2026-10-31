@@ -1,6 +1,6 @@
 # Listing Fixer — sabah teslimi
 
-**Yerel ürün incelemeye hazır; Cardano qualification ve gerçek agent ödemesi tamamlanmadı.** Alıcı cüzdan bakiyesi0. İnsan faucet doğrulaması/test fonu bekleniyor. Goal tamamlandı olarak işaretlenmedi.
+**Yerel ürün incelemeye hazır; Cardano qualification ve gerçek agent ödemesi tamamlanmadı.** Alıcı cüzdan bakiyesi0. İnsan faucet doğrulaması/test fonu bekleniyor. Üç ardışık güncel kontrolde aynı dış fonlama engeli sürdü; Goal aracı gerçek durumu **blocked** olarak döndürdü. Tamamlandı sayılmadı.
 
 - Aç: http://127.0.0.1:3107
 - Public repo: https://github.com/ABerkeBora/heka-listing-fixer
@@ -69,3 +69,5 @@ Blockfrost anahtarı artık zorunlu engel değil: resmî SDK'nın ücretsiz Koio
 Caps local executor/transaction validator tarafından uygulanıyor; on-chain session budget yok. Direct x402 adres ödemesinde escrow, otomatik refund veya on-chain kalite hakemi yok; confirmed payment/networkfee sonradan kaynak kontrolü başarısız diye geri alınamaz. Facilitator ayrıca fiyatlandırılmayan ücreti0diye gösterilmez; ek API harcaması yetkilendirilmez. Kaynak gerçekliği devralınır, schema-ready hukuki/ürün güvenliği onayı değildir. Sample tedarikçi verisi ve `.example` kaynaklar açıkça sentetiktir.
 
 Zorunlu eksikler: gerçek preprod ödeme+hash+receipt+teslim **BLOCKED**; canlı retry/timeout kanıtı ve video/Devfolio submission **PENDING**. Tamamlanmış qualification iddiası yok.
+
+Son engel denetimi: 31 October 2026 at 04:05:15 CET. Alıcı bakiye0; sağlayıcı ve facilitator çalışıyor. Fon sağlandıktan sonra Goal yeniden sürdürülebilir; DB/intent geçmişini silmeden mevcut batch ile devam edilir.
