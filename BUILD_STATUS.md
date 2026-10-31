@@ -14,5 +14,5 @@
 - get_goal rechecked: actual status `active`; same thread owner01a18fd2-92d6-7100-88a7-6232ab986e44. Goal is not complete.
 - Local application, real10-product model validation,33 passing tests, production build, audit0 and desktop/tablet/phone CUA QA are complete.
 - Cardano live setup and same-job402 work. Actual delegated payment/receipt remains BLOCKED: buyer0lovelace; human faucet verification/testADA needed. No mainnet funds spent or fixture hash claimed.
-- Public source push verification is being completed; see repository evidence and MORNING_HANDOFF.
+- Public source push verified:57a9f4a on codex/build; GitHub author/committer bothABerkeBora. See repository evidence and MORNING_HANDOFF.
 - External blocker first observed in this original goal turn. Do not mark Goal complete or prematurely blocked contrary to goal status rules; independent work is delivered and the required live economic action remains open.

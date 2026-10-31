@@ -36,7 +36,7 @@ Final check özeti: `docs/evidence/rules-cardano-final.txt`, `rules-general-fina
 |---|---|---|
 | En fazla2.5dakika video | Sunum akışı hazır; video kaydedilmedi | PENDING |
 | Detaylı Devfolio açıklaması | Taslak hazır, kullanıcı ayrı yetki vermeden gönderilmeyecek | PENDING |
-| Public repo + standalone setup/run README | [ABerkeBora/heka-listing-fixer](https://github.com/ABerkeBora/heka-listing-fixer); kaynak push kontrolü morning handoff'ta | PENDING |
+| Public repo + standalone setup/run README | [ABerkeBora/heka-listing-fixer](https://github.com/ABerkeBora/heka-listing-fixer), public `codex/build`, kaynak commit `57a9f4a`; standalone README + lockfile + env örneği; `repository.json` | PASS |
 
 ## Kullanıcı ürün şartı: agentic payment
 

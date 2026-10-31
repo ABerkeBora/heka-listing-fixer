@@ -5,7 +5,7 @@
 - Aç: http://127.0.0.1:3107
 - Public repo: https://github.com/ABerkeBora/heka-listing-fixer
 - Dizin: `/Users/wargly/Documents/ChatGPT/Heka/projects/listing-fixer`
-- Branch: `codex/build`; source push doğrulaması son teslim kaydında güncellenecek.
+- Branch: `codex/build`; public source push doğrulandı (`57a9f4a`); GitHub author ve committer login'leri `ABerkeBora`. Son dokümantasyon güncellemeleri aynı branch'tedir.
 - Hedef inceleme:31 Ekim 2026 08:00–09:00 Europe/Berlin. Bağımsız build işleri erken tamamlandı; hosted deploy veya yarışma başvurusu yapılmadı.
 
 ## Ne çalışıyor
